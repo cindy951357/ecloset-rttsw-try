@@ -1,0 +1,59 @@
+https://youtu.be/dRi7Y4GHylU
+TAILWIND CSS setup from scratch - With Webpack
+@Weibenfalk
+
+Step 1.
+add src/styles.css
+add postcss.config.js
+
+Step 2.
+其實也要安裝 css-loader 跟 style-loader , 但是因為之前安裝過了，這個指令就不再安裝。
+npm i -D tailwindcss postcss-loader postcss
+是不是也要
+npm i -D autoprefixer
+呢？
+
+Step 3.
+使用此指令產生 tailwind.config.js
+npx tailwind init
+
+並且在 module.exports 內
+新增content: ["./src/**/*.{html,js}"],
+
+Step 4.
+在 index.js 引入 ./styles.css
+檔案內容
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+Step 5.
+在 postcss.config.js
+檔案內容
+module.exports = {
+    plugins: [
+        require('tailwindcss')('./tailwind.config.js'),
+        require("autoprefixer"),
+    ]
+}
+
+Step 6.
+在 webpack.config.js
+在 module rules 內新增
+{
+    test: /\.css$/,
+    // Note!! order is from last to first
+    use: [
+        'style-loader', // would be the last loader
+        {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
+        },
+        'postcss-loader',
+    ],
+}
+
+Step 7.
+在 .storybook/preview.js 檔案內最上面增加這一行
+import '!style-loader!css-loader!postcss-loader!tailwindcss/tailwind.css';

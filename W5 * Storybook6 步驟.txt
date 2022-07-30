@@ -1,0 +1,13 @@
+Step 1.
+npx sb init --builder webpack5
+然後可能要照著terminal的指示去接受安裝sb
+
+Step 2.
+yarn storybook
+或是
+npm run storybook
+
+除錯紀錄
+Module not found: Error: Can't resolve '@mdx-js/react'
+https://github.com/storybookjs/storybook/issues/18094$ npm i @mdx-js/react@^1.6.22 -D --legacy-peer-deps
+npm i @mdx-js/react@^1.6.22 -D --legacy-peer-deps

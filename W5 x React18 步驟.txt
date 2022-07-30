@@ -1,0 +1,76 @@
+Step 1.
+npm i react react-dom 
+
+Step 2.
+npm i -D @babel/core @babel/preset-env \
+@babel/preset-react babel-loader file-loader \
+css-loader \
+sass-loader sass webpack webpack-cli
+
+Step 3.
+npm i -D style-loader
+
+Step 4.
+add .babelrc
+
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
+}
+
+Step 5. 
+add webpack.config.js
+見init_webpack.config.js
+
+跟作者不同的
+
+devServer:{
+    static: path.resolve(__dirname, 'src'),
+    port: 8080,
+    open: true,
+    hot: true
+}
+
+以上參考來源：
+https://stackoverflow.com/questions/69987319/webpack-dev-server-does-not-recognize-watchcontentbase-as-valid-option
+
+Step 6.
+add src/
+add src/App.js
+add src/App.scss
+add src/index.html
+add src/index.js
+
+註：要在 index.html 內新增一個 id 叫做 app 的 div
+
+註：比較新的 react
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App tab="home" />);
+
+Step 7.
+在 index.html 新增 <script> tag
+<script src="index.bundle.js"></script>
+
+
+Step 8.
+在 index.js 新增
+require('file-loader?name=[name].[ext]!./index.html');
+
+Step 9.
+package.json
+
+新增
+"scripts: : {
+    "serve": "webpack serve --mode development"
+}
+
+Step 10. 
+npm i -D webpack-dev-server
+
+Step 11.
+npm run serve
+但是會找不到 index.bundle.js

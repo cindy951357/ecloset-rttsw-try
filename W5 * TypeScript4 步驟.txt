@@ -1,0 +1,57 @@
+@codevolution
+https://www.youtube.com/watch?v=Elpu7CIuqjY
+
+Step 1.
+npm i -D typescript @types/react @types/react-dom
+
+Step 2.
+add tsconfig.json
+https://github.com/gopinav/React-TypeScript-Webpack-Starter/blob/master/tsconfig.json
+
+但是我增加了
+  "noImplicitAny": false
+因為 parameter implicitly has an ‘any’ type" error
+
+Step 3.
+add App.tsx
+add index.tsx
+注意，在 index.tsx 內，
+const root = createRoot(container!);
+要有驚嘆號。
+
+但是此時瀏覽器認不得這種檔案
+
+Step 4.
+為了解決瀏覽器認不得index.tsx, App.tsx的問題
+安裝以下
+yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript @babel/plugin-transform-runtime
+
+
+Step 5.
+add (modify) .babelrc
+https://github.com/gopinav/React-TypeScript-Webpack-Starter/blob/master/.babelrc
+
+Step 6.
+yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin
+yarn add -D babel-loader
+
+Step 7.
+add(edit) webpack.config.js
+
+https://github.com/gopinav/React-TypeScript-Webpack-Starter/blob/master/webpack/webpack.common.js
+
+節錄重點修改內容如下
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+重點一
+entry: path.resolve(__dirname, './src/index.tsx'),
+重點二
+resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+},
+重點三
+plugins: [
+  new HtmlWebpackPlugin(),
+],
+
+拿走 index.html 內的<script src='bundle.js'> 這個tag !!
