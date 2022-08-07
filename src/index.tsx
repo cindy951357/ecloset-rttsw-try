@@ -1,6 +1,7 @@
 // require('file-loader?name=[name].[ext]!./index.html');
+
 import React from 'react';
-import App from './App';
+import App from './pages/App';
 import { createRoot } from 'react-dom/client';
 import './locales/i18n.js';
 
