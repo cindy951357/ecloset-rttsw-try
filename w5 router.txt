@@ -4,3 +4,7 @@ https://www.youtube.com/watch?v=M3tYEwHQ86M
 
 Step 1. 
 npm i react-router react-router-dom
+
+
+React Router v6
+yarn add -D storybook-addon-react-router-v6

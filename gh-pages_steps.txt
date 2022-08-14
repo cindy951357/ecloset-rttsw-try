@@ -1,0 +1,10 @@
+
+yarn add gh-pages --develop
+
+scripts: {
+    // ignore
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist"
+}
+
+
