@@ -1,3 +1,9 @@
 node_modules
 *-lock.json
-node_modules
+
+package.json
+src/
+dist/
+.storybook
+*.txt
+
