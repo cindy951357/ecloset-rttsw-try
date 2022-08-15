@@ -1,7 +1,6 @@
 import React, { ReactNode, HTMLAttributes } from 'react'
 import classnames from 'classnames';
 
-import './NavItem.scss';
 const FIRST_LAYER = 'first-layer';
 const SECOND_LAYER = 'second-layer';
 
