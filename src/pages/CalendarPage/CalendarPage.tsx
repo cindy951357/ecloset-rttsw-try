@@ -3,10 +3,13 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     active: Boolean;
 }
 import { HTMLAttributes } from 'react';
+
+import { CalendarGrid } from '../../components/CalendarGrid/CalendarGrid';
+
 const CalendarPage = () => {
     return (
         <div className='calendar-page page'>
-            Calendar Page
+            <CalendarGrid />
         </div>
     );
 };

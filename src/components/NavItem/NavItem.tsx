@@ -11,8 +11,6 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
 }
 
 const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
-  const bgColor: string =
-    variant === FIRST_LAYER ? 'bg-pink-200' : 'bg-fuchsia-200'
   const classNames: string = classnames(
     'nav-item',
     'flex',
@@ -22,7 +20,6 @@ const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
     {
       'active': props.active || false,
       [`nav-item-${variant}`]: true,
-      [bgColor]: true,
     });
   return (
     <button
