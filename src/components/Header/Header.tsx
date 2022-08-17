@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const styleClassNames = classnames(
   'h-1/6',
-  'w-100',
+  'w-screen',
   'flex',
   'flex-1',
   'justify-self-start',

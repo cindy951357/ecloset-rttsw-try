@@ -10,21 +10,29 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
   text: String;
 }
 
+const defaultClassNames: string = classnames(
+  'nav-item',
+  'flex',
+  'w-full',
+  'h-full',
+  'justify-center',
+  'items-center',
+);
+
 const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
-  const classNames: string = classnames(
-    'nav-item',
-    'flex',
-    'p-1',
-    'justify-center',
-    'align-center',
+  const {
+    active
+  } = props;
+  const customizedClassNames: string = classnames(
     {
-      'active': props.active || false,
+      'active': active || false,
       [`nav-item-${variant}`]: true,
+      'bg-rose-300': active,
     });
   return (
     <button
       {...props}
-      className={classNames}
+      className={`${defaultClassNames} ${customizedClassNames}`}
     >
       {props.text}
     </button>
