@@ -18,7 +18,7 @@ const defaultCalendarStyle = classnames(
     'calendar-grid',
     'grid',
     'grid-cols-7',
-    'gap-1',
+    'gap-2',
     'rounded',
 );
 
@@ -27,6 +27,7 @@ const defaultCellStyle = classnames(
     'rounded',
     'bg-zinc-200',
     'py-1',
+    'px-1',
 );
 
 const defaultDateLabelStyle = classnames(

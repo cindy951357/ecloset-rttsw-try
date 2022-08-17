@@ -16,6 +16,7 @@ const styleClassNames = classnames(
     'grid',
     'grid-cols-2',
     'grid-rows-2',
+    'gap-0',
     'h-fit',
     'px-0.5',
     'place-content-center',

@@ -23,11 +23,8 @@ const ClothItem = ({ ...props }: Props) => {
     const styleClassNames = classnames(
         'cloth-item',
         'flex',
-        {
-            'max-w-[30px]': size === 's',
-            'max-w-[100px]': size === 'm',
-            'max-w-[300px]': size === 'l',
-        },
+        'w-100',
+        'h-100',
         'rounded',
         'bg-white',
         'items-center',
@@ -36,7 +33,7 @@ const ClothItem = ({ ...props }: Props) => {
         <div
             className={styleClassNames}
         >
-            <img src={imgFile} alt={imgFile} />
+            <img className={'bg-cover'} src={imgFile} alt={imgFile} />
         </div>
     )
 }
