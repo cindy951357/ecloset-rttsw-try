@@ -7,12 +7,10 @@ const imgFolderPath = './../../assets/images/cloth-items'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
-    size: 's' | 'm' | 'l',
     clothFiles: Array<string>,
 }
 
-const styleClassNames = classnames(
-    'outfit-item',
+export const styleClassNames = classnames(
     'grid',
     'grid-cols-2',
     'grid-rows-2',
@@ -25,14 +23,13 @@ const styleClassNames = classnames(
 const OutfitItem = ({ ...props }: Props) => {
     const {
         clothFiles,
-        size,
         viewMode,
     } = props;
 
 
     return (
         <div
-            className={styleClassNames}
+            className={`outfit-item ${styleClassNames}`}
         >
 
             {clothFiles.map((file, i) => {

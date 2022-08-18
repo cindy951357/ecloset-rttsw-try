@@ -15,6 +15,7 @@ import { OutfitPage } from './OutfitPage/OutfitPage';
 import { NavBar } from './../components/NavBar/NavBar';
 import { Header } from './../components/Header/Header';
 
+import { PopupPage } from './PopupPage/PopupPage';
 
 import classnames from 'classnames';
 
@@ -36,6 +37,8 @@ const App = () => {
                 </Routes>
                 <NavBar variant={''}></NavBar>
             </Router>
+
+            <PopupPage />
         </div>
     )
 }

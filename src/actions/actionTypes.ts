@@ -1,0 +1,1 @@
+export const SET_POPUP_SHOW = 'SET_POPUP_SHOW';
