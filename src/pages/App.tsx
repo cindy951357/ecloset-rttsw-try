@@ -19,13 +19,22 @@ import { PopupPage } from './PopupPage/PopupPage';
 
 import classnames from 'classnames';
 
+const appStyleClassName = classnames(
+    'flex',
+    'flex-col',
+    'container',
+    'max-h-full',
+    'h-screen',
+    'w-screen',
+)
+
 const App = () => {
     const { t } = useTranslation();
 
 
     return (
         <div id='app'
-            className='flex flex-col container max-h-full h-full w-full'
+            className={appStyleClassName}
         >
             <Header></Header>
             <Router>

@@ -3,7 +3,7 @@ import {
 } from '../actions/actionTypes';
 
 const init = {
-    isShow: true
+    isShow: false,
 };
 
 export default function popupReducer(state = init, action) {

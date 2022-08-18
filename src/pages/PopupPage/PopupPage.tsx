@@ -14,8 +14,8 @@ const PopupPage = () => {
     const popupClassName = classnames(
         'pop-up-page',
         'flex',
-        'w-screen',
-        'h-screen',
+        'w-full',
+        'h-full',
         'z-1',
         {
             'hidden': !popupShow.isShow,
