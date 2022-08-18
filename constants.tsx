@@ -9,7 +9,7 @@ export const defaultImgFName = 'A02_DTB_black.jpg';
 export const SIMPLE_MODE = 'SIMPLE_MODE';
 export const COMPLEX_MODE = 'COMPLEX_MODE';
 
-export const defaultOutfitFiles = [
+export const defaultOutfitFiles: Array<typeof Image> = [
     outfitDefaultImg1,
     outfitDefaultImg2,
     outfitDefaultImg3,

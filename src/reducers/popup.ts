@@ -2,8 +2,20 @@ import {
     SET_POPUP_SHOW,
 } from '../actions/actionTypes';
 
+import { Props as outfitItemProps } from '../components/OutfitItem/OutfitItem';
+
+interface Props {
+    isShow: Boolean,
+    content: {
+        outfitItem: outfitItemProps | null,
+    },
+}
+
 const init = {
     isShow: false,
+    content: {
+        outfitItem: null,
+    },
 };
 
 export default function popupReducer(state = init, action) {
@@ -11,7 +23,8 @@ export default function popupReducer(state = init, action) {
         case SET_POPUP_SHOW:
             return {
                 ...state,
-                isShow: action.payload
+                isShow: action.payload.isShow,
+                content: action.payload.content,
             };
         default: return state;
     }

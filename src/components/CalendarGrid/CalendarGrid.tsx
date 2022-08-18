@@ -7,6 +7,9 @@ import { getDaysInMonth } from '../../utils/Datetime';
 import { OutfitItem } from '../OutfitItem/OutfitItem';
 import { defaultOutfitFiles } from './../../../constants';
 
+import { setPopupShowAndContent } from '../../actions/popup';
+import { useDispatch } from 'react-redux';
+
 const todayDate: Date = new Date();
 const currentYear: number = todayDate.getFullYear();
 const currentMonth: number = todayDate.getMonth() + 1;
@@ -41,27 +44,38 @@ const defaultDateLabelStyle = classnames(
 export const CalendarGrid = ({
     primary, backgroundColor, size, label, ...props
 }) => {
+    const dispatch = useDispatch();
+
+    const onOutfitCellClick = (clothFiles) => {
+        dispatch(setPopupShowAndContent({
+            isShow: true,
+            content: {
+                viewMode: 'SIMPLE_MODE',
+                clothFiles: clothFiles,
+            }
+        }));
+    }
 
     return (
         <div className={defaultCalendarStyle}>
             {
-                defaultDateNumber.map(monthNumber => {
+                defaultDateNumber.map(dateNumber => {
                     return (
-                        <div key={`cell-${monthNumber}`}
+                        <div key={`cell-${dateNumber}`}
                             className={defaultCellStyle}
+                            onClick={() => {
+                                onOutfitCellClick(defaultOutfitFiles)
+                            }}
                         >
-                            <time className={defaultDateLabelStyle}>{monthNumber}</time>
+                            <time className={defaultDateLabelStyle}>{dateNumber}</time>
                             <OutfitItem
                                 viewMode='SIMPLE_MODE'
-                                size='s'
                                 clothFiles={defaultOutfitFiles}
                             />
                         </div>
                     )
-                })
-            }
+                })}
         </div>
-
     );
 };
 

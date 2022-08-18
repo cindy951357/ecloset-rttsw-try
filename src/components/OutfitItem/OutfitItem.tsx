@@ -7,7 +7,7 @@ const imgFolderPath = './../../assets/images/cloth-items'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
-    clothFiles: Array<string>,
+    clothFiles: Array<typeof Image>,
 }
 
 export const styleClassNames = classnames(
@@ -18,6 +18,10 @@ export const styleClassNames = classnames(
     'h-fit',
     'px-0.5',
     'place-content-center',
+    'flex',
+    'justify-self-center',
+    'self-center',
+    'max-w-[300px]',
 );
 
 const OutfitItem = ({ ...props }: Props) => {

@@ -4,41 +4,57 @@ import classnames from 'classnames';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { popupShowSelector } from '../../reducers/popup';
-import { setPopupShow } from '../../actions/popup';
+import { setPopupShowAndContent } from '../../actions/popup';
+
+import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
 
 
 const PopupPage = () => {
     const dispatch = useDispatch();
-    const popupShow = useSelector(popupShowSelector);
+    const {
+        isShow,
+        content,
+    } = useSelector(popupShowSelector);
 
     const popupClassName = classnames(
         'pop-up-page',
+        'p-6',
         'flex',
+        'grid',
+        'grid-rows-3',
+        //grid-template-rows is specified in inline style in jsx part
         'w-full',
         'h-full',
         'z-1',
         {
-            'hidden': !popupShow.isShow,
+            'hidden': !isShow,
         },
-        'bg-fuchsia-100',
+        'bg-[rgba(250,232,255,0.8)]',//'bg-fuchsia-100',
         'absolute',
-        'opacity-80',
     )
     return (
         <div
             className={popupClassName}
+            style={{
+                gridTemplateRows: '1fr 4fr 1fr',
+            }}
         >
             <button
                 onClick={() => {
-                    dispatch(setPopupShow(false))
+                    dispatch(setPopupShowAndContent({
+                        isShow: false,
+                        content: null,
+                    }))
                 }}
                 className={'justify-self-end'}
             >
                 &#x2715;
-                haha
             </button>
-            PopupPage
-
+            {isShow && <OutfitItem
+                viewMode={content.viewMode}
+                clothFiles={content.clothFiles}
+            />}
+            <div>haha</div>
         </div>
     )
 }
