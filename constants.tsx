@@ -15,3 +15,10 @@ export const defaultOutfitFiles: Array<typeof Image> = [
     outfitDefaultImg3,
     outfitDefaultImg4,
 ]
+
+export const defaultOutfitImgFileNames: Array<string> = [
+    'T01_YeccaVecca_white.jpg',
+    'F01_Net_darkGreen.jpg',
+    'S01_Orin_black_derby.jpg',
+    'A02_DTB_black.jpg',
+]

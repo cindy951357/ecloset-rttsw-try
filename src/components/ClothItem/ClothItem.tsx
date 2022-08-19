@@ -9,35 +9,43 @@ const COMPLEX_MODE = 'COMPLEX_MODE';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
-    size: 's' | 'm' | 'l',
     imgFile: string,
+    borderRadius: string,
+    position: string,
 }
 
 const ClothItem = ({ ...props }: Props) => {
     const {
         imgFile,
-        size = 's',
         viewMode,
+        borderRadius,
     } = props;
 
-    const styleClassNames = classnames(
+    const wrapperStyleClassNames = classnames(
         'cloth-item',
         'flex',
-        'w-100',
-        'h-100',
-        'rounded',
-        'bg-white',
+        'w-full',
+        'h-full',
+        'bg-zinc-100',
         'items-center',
+        'bg-cover',
     )
     return (
         <div
-            className={styleClassNames}
+            className={wrapperStyleClassNames}
+            style={{
+                borderRadius: borderRadius,
+                backgroundImage: `url("./../../assets/images/cloth-items/${imgFile}")`,
+            }}
         >
-            <img className={'bg-cover'} src={imgFile} alt={imgFile} />
         </div>
     )
 }
 
+ClothItem.defaultProps = {
+    borderRadius: '1em 1em 1em 1em',
+    position: '',
+}
 export {
     ClothItem,
 };

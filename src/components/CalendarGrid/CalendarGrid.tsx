@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { getDaysInMonth } from '../../utils/Datetime';
 
 import { OutfitItem } from '../OutfitItem/OutfitItem';
-import { defaultOutfitFiles } from './../../../constants';
+import { defaultOutfitFiles, defaultOutfitImgFileNames } from './../../../constants';
 
 import { setPopupShowAndContent } from '../../actions/popup';
 import { useDispatch } from 'react-redux';
@@ -23,12 +23,13 @@ const defaultCalendarStyle = classnames(
     'grid-cols-7',
     'gap-2',
     'rounded',
+    'h-full',
 );
 
 const defaultCellStyle = classnames(
     'cell',
+    'grid',
     'rounded',
-    'bg-zinc-200',
     'py-1',
     'px-1',
 );
@@ -38,7 +39,8 @@ const defaultDateLabelStyle = classnames(
     'flex',
     'place-content-center',
     'text-xs',
-    'text-zinc-600',
+    'text-zinc-400',
+    'py-1',
 );
 
 export const CalendarGrid = ({
@@ -66,11 +68,16 @@ export const CalendarGrid = ({
                             onClick={() => {
                                 onOutfitCellClick(defaultOutfitFiles)
                             }}
+                            style={{ gridTemplateRows: '1fr 5fr' }}
                         >
-                            <time className={defaultDateLabelStyle}>{dateNumber}</time>
+                            <time
+                                className={defaultDateLabelStyle}
+                            >
+                                {dateNumber}
+                            </time>
                             <OutfitItem
                                 viewMode='SIMPLE_MODE'
-                                clothFiles={defaultOutfitFiles}
+                                clothFileNames={defaultOutfitImgFileNames}
                             />
                         </div>
                     )

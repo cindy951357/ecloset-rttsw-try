@@ -27,12 +27,12 @@ const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
     {
       'active': active || false,
       [`nav-item-${variant}`]: true,
-      'bg-rose-300': active,
     });
   return (
     <button
       {...props}
       className={`${defaultClassNames} ${customizedClassNames}`}
+      style={{ color: active ? 'black' : 'gray' }}
     >
       {props.text}
     </button>

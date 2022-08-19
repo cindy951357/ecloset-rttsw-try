@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { OutfitItem, Props } from './OutfitItem';
 
-import { defaultOutfitFiles, SIMPLE_MODE, COMPLEX_MODE } from './../../../constants';
+import { defaultOutfitFiles, defaultOutfitImgFileNames } from './../../../constants';
 
 const meta: Meta = {
     title: 'OutfitItem',
@@ -15,5 +15,6 @@ const Template: Story<Props> = (args) => <OutfitItem {...args} />
 export const Default = Template.bind({});
 
 Default.args = {
-    clothFiles: defaultOutfitFiles
+    // clothFiles: defaultOutfitFiles,
+    clothFileNames: defaultOutfitImgFileNames,
 }

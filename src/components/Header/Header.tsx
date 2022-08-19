@@ -6,15 +6,13 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const styleClassNames = classnames(
-  'h-1/6',
   'w-screen',
   'flex',
-  'flex-1',
   'justify-self-start',
   'place-content-center',
   'place-items-center',
-  'bg-rose-200',
-  'text-zinc-700',
+  'bg-white',
+  'text-rose-300',
 );
 
 const Header = ({ ...props }: Props) => {

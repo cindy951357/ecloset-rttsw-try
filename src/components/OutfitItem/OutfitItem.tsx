@@ -5,9 +5,20 @@ import { ClothItem } from './../ClothItem/ClothItem';
 
 const imgFolderPath = './../../assets/images/cloth-items'
 
+const borderRadiusList = [
+    '1em 0 0 0',
+    '0 1em 0 0',
+    '0 0 0 1em',
+    '0 0 1em 0',
+];
+const positionList = [
+
+];
+
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
-    clothFiles: Array<typeof Image>,
+    // clothFiles: Array<typeof Image>,
+    clothFileNames: Array<string>,
 }
 
 export const styleClassNames = classnames(
@@ -15,18 +26,20 @@ export const styleClassNames = classnames(
     'grid-cols-2',
     'grid-rows-2',
     'gap-0',
-    'h-fit',
     'px-0.5',
     'place-content-center',
     'flex',
     'justify-self-center',
     'self-center',
+    'h-full',
+    'w-full',
     'max-w-[300px]',
+    'max-h-[300px]'
 );
 
 const OutfitItem = ({ ...props }: Props) => {
     const {
-        clothFiles,
+        clothFileNames,
         viewMode,
     } = props;
 
@@ -36,14 +49,14 @@ const OutfitItem = ({ ...props }: Props) => {
             className={`outfit-item ${styleClassNames}`}
         >
 
-            {clothFiles.map((file, i) => {
-                console.log(file)
+            {clothFileNames.map((file, i) => {
                 return (
                     <ClothItem
                         key={i}
                         viewMode={viewMode}
-                        size={'s'}
                         imgFile={`${file}`}
+                        borderRadius={borderRadiusList[i]}
+                        position={positionList[i]}
                     ></ClothItem>
                 )
             })}

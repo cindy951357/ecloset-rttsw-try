@@ -28,10 +28,38 @@ const defaultClassNames = classnames(
     'grow-0',
     'shrink-0',
     'basis-[20%]',
-    'bg-rose-100',
+    'bg-white',
     'items-center',
     'justify-center',
 )
+
+const navItemList = [
+    {
+        linkTo: '/closet',
+        i18n: 'Closet',
+        navNameConstant: NAV_CLOSET,
+    },
+    {
+        linkTo: '/outfit',
+        i18n: 'Outfit',
+        navNameConstant: NAV_OUTFIT,
+    },
+    {
+        linkTo: '/calendar',
+        i18n: 'Calendar',
+        navNameConstant: NAV_CALENDAR,
+    },
+    {
+        linkTo: '/tags',
+        i18n: 'Tags',
+        navNameConstant: NAV_TAGS,
+    },
+    {
+        linkTo: '/setting',
+        i18n: 'Setting',
+        navNameConstant: NAV_SETTING,
+    }
+]
 
 const NavBar = ({ variant = '', ...props }: Props) => {
     const { t } = useTranslation();
@@ -42,55 +70,26 @@ const NavBar = ({ variant = '', ...props }: Props) => {
         <ul id='nav_bar'
             className='flex flex-row w-screen flex-1'
         >
-            <li className={defaultClassNames}
-                onClick={() => { setCurPage(NAV_CLOSET); console.log(curPage, 'hahaha') }}
-            >
-                <Link to='/closet'>
-                    <NavItem text={t('Closet')} variant='first-layer'
-                        active={curPage === NAV_CLOSET}>
-                    </NavItem>
-                </Link>
-            </li>
-            <li className={defaultClassNames}
-                onClick={() => { setCurPage(NAV_OUTFIT) }}
-            >
-                <Link to='/outfit'>
-                    <NavItem text={t('Outfit')} variant='first-layer'
-                        active={curPage === NAV_OUTFIT}>
-                    </NavItem>
-                </Link>
-            </li>
-            <li className={defaultClassNames}
-                onClick={() => { setCurPage(NAV_CALENDAR) }}
-            >
-                <Link to='/calendar'>
-                    <NavItem text={t('Calendar')} variant='first-layer'
-                        active={curPage === NAV_CALENDAR}>
-                    </NavItem>
-                </Link>
-            </li>
-            <li className={defaultClassNames}
-                onClick={() => { setCurPage(NAV_TAGS) }}
-            >
-                <Link to='/tags'>
-                    <NavItem text={t('Tags')} variant='first-layer'
-                        active={curPage === NAV_TAGS}>
-                    </NavItem>
-                </Link>
-            </li>
-            <li className={defaultClassNames}
-                onClick={() => { setCurPage(NAV_SETTING) }}
-            >
-                <Link to='/settings'>
-                    <NavItem text={t('Settings')} variant='first-layer'
-                        active={curPage === NAV_SETTING}>
-                    </NavItem>
-                </Link>
-            </li>
+
+            {
+                navItemList.map(navItem => (
+                    <li key={navItem.i18n}
+                        className={defaultClassNames}
+                        onClick={() => { setCurPage(navItem.navNameConstant) }}
+                    >
+                        <Link to={navItem.linkTo}>
+                            <NavItem text={t(navItem.i18n)} variant='first-layer'
+                                active={curPage === navItem.navNameConstant}>
+                            </NavItem>
+                        </Link>
+                    </li>
+                ))
+            }
         </ul>
     )
 }
 
 export {
     NavBar,
-}
+};
+export type { Props };
