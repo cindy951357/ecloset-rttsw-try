@@ -8,6 +8,7 @@ import { setPopupShowAndContent } from '../../actions/popup';
 
 import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
 
+import { defaultOutfitImgFileNames } from './../../../constants';
 
 const PopupPage = () => {
     const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const PopupPage = () => {
         {
             'hidden': !isShow,
         },
-        'bg-[rgba(250,232,255,0.8)]',//'bg-fuchsia-100',
+        'bg-[rgba(249,168,212,0.8)]',//'bg-rose-200',
         'absolute',
     )
     return (
@@ -52,7 +53,7 @@ const PopupPage = () => {
             </button>
             {isShow && <OutfitItem
                 viewMode={content.viewMode}
-                clothFiles={content.clothFiles}
+                clothFileNames={defaultOutfitImgFileNames}
             />}
             <div>haha</div>
         </div>
