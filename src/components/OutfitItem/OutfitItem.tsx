@@ -37,6 +37,7 @@ export const styleClassNames = classnames(
     'max-h-[300px]',
     'min-w-[25px]',
     'min-h-[25px]',
+    'aspect-square',
 );
 
 const OutfitItem = ({ ...props }: Props) => {
