@@ -1,7 +1,11 @@
 import React, { ReactNode, HTMLAttributes } from 'react'
 import classnames from 'classnames';
 
-import { imgFolderPath, defaultImgFName } from './../../../constants';
+import {
+    env,
+    imgFolderPath,
+    defaultImgFName
+} from './../../../constants';
 import defaultImg from './../../assets/images/cloth-items/A02_DTB_black.jpg';
 
 const SIMPLE_MODE = 'SIMPLE_MODE';
@@ -35,10 +39,14 @@ const ClothItem = ({ ...props }: Props) => {
             className={wrapperStyleClassNames}
             style={{
                 borderRadius: borderRadius,
-                backgroundImage: `url("./../../assets/images/cloth-items/${imgFile}")`,
+                backgroundImage:
+                    env === 'development'
+                        ? `url("./../../assets/images/cloth-items/${imgFile}")`
+                        : `url("./images/${imgFile}")`
+                ,
             }}
         >
-        </div>
+        </div >
     )
 }
 

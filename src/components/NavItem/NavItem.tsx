@@ -3,9 +3,9 @@ import classnames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fontawesome from '@fortawesome/fontawesome';
-import { faTshirt, faCalendar } from '@fortawesome/fontawesome-free-solid'
+import { faTshirt, faCalendar, faWrench, faTags } from '@fortawesome/fontawesome-free-solid'
 
-fontawesome.library.add(faTshirt, faCalendar);
+fontawesome.library.add(faTshirt, faCalendar, faWrench, faTags);
 
 const FIRST_LAYER = 'first-layer';
 const SECOND_LAYER = 'second-layer';

@@ -58,11 +58,13 @@ const navItemList = [
         linkTo: '/tags',
         i18n: 'Tags',
         navNameConstant: NAV_TAGS,
+        iconName: 'fa-tags',
     },
     {
         linkTo: '/setting',
         i18n: 'Setting',
         navNameConstant: NAV_SETTING,
+        iconName: 'fa-wrench',
     }
 ]
 

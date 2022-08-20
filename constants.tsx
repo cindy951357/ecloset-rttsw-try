@@ -1,3 +1,4 @@
+export const env = process.env.NODE_ENV;
 import outfitDefaultImg1 from './src/assets/images/cloth-items/T01_YeccaVecca_white.jpg';
 import outfitDefaultImg2 from './src/assets/images/cloth-items/F01_Net_darkGreen.jpg';
 import outfitDefaultImg3 from './src/assets/images/cloth-items/S01_Orin_black_derby.jpg';
