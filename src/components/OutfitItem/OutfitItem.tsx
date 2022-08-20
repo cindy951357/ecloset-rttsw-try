@@ -34,7 +34,9 @@ export const styleClassNames = classnames(
     'h-full',
     'w-full',
     'max-w-[300px]',
-    'max-h-[300px]'
+    'max-h-[300px]',
+    'min-w-[25px]',
+    'min-h-[25px]',
 );
 
 const OutfitItem = ({ ...props }: Props) => {
@@ -47,6 +49,7 @@ const OutfitItem = ({ ...props }: Props) => {
     return (
         <div
             className={`outfit-item ${styleClassNames}`}
+            style={{ gridTemplateRows: '1fr 1fr', gridTemplateColumns: '1fr 1fr' }}
         >
 
             {clothFileNames.map((file, i) => {

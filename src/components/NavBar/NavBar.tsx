@@ -31,6 +31,7 @@ const defaultClassNames = classnames(
     'bg-white',
     'items-center',
     'justify-center',
+    'py-1',
 )
 
 const navItemList = [
@@ -38,16 +39,20 @@ const navItemList = [
         linkTo: '/closet',
         i18n: 'Closet',
         navNameConstant: NAV_CLOSET,
+        iconName: 'fa-tshirt'
     },
     {
         linkTo: '/outfit',
         i18n: 'Outfit',
         navNameConstant: NAV_OUTFIT,
+        iconName: 'fa-tshirt'
     },
     {
         linkTo: '/calendar',
         i18n: 'Calendar',
         navNameConstant: NAV_CALENDAR,
+        iconName: 'fa-calendar'
+
     },
     {
         linkTo: '/tags',
@@ -78,8 +83,12 @@ const NavBar = ({ variant = '', ...props }: Props) => {
                         onClick={() => { setCurPage(navItem.navNameConstant) }}
                     >
                         <Link to={navItem.linkTo}>
-                            <NavItem text={t(navItem.i18n)} variant='first-layer'
-                                active={curPage === navItem.navNameConstant}>
+                            <NavItem
+                                text={t(navItem.i18n)}
+                                variant='first-layer'
+                                active={curPage === navItem.navNameConstant}
+                                fontAwesomeIconName={navItem.iconName}
+                            >
                             </NavItem>
                         </Link>
                     </li>

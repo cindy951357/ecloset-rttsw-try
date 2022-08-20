@@ -28,9 +28,7 @@ html {
     /* 10 / 12*/
 
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
     padding-left: 1rem;
     padding-right: 1rem;
 

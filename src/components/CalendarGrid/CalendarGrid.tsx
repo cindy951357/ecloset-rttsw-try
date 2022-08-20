@@ -23,12 +23,12 @@ const defaultCalendarStyle = classnames(
     'grid-cols-7',
     'gap-2',
     'rounded',
-    'h-full',
 );
 
 const defaultCellStyle = classnames(
     'cell',
     'grid',
+    'h-full',
     'rounded',
     'py-1',
     'px-1',
@@ -68,7 +68,7 @@ export const CalendarGrid = ({
                             onClick={() => {
                                 onOutfitCellClick(defaultOutfitFiles)
                             }}
-                            style={{ gridTemplateRows: '1fr 5fr' }}
+                            style={{ gridTemplateRows: '20px auto' }}
                         >
                             <time
                                 className={defaultDateLabelStyle}
