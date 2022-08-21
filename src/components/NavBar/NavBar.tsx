@@ -31,7 +31,7 @@ const defaultClassNames = classnames(
     'bg-white',
     'items-center',
     'justify-center',
-    'py-1',
+    'py-3',
 )
 
 const navItemList = [
@@ -45,7 +45,7 @@ const navItemList = [
         linkTo: '/outfit',
         i18n: 'Outfit',
         navNameConstant: NAV_OUTFIT,
-        iconName: 'fa-tshirt'
+        iconName: 'fa-puzzle-piece'
     },
     {
         linkTo: '/calendar',

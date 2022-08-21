@@ -3,9 +3,9 @@ import classnames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fontawesome from '@fortawesome/fontawesome';
-import { faTshirt, faCalendar, faWrench, faTags } from '@fortawesome/fontawesome-free-solid'
+import { faTshirt, faCalendar, faWrench, faTags, faSquare, faPuzzlePiece } from '@fortawesome/fontawesome-free-solid'
 
-fontawesome.library.add(faTshirt, faCalendar, faWrench, faTags);
+fontawesome.library.add(faTshirt, faCalendar, faWrench, faTags, faSquare, faPuzzlePiece);
 
 const FIRST_LAYER = 'first-layer';
 const SECOND_LAYER = 'second-layer';
@@ -25,6 +25,8 @@ const defaultClassNames: string = classnames(
   'justify-center',
   'items-center',
   'flex-col',
+  'text-2xl',
+  'py-2',
 );
 
 const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
@@ -43,10 +45,10 @@ const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
     <button
       {...props}
       className={`${defaultClassNames} ${customizedClassNames}`}
-      style={{ color: active ? 'black' : 'gray' }}
+      style={{ color: active ? 'black' : 'lightgray' }}
     >
       <FontAwesomeIcon icon={`fa-solid ${fontAwesomeIconName}`} />
-      {props.text}
+      <span className="text-xs py-2">{props.text}</span>
     </button>
   )
 }

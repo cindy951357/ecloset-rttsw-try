@@ -18,7 +18,7 @@ const positionList = [
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
     // clothFiles: Array<typeof Image>,
-    clothFileNames: Array<string>,
+    clothFileNames: [string, string, string, string],
 }
 
 export const styleClassNames = classnames(
