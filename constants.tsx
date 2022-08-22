@@ -17,7 +17,7 @@ export const defaultOutfitFiles: Array<typeof Image> = [
     outfitDefaultImg4,
 ]
 
-export const defaultOutfitImgFileNames: Array<string> = [
+export const defaultOutfitImgFileNames: [string, string, string, string] = [
     'T01_YeccaVecca_white.jpg',
     'F01_Net_darkGreen.jpg',
     'S01_Orin_black_derby.jpg',

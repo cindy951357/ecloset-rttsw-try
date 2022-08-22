@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { OutfitItem } from '../OutfitItem/OutfitItem';
 import { defaultOutfitFiles, defaultOutfitImgFileNames } from './../../../constants';
 
-import { setPopupShowAndContent } from '../../actions/popup';
+import { setZoomedInAreaContent } from '../../actions/zoomedInArea';
 import { useDispatch } from 'react-redux';
 
 import {
@@ -87,12 +87,9 @@ export const CalendarGrid = ({
     const dispatch = useDispatch();
 
     const onOutfitCellClick = (clothFiles) => {
-        dispatch(setPopupShowAndContent({
-            isShow: true,
-            content: {
-                viewMode: 'SIMPLE_MODE',
-                clothFiles: clothFiles,
-            }
+        dispatch(setZoomedInAreaContent({
+            viewMode: 'SIMPLE_MODE',
+            clothFileNames: clothFiles,
         }));
     }
 
@@ -101,7 +98,7 @@ export const CalendarGrid = ({
             <div className={dayNamesClass}>
                 {
                     dayNamesInWeek.map(dayName => (
-                        <time>{dayName}</time>
+                        <time key={dayName}>{dayName}</time>
                     ))
                 }
             </div>
@@ -109,14 +106,14 @@ export const CalendarGrid = ({
                 {
                     defaultDateNumber.map((dateNumber, i) => {
                         const mockOutfitId = mockOutfitDate[i];
-                        const mockClothFileNames = mockOutfits.find(
+                        const mockClothFileNames: [string, string, string, string] = mockOutfits.find(
                             outfit => outfit.id.toString() === mockOutfitId.toString()
                         )?.clothes ?? defaultOutfitImgFileNames;
                         return (
                             <div key={`cell-${dateNumber}`}
                                 className={defaultCellStyle}
                                 onClick={() => {
-                                    onOutfitCellClick(defaultOutfitFiles)
+                                    onOutfitCellClick(mockClothFileNames)
                                 }}
                                 style={{ gridTemplateRows: '20px auto' }}
                             >

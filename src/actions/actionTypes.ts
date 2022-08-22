@@ -1,1 +1,2 @@
 export const SET_POPUP_SHOW = 'SET_POPUP_SHOW';
+export const SET_ZOOMIN_CONTENT = 'SET_ZOOMIN_CONTENT';

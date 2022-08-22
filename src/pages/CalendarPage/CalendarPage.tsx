@@ -8,6 +8,9 @@ import { CalendarGrid } from '../../components/CalendarGrid/CalendarGrid';
 import classnames from 'classnames';
 
 import './CalendarPage.scss';
+import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { zoomInSelector } from '../../reducers/zoomedInArea';
 
 const defaultClassName = classnames(
     'flex',
@@ -27,6 +30,11 @@ const zoomedInClass = classnames(
 )
 
 const CalendarPage = () => {
+    const dispatch = useDispatch();
+    const {
+        viewMode,
+        clothFileNames,
+    } = useSelector(zoomInSelector);
     return (
         <div className={`calendar-page page ${defaultClassName}`}
         // style={rwdStyle}
@@ -34,7 +42,7 @@ const CalendarPage = () => {
             <div className={zoomedInClass}
             >
 
-                Zoomed In
+                <OutfitItem viewMode={viewMode} clothFileNames={clothFileNames} />
             </div>
             <CalendarGrid />
         </div>
