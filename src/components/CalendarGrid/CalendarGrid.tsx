@@ -38,13 +38,14 @@ const dayNamesClass = classnames(
     'day-names',
     'grid',
     'grid-cols-7',
-    'gap-2',
+    'gap-1',
     'flex',
     'text-xs',
     'text-center',
     'py-2',
     'text-zinc-400',
     'max-w-[200px]',
+    'sm:w-[80%]',
     'sm:max-w-full',
     'place-self-center',
 );
@@ -60,6 +61,7 @@ const defaultOutfitGridClass = classnames(
     'justify-center',
     'items-center',
     'sm:max-w-full',
+    'sm:w-[80%]',
     'place-self-center',
 );
 

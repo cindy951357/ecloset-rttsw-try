@@ -35,9 +35,10 @@ export const styleClassNames = classnames(
     'w-full',
     'max-w-[300px]',
     'max-h-[300px]',
-    'min-w-[25px]',
-    'min-h-[25px]',
+    'min-w-[10px]',
+    'min-h-[10px]',
     'aspect-square',
+    'cursor-pointer',
 );
 
 const OutfitItem = ({ ...props }: Props) => {
