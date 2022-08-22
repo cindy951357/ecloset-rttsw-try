@@ -23,12 +23,11 @@ html {
 }
 
 .page {
-    display: grid;
     overflow-y: scroll;
     /* 10 / 12*/
 
     width: 100vw;
-    display: grid;
+    min-width: 300px;
     padding-left: 1rem;
     padding-right: 1rem;
 

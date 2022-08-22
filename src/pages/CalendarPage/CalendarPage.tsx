@@ -7,18 +7,35 @@ import { HTMLAttributes } from 'react';
 import { CalendarGrid } from '../../components/CalendarGrid/CalendarGrid';
 import classnames from 'classnames';
 
+import './CalendarPage.scss';
+
 const defaultClassName = classnames(
-    'grid',
-    'grid-rows-2',
-    'grid-cols-1',
+    'flex',
+    'flex-col',
+    'sm:flex-row',
 );
+
+const zoomedInClass = classnames(
+    'zoomed-in-area',
+    'flex',
+    'w-full',
+    'text-slate-400',
+    'p-3',
+    'text-center',
+    'items-center',
+    'justify-center',
+)
 
 const CalendarPage = () => {
     return (
         <div className={`calendar-page page ${defaultClassName}`}
-            style={{ gridTemplateRows: 'auto auto' }}
+        // style={rwdStyle}
         >
-            <div></div>
+            <div className={zoomedInClass}
+            >
+
+                Zoomed In
+            </div>
             <CalendarGrid />
         </div>
     );

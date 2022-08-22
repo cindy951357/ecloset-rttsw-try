@@ -25,6 +25,15 @@ const defaultDateNumber: Array<number> =
         Array(daysOfCurrentMonth).keys()
     ).map(key => key + 1);
 
+const calendarGridClass = classnames(
+    'calendar-grid',
+    'flex',
+    'flex-col',
+    'justify-center',
+    'items-center',
+    'sm:w-full',
+)
+
 const dayNamesClass = classnames(
     'day-names',
     'grid',
@@ -35,14 +44,23 @@ const dayNamesClass = classnames(
     'text-center',
     'py-2',
     'text-zinc-400',
+    'max-w-[200px]',
+    'sm:max-w-full',
+    'place-self-center',
 );
 
 const defaultOutfitGridClass = classnames(
     'outfit-grid',
     'grid',
     'grid-cols-7',
-    'gap-2',
+    'gap-1',
     'rounded',
+    'max-w-[200px]',
+    'flex',
+    'justify-center',
+    'items-center',
+    'sm:max-w-full',
+    'place-self-center',
 );
 
 const defaultCellStyle = classnames(
@@ -79,7 +97,7 @@ export const CalendarGrid = ({
     }
 
     return (
-        <div className={`calendar-grid`}>
+        <div className={calendarGridClass}>
             <div className={dayNamesClass}>
                 {
                     dayNamesInWeek.map(dayName => (

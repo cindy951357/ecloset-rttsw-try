@@ -1,0 +1,10 @@
+.calendar-page {
+    .zoomed-in-area {
+        border-bottom: 1px solid grey;
+
+        @media(min-width: 640px) {
+            border-right: 1px solid grey;
+            border-bottom: none;
+        }
+    }
+}
