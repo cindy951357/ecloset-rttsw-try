@@ -14,7 +14,7 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
   variant: String,
   active: Boolean;
   text: String;
-  fontAwesomeIconName: string,
+  fontawesomeiconname: string,
 }
 
 const defaultClassNames: string = classnames(
@@ -32,12 +32,12 @@ const defaultClassNames: string = classnames(
 const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
   const {
     active,
-    fontAwesomeIconName
+    fontawesomeiconname
   } = props;
 
   const customizedClassNames: string = classnames(
     {
-      'active': active || false,
+      'active': active,
       [`nav-item-${variant}`]: true,
     });
 
@@ -47,14 +47,14 @@ const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
       className={`${defaultClassNames} ${customizedClassNames}`}
       style={{ color: active ? 'black' : 'lightgray' }}
     >
-      <FontAwesomeIcon icon={`fa-solid ${fontAwesomeIconName}`} />
+      <FontAwesomeIcon icon={`fa-solid ${fontawesomeiconname}`} />
       <span className="text-xs py-2">{props.text}</span>
     </button>
   )
 }
 
 NavItem.defaultProps = {
-  fontAwesomeIconName: 'fa-tshirt'
+  fontawesomeiconname: 'fa-tshirt'
 }
 
 export {

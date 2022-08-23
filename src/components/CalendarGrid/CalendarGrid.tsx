@@ -9,21 +9,20 @@ import { OutfitItem } from '../OutfitItem/OutfitItem';
 import { defaultOutfitFiles, defaultOutfitImgFileNames } from './../../../constants';
 
 import { setZoomedInAreaContent } from '../../actions/zoomedInArea';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { outfiitDateSelector } from '../../reducers/outfitDate';
 
 import {
     dayNamesInWeek,
     numOfDaysOfCurrentMonth,
-    getNumOfDaysInThisMonth,
-    generateDatesOfCurMonth,
+
 } from './../../utils/Datetime';
 
 import {
     mockOutfits,
 } from '../../mockData/mockOutfit';
-import {
-    mockOutfitDateSimple
-} from '../../mockData/mockOutfitDate';
+
 import { generateMockOutfitDateTuplesArr } from '../../mockData/mockOutfitDate';
 
 const defaultDateNumber: Array<number> =
@@ -94,8 +93,7 @@ export const CalendarGrid = ({
 }) => {
     const dispatch = useDispatch();
 
-    const [outfitDateTupleArr, setOutfitDateTupleArr] = useState(generateMockOutfitDateTuplesArr(2022, 8));
-
+    const outfitDate = useSelector(outfiitDateSelector);
 
     const onOutfitCellClick = (clothFiles) => {
         dispatch(setZoomedInAreaContent({
@@ -115,9 +113,9 @@ export const CalendarGrid = ({
             </div>
             <div className={defaultOutfitGridClass}>
                 {
-                    outfitDateTupleArr.map((tuple, i) => {
+                    outfitDate.outfitDateTupleArr.map((tuple, i) => {
                         const mockOutfitId = tuple[1];
-                        const mockClothFileNames: [string, string, string, string] = mockOutfits.find(
+                        const mockClothFileNames: string[] = mockOutfits.find(
                             outfit => outfit.id.toString() === mockOutfitId.toString()
                         )?.clothes ?? defaultOutfitImgFileNames;
                         return (

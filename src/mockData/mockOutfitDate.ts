@@ -35,7 +35,8 @@ export const mockOutfitDateSimple = [
     1,
 ];
 
-export const generateMockOutfitDateTuplesArr = (year: number, month: number) => {
+
+export const generateMockOutfitDateTuplesArr = (year: number, month: number): Array<Array<[string, string]>> => {
     const numOfDaysOfMonth = moment(`${year}-${month}`).daysInMonth();
 
     let outfitDatesTupleArr: any[] = [];
@@ -45,6 +46,6 @@ export const generateMockOutfitDateTuplesArr = (year: number, month: number) => 
     return outfitDatesTupleArr;
 }
 const now = new Date();
-export const outfitDatesTupleArr = generateMockOutfitDateTuplesArr(
-    now.getDate(), now.getMonth() + 1
+export const defaultOutfitDatesTupleArr = generateMockOutfitDateTuplesArr(
+    now.getFullYear(), now.getMonth() + 1
 );

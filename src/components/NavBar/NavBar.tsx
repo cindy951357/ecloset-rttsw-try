@@ -89,7 +89,7 @@ const NavBar = ({ variant = '', ...props }: Props) => {
                                 text={t(navItem.i18n)}
                                 variant='first-layer'
                                 active={curPage === navItem.navNameConstant}
-                                fontAwesomeIconName={navItem.iconName}
+                                fontawesomeiconname={navItem.iconName}
                             >
                             </NavItem>
                         </Link>
