@@ -75,8 +75,7 @@ const outfitListClass = classnames(
     'w-full',
 )
 
-const OutfitList = () => {
-    const [checkedOutfitID, setCheckedOutfitID] = useState(-1);
+const OutfitList = ({ setOutfitID, checkedOutfitID }) => {
 
     return (
         <div className={outfitListClass}>
@@ -87,7 +86,7 @@ const OutfitList = () => {
                         clothFileNames={
                             outfit.clothes}
                         numbering={outfit.id}
-                        setID={setCheckedOutfitID}
+                        setID={setOutfitID}
                         checkedOutfitID={checkedOutfitID}
                     />
 

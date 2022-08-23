@@ -31,27 +31,31 @@ const step2Class = classnames(
   'grid',
 );
 
-const PickStep1 = () => {
+const PickStep1 = ({ setOutfitID }) => {
+  const [checkedOutfitID, setCheckedOutfitID] = useState(-1);
+
   return (
     <div className={step1Class}>
       <div className="step-instruction">
         Step 1. Let's pick your desired outfit.
       </div>
       <div className="filter-section">
-        <OutfitList />
+        <OutfitList setOutfitID={setOutfitID} checkedOutfitID={checkedOutfitID} />
       </div>
     </div>
   )
 };
 
-const PickStep2 = () => {
+const PickStep2 = ({ setDate }) => {
   return (
     <div className={step2Class}>
       <div className="step-instruction">
         Step 2. Let's pick your desired day.
       </div>
       <div className="date-input-section">
-        <input type='date' />
+        <input type='date'
+          onChange={e => { setDate(e.target.value); }}
+        />
       </div>
     </div>
   )
@@ -66,8 +70,8 @@ const PickOutfitDatePage = () => {
 
   return (
     <div className={pickOutfitDatePageClass}>
-      <PickStep1 />
-      <PickStep2 />
+      <PickStep1 setOutfitID={setOutfitID} />
+      <PickStep2 setDate={setDate} />
       <SubmitButton onClick={() => {
         dispatch(setPickedOutfitDate({
           outfitID: outfitID,

@@ -43,7 +43,7 @@ const App = () => {
                     <Route path="/closet" element={<ClosetPage />} />
                     <Route path="/outfit" element={<PickOutfitDatePage />} />
                     <Route path="/calendar" element={<CalendarPage />} />
-                    <Route path="*" element={<PickOutfitDatePage />} />
+                    <Route path="*" element={<CalendarPage />} />
                 </Routes>
                 <NavBar variant={''}></NavBar>
             </Router>

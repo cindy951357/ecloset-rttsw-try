@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {
+    useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import moment from 'moment';
 
 import { OutfitItem } from '../OutfitItem/OutfitItem';
 import { defaultOutfitFiles, defaultOutfitImgFileNames } from './../../../constants';
@@ -10,19 +13,22 @@ import { useDispatch } from 'react-redux';
 
 import {
     dayNamesInWeek,
-    daysOfCurrentMonth,
+    numOfDaysOfCurrentMonth,
     getNumOfDaysInThisMonth,
+    generateDatesOfCurMonth,
 } from './../../utils/Datetime';
 
 import {
     mockOutfits,
-    mockOutfitDate,
-    mockOutfit,
 } from '../../mockData/mockOutfit';
+import {
+    mockOutfitDateSimple
+} from '../../mockData/mockOutfitDate';
+import { generateMockOutfitDateTuplesArr } from '../../mockData/mockOutfitDate';
 
 const defaultDateNumber: Array<number> =
     Array.from(
-        Array(daysOfCurrentMonth).keys()
+        Array(numOfDaysOfCurrentMonth).keys()
     ).map(key => key + 1);
 
 const calendarGridClass = classnames(
@@ -88,6 +94,9 @@ export const CalendarGrid = ({
 }) => {
     const dispatch = useDispatch();
 
+    const [outfitDateTupleArr, setOutfitDateTupleArr] = useState(generateMockOutfitDateTuplesArr(2022, 8));
+
+
     const onOutfitCellClick = (clothFiles) => {
         dispatch(setZoomedInAreaContent({
             viewMode: 'SIMPLE_MODE',
@@ -106,13 +115,13 @@ export const CalendarGrid = ({
             </div>
             <div className={defaultOutfitGridClass}>
                 {
-                    defaultDateNumber.map((dateNumber, i) => {
-                        const mockOutfitId = mockOutfitDate[i];
+                    outfitDateTupleArr.map((tuple, i) => {
+                        const mockOutfitId = tuple[1];
                         const mockClothFileNames: [string, string, string, string] = mockOutfits.find(
                             outfit => outfit.id.toString() === mockOutfitId.toString()
                         )?.clothes ?? defaultOutfitImgFileNames;
                         return (
-                            <div key={`cell-${dateNumber}`}
+                            <div key={tuple[0]}
                                 className={defaultCellStyle}
                                 onClick={() => {
                                     onOutfitCellClick(mockClothFileNames)
@@ -122,7 +131,7 @@ export const CalendarGrid = ({
                                 <time
                                     className={defaultDateLabelStyle}
                                 >
-                                    {dateNumber}
+                                    {i + 1}
                                 </time>
                                 <OutfitItem
                                     viewMode='SIMPLE_MODE'

@@ -13,6 +13,12 @@ export const getNumOfDaysInThisMonth = (year: number, monthNumber: number) => {
 export const todayDate: Date = new Date();
 export const currentYear: number = todayDate.getFullYear();
 export const currentMonth: number = todayDate.getMonth() + 1;
-export const daysOfCurrentMonth: number = getNumOfDaysInThisMonth(currentYear, currentMonth);
+export const numOfDaysOfCurrentMonth: number = getNumOfDaysInThisMonth(currentYear, currentMonth);
 
 export const dayNamesInWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+export const generateDatesOfCurMonth = (curYear: number, curMonth: number): Array<string> => {
+    return Array.from(
+        Array(numOfDaysOfCurrentMonth).keys()
+    ).map(key => `${curYear}-${curMonth}-${key + 1}`);;
+}
