@@ -5,6 +5,7 @@ import { OutfitList } from '../../components/OutfitList/OutfitList';
 const pickOutfitDatePageClass = classnames(
   'pick-outfit-date-page',
   'page',
+  'grid',
   'flex',
   'flex-col',
   'sm:flex-row',
