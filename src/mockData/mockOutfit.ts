@@ -11,7 +11,8 @@ export const mockOutfits =
                 "",
                 "",
                 ""
-            ]
+            ],
+            tags: [],
         },
         {
             "id": 1,
@@ -20,7 +21,8 @@ export const mockOutfits =
                 "F01_Net_darkGreen.jpg",
                 "S01_Orin_black_derby.jpg",
                 "A02_DTB_black.jpg"
-            ]
+            ],
+            tags: [6, 8]
         },
         {
             "id": 2,
@@ -29,7 +31,8 @@ export const mockOutfits =
                 "S01_Anns_lightBlue.jpg",
                 "bag_attrangs_.pink.jpg",
                 ""
-            ]
+            ],
+            tags: [1, 7]
         },
         {
             "id": 3,
@@ -38,7 +41,8 @@ export const mockOutfits =
                 "B04_Cocodeal_brown.jpg",
                 "S01_Orin_white_derby.jpg",
                 "A02_DTB_black.jpg"
-            ]
+            ],
+            tags: [4, 5, 6]
         },
         {
             "id": 4,
@@ -47,7 +51,8 @@ export const mockOutfits =
                 "",
                 "",
                 ""
-            ]
+            ],
+            tags: [1, 2, 3]
         }
     ]
 

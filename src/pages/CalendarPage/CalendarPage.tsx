@@ -11,6 +11,8 @@ import './CalendarPage.scss';
 import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { zoomInSelector } from '../../reducers/zoomedInArea';
+import { outfiitDateSelector } from '../../reducers/outfitDate';
+
 
 const defaultClassName = classnames(
     'flex',

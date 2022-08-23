@@ -1,6 +1,13 @@
-import React from 'react'
+import React, {
+  useState,
+} from 'react'
+import { useDispatch } from 'react-redux';
+
 import classnames from 'classnames';
 import { OutfitList } from '../../components/OutfitList/OutfitList';
+
+import { setPickedOutfitDate } from '../../actions/outfitDate';
+import { SubmitButton } from '../../components/SubmitButton/SubmitButton';
 
 const pickOutfitDatePageClass = classnames(
   'pick-outfit-date-page',
@@ -51,10 +58,22 @@ const PickStep2 = () => {
 }
 
 const PickOutfitDatePage = () => {
+  const dispatch = useDispatch();
+
+  const [date, setDate] = useState('');
+  const [outfitID, setOutfitID] = useState(-1);
+
+
   return (
     <div className={pickOutfitDatePageClass}>
       <PickStep1 />
       <PickStep2 />
+      <SubmitButton onClick={() => {
+        dispatch(setPickedOutfitDate({
+          outfitID: outfitID,
+          date: date
+        }));
+      }} />
     </div>
   )
 }
