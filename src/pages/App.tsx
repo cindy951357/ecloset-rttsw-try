@@ -11,6 +11,7 @@ import '../styles.css';
 import { CalendarPage } from './CalendarPage/CalendarPage';
 import { ClosetPage } from './ClosetPage/ClosetPage';
 import { OutfitPage } from './OutfitPage/OutfitPage';
+import { PickOutfitDatePage } from "./PickOutfitDatePage/PickOutfitDatePage";
 
 import { NavBar } from './../components/NavBar/NavBar';
 import { Header } from './../components/Header/Header';
@@ -40,7 +41,7 @@ const App = () => {
             <Router>
                 <Routes>
                     <Route path="/closet" element={<ClosetPage />} />
-                    <Route path="/outfit" element={<OutfitPage />} />
+                    <Route path="/outfit" element={<PickOutfitDatePage />} />
                     <Route path="/calendar" element={<CalendarPage />} />
                     <Route path="*" element={<CalendarPage />} />
                 </Routes>
