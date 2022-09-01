@@ -29,7 +29,7 @@ export const mockOutfits =
             "clothes": [
                 "cinderelly_houry.jpg",
                 "S01_Anns_lightBlue.jpg",
-                "bag_attrangs_.pink.jpg",
+                "bag_attrangs_pink.jpg",
                 ""
             ],
             tags: [1, 7]
