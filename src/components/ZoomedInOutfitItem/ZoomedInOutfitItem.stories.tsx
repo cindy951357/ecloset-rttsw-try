@@ -16,6 +16,6 @@ export const Default = Template.bind({});
 
 Default.args = {
     viewMode: 'SIMPLE_MODE',
-    selectedDlothFiles: defaultOutfitFiles,
+    selectedClothFiles: defaultOutfitFiles,
     show: false,
 }

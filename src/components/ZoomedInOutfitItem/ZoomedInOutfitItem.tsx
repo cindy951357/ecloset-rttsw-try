@@ -9,11 +9,11 @@ import {
 
 interface Props {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
-    selectedDlothFiles: Array<string>,
+    selectedClothFiles: [string, string, string, string],
     show: Boolean,
 }
 
-const ZoomedInOutfitItem = ({ selectedDlothFiles, show }: Props) => {
+const ZoomedInOutfitItem = ({ selectedClothFiles, show }: Props) => {
     const screenStyleClassName = classnames(
 
         {
@@ -26,7 +26,7 @@ const ZoomedInOutfitItem = ({ selectedDlothFiles, show }: Props) => {
         >
             <OutfitItem
                 viewMode='SIMPLE_MODE'
-                clothFiles={selectedDlothFiles}
+                clothFileNames={selectedClothFiles}
             />
         </div>
     )
