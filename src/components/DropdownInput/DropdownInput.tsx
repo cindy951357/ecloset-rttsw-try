@@ -13,21 +13,23 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const dropdownInputClass = classnames(
     'dropdown-input',
-    'p-2',
     'flex',
     'flex-col',
     'rounded',
     'bg-slate-100',
     'h-8',
+    'w-48',
+    'box-border',
 );
 
 const firstRowClass = classnames(
     'first-rorw',
     'cursor-pointer',
     'flex',
-    'w-48',
+    'w-full',
     'justify-between',
     'items-center',
+    'p-1',
 );
 
 const selectedOptionClass = classnames(
@@ -46,7 +48,7 @@ const ulClass = classnames(
     'dropdown-ul',
     'flex',
     'flex-col',
-    'w-48',
+    'w-full',
     'bg-slate-200',
     'rounded',
 );
@@ -55,6 +57,8 @@ const liClass = classnames(
     'flex',
     'cursor-pointer',
     'hover:bg-slate-300',
+    'w-full',
+    'p-1',
 );
 
 const DropdownInput = ({ optionList }) => {
