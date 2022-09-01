@@ -10,7 +10,14 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<Props> = ({ optionList }) => <DropdownInput optionList={optionList} />
+const Template: Story<Props> = ({ optionList }) =>
+    <DropdownInput
+        layer={'FIRST'}
+        optionList={optionList}
+        setParentSelected={() => { }}
+        clearSecondLayerDefaultOption={() => { }}
+        secondLayerDefaultOption={''}
+    />
 
 export const Default = Template.bind({});
 

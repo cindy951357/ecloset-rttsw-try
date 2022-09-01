@@ -8,7 +8,11 @@ import { faArrowDown } from '@fortawesome/fontawesome-free-solid'
 fontawesome.library.add(faArrowDown);
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
+    layer: 'FIRST' | 'SECOND',
     optionList: Array<string>,
+    setParentSelected: Function,
+    clearSecondLayerDefaultOption: Function,
+    secondLayerDefaultOption: string,
 };
 
 const dropdownInputClass = classnames(
@@ -51,6 +55,7 @@ const ulClass = classnames(
     'w-full',
     'bg-slate-200',
     'rounded',
+    'z-10',
 );
 const liClass = classnames(
     'dropdown-li',
@@ -61,7 +66,13 @@ const liClass = classnames(
     'p-1',
 );
 
-const DropdownInput = ({ optionList }) => {
+const DropdownInput = ({
+    layer,
+    optionList,
+    setParentSelected,
+    clearSecondLayerDefaultOption,
+    secondLayerDefaultOption,
+}: Props) => {
     const [isListOn, setIsListOn] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Please Select');
 
@@ -72,11 +83,19 @@ const DropdownInput = ({ optionList }) => {
     const onListItemClick = (option) => {
         setSelectedOption(option);
         setIsListOn(false);
+        setParentSelected(option);
+        if (layer === 'FIRST') {
+            clearSecondLayerDefaultOption('');
+        } else {
+            clearSecondLayerDefaultOption(option);
+        }
     };
     return (
         <div className={dropdownInputClass}>
             <span className={firstRowClass} onClick={onDropdownIconClick}>
-                <span className={selectedOptionClass}>{selectedOption}</span>
+                <span className={selectedOptionClass}>{
+                    layer === 'FIRST' ? selectedOption : secondLayerDefaultOption === '' ? '' : selectedOption
+                }</span>
                 <FontAwesomeIcon icon={`fa-solid fa-arrow-down`}
                     className={dropdownIconClass}
                 />
