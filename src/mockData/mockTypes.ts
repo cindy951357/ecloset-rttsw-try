@@ -4,6 +4,7 @@ export const ONEPIECE = 'One-Piece';
 export const ACCESSORIES = 'Accessories';
 export const SHOES = 'Shoes';
 
+export const ALL = 'All';
 export const OTHERS = 'Others';
 
 export const BLOUSE = 'Blouse';
@@ -28,11 +29,12 @@ export const GLASSES = 'Glasses'
 export const SCARFS = 'Scarfs';
 
 export const clothTypes = {
-    [TOP]: [BLOUSE, TSHIRT, LACETOP, CARDIGANS, COAT, OTHERS],
-    [BOTTOM]: [SKIRTS, PANTS, JEANS, SHORTS, OTHERS],
-    [ONEPIECE]: [DRESS, JUMPSUIT, OTHERS],
-    [SHOES]: [DERBY, SNEAKERS, OTHERS],
-    [ACCESSORIES]: [BAG, GLASSES, SCARFS, OTHERS]
+    [ALL]: [ALL],
+    [TOP]: [ALL, BLOUSE, TSHIRT, LACETOP, CARDIGANS, COAT, OTHERS],
+    [BOTTOM]: [ALL, SKIRTS, PANTS, JEANS, SHORTS, OTHERS],
+    [ONEPIECE]: [ALL, DRESS, JUMPSUIT, OTHERS],
+    [SHOES]: [ALL, DERBY, SNEAKERS, OTHERS],
+    [ACCESSORIES]: [ALL, BAG, GLASSES, SCARFS, OTHERS]
 }
 
 export const firstLayerClothTypes = Object.keys(clothTypes);

@@ -3,6 +3,7 @@ import { DropdownInput } from './../../components/DropdownInput/DropdownInput';
 import { ClothItem } from '../../components/ClothItem/ClothItem';
 
 import {
+    ALL,
     clothTypes, firstLayerClothTypes,
     TOP
 } from './../../mockData/mockTypes';
@@ -12,6 +13,13 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 import { HTMLAttributes } from 'react';
 import classnames from 'classnames';
+
+const closetPageClass = classnames(
+    'closet-page',
+    'page',
+    'grid',
+    'grid-rows-6',
+);
 
 const filterConditionSectionClass = classnames(
     'filter-condition-section',
@@ -24,6 +32,7 @@ const filterResultClass = classnames(
     'h-full',
     'flex',
     'flex-wrap',
+    'row-span-5',
 );
 
 const clothItemClass = classnames(
@@ -34,11 +43,11 @@ const clothItemClass = classnames(
 );
 
 const ClosetPage = ({ ...props }: Props) => {
-    const [firstTypeSelected, setFirstTypeSelected] = useState(TOP);
-    const [secondTypeSelected, setSecondTypeSelected] = useState('');
+    const [firstTypeSelected, setFirstTypeSelected] = useState(ALL);
+    const [secondTypeSelected, setSecondTypeSelected] = useState(ALL);
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState('');
     return (
-        <div className='closet-page page'>
+        <div className={closetPageClass}>
             <div className={filterConditionSectionClass}>
                 <DropdownInput
                     layer={'FIRST'}
@@ -57,7 +66,8 @@ const ClosetPage = ({ ...props }: Props) => {
             <div className={filterResultClass}>
                 {mockCloset.map(item => {
                     if ((item.firstType === firstTypeSelected && item.secondType === secondTypeSelected)
-                        || (item.firstType === firstTypeSelected && secondLayerDefaultOption === '')
+                        || (item.firstType === firstTypeSelected && secondLayerDefaultOption === ALL
+                            || firstTypeSelected === ALL)
                     ) {
                         return (
                             <ClothItem

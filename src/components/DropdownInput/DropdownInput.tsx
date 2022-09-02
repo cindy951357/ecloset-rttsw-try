@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fontawesome from '@fortawesome/fontawesome';
 import { faArrowDown } from '@fortawesome/fontawesome-free-solid'
+import { ALL } from '../../mockData/mockTypes';
 
 fontawesome.library.add(faArrowDown);
 
@@ -85,7 +86,7 @@ const DropdownInput = ({
         setIsListOn(false);
         setParentSelected(option);
         if (layer === 'FIRST') {
-            clearSecondLayerDefaultOption('');
+            clearSecondLayerDefaultOption(ALL);
         } else {
             clearSecondLayerDefaultOption(option);
         }

@@ -54,5 +54,50 @@ export const mockCloset = [
         file: "F03_HAndM_橘.jpg",
         firstType: ONEPIECE,
         secondType: DRESS,
-    }
+    }, {
+        id: 10,
+        file: "B02_Tou_黑.jpg",
+        firstType: BOTTOM,
+        secondType: PANTS,
+    }, {
+        id: 11,
+        file: "B04_Ladywore_茶_微光澤.jpg",
+        firstType: BOTTOM,
+        secondType: SKIRTS,
+    }, {
+        id: 12,
+        file: "B04_東京著衣_粉.jpg",
+        firstType: BOTTOM,
+        secondType: SKIRTS,
+    }, {
+        id: 13,
+        file: "T06_Uniqlo_白_半告領.jpg",
+        firstType: TOP,
+        secondType: CARDIGANS,
+    }, {
+        id: 14,
+        file: "T06_Net_粉_圓領.jpg",
+        firstType: TOP,
+        secondType: CARDIGANS,
+    }, {
+        id: 15,
+        file: "T06_Uniqlo_米_v領.jpg",
+        firstType: TOP,
+        secondType: CARDIGANS
+    }, {
+        id: 16,
+        file: "T06_InShop_棕_短版.jpg",
+        firstType: TOP,
+        secondType: CARDIGANS
+    }, {
+        id: 17,
+        file: "T04_32Wardrobe_棕.jpg",
+        firstType: TOP,
+        secondType: TSHIRT,
+    }, {
+        id: 18,
+        file: "T04_Elf_粉紅_燙金字母.jpg",
+        firstType: TOP,
+        secondType: TSHIRT,
+    },
 ]
