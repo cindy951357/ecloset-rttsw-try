@@ -45,7 +45,7 @@ const clothItemClass = classnames(
 const ClosetPage = ({ ...props }: Props) => {
     const [firstTypeSelected, setFirstTypeSelected] = useState(ALL);
     const [secondTypeSelected, setSecondTypeSelected] = useState(ALL);
-    const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState('');
+    const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
     return (
         <div className={closetPageClass}>
             <div className={filterConditionSectionClass}>

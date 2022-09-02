@@ -95,7 +95,7 @@ const DropdownInput = ({
         <div className={dropdownInputClass}>
             <span className={firstRowClass} onClick={onDropdownIconClick}>
                 <span className={selectedOptionClass}>{
-                    layer === 'FIRST' ? selectedOption : secondLayerDefaultOption === '' ? '' : selectedOption
+                    layer === 'FIRST' ? selectedOption : secondLayerDefaultOption === ALL ? ALL : selectedOption
                 }</span>
                 <FontAwesomeIcon icon={`fa-solid fa-arrow-down`}
                     className={dropdownIconClass}
