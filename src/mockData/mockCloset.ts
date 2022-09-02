@@ -49,5 +49,10 @@ export const mockCloset = [
         file: "B04_Cocodeal_brown.jpg",
         firstType: BOTTOM,
         secondType: SKIRTS,
+    }, {
+        id: 9,
+        file: "F03_HAndM_橘.jpg",
+        firstType: ONEPIECE,
+        secondType: DRESS,
     }
 ]

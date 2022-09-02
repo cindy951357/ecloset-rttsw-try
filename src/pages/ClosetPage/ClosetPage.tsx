@@ -9,19 +9,29 @@ import {
 import { mockCloset } from './../../mockData/mockCloset';
 interface Props extends HTMLAttributes<HTMLDivElement> {
 }
+
 import { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
 const filterConditionSectionClass = classnames(
     'filter-condition-section',
     'flex',
-)
+);
 
 const filterResultClass = classnames(
     'filter-closet-result',
-    'w-48',
-    'h-48',
-)
+    'w-full',
+    'h-full',
+    'flex',
+    'flex-wrap',
+);
+
+const clothItemClass = classnames(
+    'cloth-item-result',
+    'flex',
+    'm-2',
+
+);
 
 const ClosetPage = ({ ...props }: Props) => {
     const [firstTypeSelected, setFirstTypeSelected] = useState(TOP);
@@ -52,9 +62,11 @@ const ClosetPage = ({ ...props }: Props) => {
                         return (
                             <ClothItem
                                 key={item.id}
+                                className={clothItemClass}
                                 imgFile={item.file}
                                 viewMode={'SIMPLE_MODE'}
                                 borderRadius={'1em 1em 1em 1em'}
+                                size={'S'}
                             />
                         );
                     };

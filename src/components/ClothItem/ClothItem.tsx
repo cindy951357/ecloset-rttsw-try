@@ -16,20 +16,26 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     imgFile: string,
     borderRadius: string,
     position: string,
+    size: 'S' | 'M' | 'L',
 }
 
 const ClothItem = ({ ...props }: Props) => {
     const {
         imgFile,
         viewMode,
+        size,
         borderRadius,
     } = props;
 
     const wrapperStyleClassNames = classnames(
         'cloth-item',
         'flex',
-        'w-full',
-        'h-full',
+        {
+            'w-full': size === 'L' || size === 'M',
+            'h-full': size === 'L' || size === 'M',
+            'w-48': size === 'S',
+            'h-48': size === 'S',
+        },
         'bg-zinc-100',
         'items-center',
         'bg-cover',
