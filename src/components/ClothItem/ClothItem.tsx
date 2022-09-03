@@ -33,8 +33,10 @@ const ClothItem = ({ ...props }: Props) => {
         {
             'w-full': size === 'L' || size === 'M',
             'h-full': size === 'L' || size === 'M',
-            'w-48': size === 'S',
-            'h-48': size === 'S',
+            'w-40': size === 'S',
+            'h-40': size === 'S',
+            'md:w-48': size === 'S',
+            'md:h-48': size === 'S',
         },
         'bg-zinc-100',
         'items-center',
