@@ -1,7 +1,19 @@
 {
-  "title": "Welcome to RTTSW-try",
-  "description": {
-    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-    "part2": "Switch language between english and german using buttons above."
+  "title": "Dear Closet",
+  "nav": {
+    "closet": "Closet",
+    "outfit": "Outfit",
+    "calendar": "Calendar",
+    "tags": "Tags",
+    "setting": "Setting"
+  },
+  "weekDay": {
+    "Mon": "Mon",
+    "Tue": "Tue",
+    "Wed": "Wed",
+    "Thu": "Thu",
+    "Fri": "Fri",
+    "Sat": "Sat",
+    "Sun": "Sun"
   }
 }

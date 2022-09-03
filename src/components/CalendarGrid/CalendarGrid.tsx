@@ -24,6 +24,7 @@ import {
 } from '../../mockData/mockOutfit';
 
 import { generateMockOutfitDateTuplesArr } from '../../mockData/mockOutfitDate';
+import { useTranslation } from 'react-i18next';
 
 const defaultDateNumber: Array<number> =
     Array.from(
@@ -91,6 +92,7 @@ const defaultDateLabelStyle = classnames(
 export const CalendarGrid = ({
     primary, backgroundColor, size, label, ...props
 }) => {
+    const { t } = useTranslation();
     const dispatch = useDispatch();
 
     const outfitDate = useSelector(outfiitDateSelector);
@@ -107,7 +109,7 @@ export const CalendarGrid = ({
             <div className={dayNamesClass}>
                 {
                     dayNamesInWeek.map(dayName => (
-                        <time key={dayName}>{dayName}</time>
+                        <time key={dayName}>{t(`weekDay.${dayName}`)}</time>
                     ))
                 }
             </div>

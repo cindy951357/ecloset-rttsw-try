@@ -37,32 +37,32 @@ const defaultClassNames = classnames(
 const navItemList = [
     {
         linkTo: '/closet',
-        i18n: 'Closet',
+        i18n: 'nav.closet',
         navNameConstant: NAV_CLOSET,
         iconName: 'fa-tshirt'
     },
     {
         linkTo: '/outfit',
-        i18n: 'Outfit',
+        i18n: 'nav.outfit',
         navNameConstant: NAV_OUTFIT,
         iconName: 'fa-puzzle-piece'
     },
     {
         linkTo: '/calendar',
-        i18n: 'Calendar',
+        i18n: 'nav.calendar',
         navNameConstant: NAV_CALENDAR,
         iconName: 'fa-calendar'
 
     },
     {
         linkTo: '/tags',
-        i18n: 'Tags',
+        i18n: 'nav.tags',
         navNameConstant: NAV_TAGS,
         iconName: 'fa-tags',
     },
     {
         linkTo: '/setting',
-        i18n: 'Setting',
+        i18n: 'nav.setting',
         navNameConstant: NAV_SETTING,
         iconName: 'fa-wrench',
     }

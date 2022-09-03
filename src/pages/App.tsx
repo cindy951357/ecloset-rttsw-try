@@ -19,6 +19,7 @@ import { Header } from './../components/Header/Header';
 import { PopupPage } from './PopupPage/PopupPage';
 
 import classnames from 'classnames';
+import SettingPage from "./SettingPage/SettingPage";
 
 const appStyleClassName = classnames(
     'flex',
@@ -43,6 +44,7 @@ const App = () => {
                     <Route path="/closet" element={<ClosetPage />} />
                     <Route path="/outfit" element={<PickOutfitDatePage />} />
                     <Route path="/calendar" element={<CalendarPage />} />
+                    <Route path="/setting" element={<SettingPage />} />
                     <Route path="*" element={<CalendarPage />} />
                 </Routes>
                 <NavBar variant={''}></NavBar>

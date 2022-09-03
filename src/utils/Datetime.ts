@@ -15,6 +15,7 @@ export const currentYear: number = todayDate.getFullYear();
 export const currentMonth: number = todayDate.getMonth() + 1;
 export const numOfDaysOfCurrentMonth: number = getNumOfDaysInThisMonth(currentYear, currentMonth);
 
+// i18n key
 export const dayNamesInWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export const generateDatesOfCurMonth = (curYear: number, curMonth: number): Array<string> => {
