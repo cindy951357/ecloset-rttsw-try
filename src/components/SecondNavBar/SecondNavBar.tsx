@@ -15,31 +15,28 @@ import { NavItem } from './../NavItem/NavItem';
 
 interface Props extends HTMLAttributes<HTMLUListElement> {
     variant: String,
+    navItemList: Array<{
+        i18n: string,
+        linkTo: string,
+        navNameConstant: string,
+        iconName: string,
+    }>,
+    defaultNavItem,
 }
 
 const NAV_VIEW_CALENDAR = 'NAV_VIEW_CALENDAR';
 const NAV_ADD_CALENDAR = 'NAV_ADD_CALENDAR';
 
 
-
-const navItemList = [
-    {
-        linkTo: '/view-calendar',
-        i18n: 'nav.viewCalendar',
-        navNameConstant: NAV_VIEW_CALENDAR,
-        iconName: 'fa-heart'
-    },
-    {
-        linkTo: '/add-calendar',
-        i18n: 'nav.addCalendar',
-        navNameConstant: NAV_ADD_CALENDAR,
-        iconName: 'fa-heart'
-    },
-]
-
-const SecondNavBar = ({ variant = '', ...props }: Props) => {
+const SecondNavBar = ({ ...props }: Props) => {
     const { t } = useTranslation();
-    const [curPage, setCurPage] = useState(NAV_VIEW_CALENDAR);
+    const {
+        navItemList,
+        defaultNavItem,
+    } = props
+    const [curPage, setCurPage] = useState(defaultNavItem);
+
+
 
     const secondNavBarClass: string = classnames(
         'second_nav_bar',
