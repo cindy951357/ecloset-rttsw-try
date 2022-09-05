@@ -11,35 +11,50 @@ const FIRST_LAYER = 'first-layer';
 const SECOND_LAYER = 'second-layer';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
-  variant: String,
+  variant: 'first-layer' | 'second-layer',
   active: Boolean;
   text: String;
   fontawesomeiconname: string,
 }
 
-const defaultClassNames: string = classnames(
-  'nav-item',
-  'flex',
-  'w-full',
-  'h-full',
-  'justify-center',
-  'items-center',
-  'flex-col',
-  'text-2xl',
-  'py-2',
-);
-
-const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
+const NavItem = ({ ...props }: Props) => {
   const {
+    variant,
     active,
     fontawesomeiconname
   } = props;
+
+  const defaultClassNames: string = classnames(
+    'nav-item',
+    'flex',
+    'w-full',
+    {
+      'h-full': variant === FIRST_LAYER,
+      'h-32': variant === FIRST_LAYER,
+    },
+    'justify-center',
+    'items-center',
+    {
+      'flex-col': variant === FIRST_LAYER,
+      'flex-row': variant === FIRST_LAYER,
+    },
+    'text-2xl',
+    {
+      'py-2': variant === FIRST_LAYER,
+    },
+  );
 
   const customizedClassNames: string = classnames(
     {
       'active': active,
       [`nav-item-${variant}`]: true,
     });
+
+
+  const textClass: string = classnames(
+    'text-xs',
+    'py-2',
+  )
 
   return (
     <button
@@ -48,7 +63,7 @@ const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
       style={{ color: active ? 'black' : 'lightgray' }}
     >
       <FontAwesomeIcon icon={`fa-solid ${fontawesomeiconname}`} />
-      <span className="text-xs py-2">{props.text}</span>
+      <span className={textClass}>{props.text}</span>
     </button>
   )
 }

@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react';
-import { CalendarPage, Props } from './CalendarPage';
+import { ViewCalendarPage, Props } from './ViewCalendarPage';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
 const meta: Meta = {
-  title: 'Page/CalendarPage',
-  component: CalendarPage,
+  title: 'Page/ViewCalendarPage',
+  component: ViewCalendarPage,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -15,6 +15,6 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<Props> = (args) => <CalendarPage {...args} />;
+const Template: Story<Props> = (args) => <ViewCalendarPage {...args} />;
 
 export const Default = Template.bind({});

@@ -5,7 +5,9 @@
     "outfit": "Outfit",
     "calendar": "Calendar",
     "tags": "Tags",
-    "setting": "Setting"
+    "setting": "Setting",
+    "viewCalendar": "View Calendar",
+    "addCalendar": "Add to Calendar"
   },
   "weekDay": {
     "Mon": "Mon",

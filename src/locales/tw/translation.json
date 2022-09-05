@@ -5,7 +5,9 @@
     "outfit": "穿搭",
     "calendar": "日曆",
     "tags": "標籤",
-    "setting": "設定"
+    "setting": "設定",
+    "viewCalendar": "檢視日曆",
+    "addCalendar": "新增日曆穿搭"
   },
   "weekDay": {
     "Mon": "一",
