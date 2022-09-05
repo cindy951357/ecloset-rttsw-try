@@ -7,7 +7,11 @@
     "tags": "Tags",
     "setting": "Setting",
     "viewCalendar": "View Calendar",
-    "addCalendar": "Add to Calendar"
+    "addCalendar": "Add to Calendar",
+    "viewClosest": "View Closet",
+    "addCloset": "Add to Closet",
+    "viewOutfit": "View Outfit",
+    "addOutfit": "Add to Outfit"
   },
   "weekDay": {
     "Mon": "Mon",

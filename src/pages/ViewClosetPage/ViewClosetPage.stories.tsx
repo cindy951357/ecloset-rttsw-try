@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import { ClosetPage, Props } from './ClosetPage';
+import { ViewClosetPage, Props } from './ViewClosetPage';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
 const meta: Meta = {
-  title: 'Page/ClosetPage',
+  title: 'Page/ViewClosetPage',
   component: ClosetPage,
   decorators: [withRouter],
   parameters: {
@@ -15,6 +15,6 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<Props> = (args) => <ClosetPage {...args} />;
+const Template: Story<Props> = (args) => <ViewClosetPage {...args} />;
 
 export const Default = Template.bind({});

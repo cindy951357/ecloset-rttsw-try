@@ -103,7 +103,9 @@ const DropdownInput = ({
             </span>
             <ul className={`${ulClass} ${isListOn ? '' : 'hidden'}`}>
                 {optionList.map(option => (
-                    <li className={liClass}
+                    <li
+                        key={option}
+                        className={liClass}
                         onClick={() => { onListItemClick(option) }}>{option}
                     </li>))}
             </ul>

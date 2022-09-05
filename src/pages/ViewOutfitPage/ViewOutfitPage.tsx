@@ -1,8 +1,8 @@
-const OutfitPage = () => {
+const ViewOutfitPage = () => {
     return (
         <div className='outfit-page page'>
             Outfit Page
         </div>
     );
 };
-export { OutfitPage };
+export { ViewOutfitPage };

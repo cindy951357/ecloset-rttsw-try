@@ -1,11 +1,11 @@
 import { Meta, Story } from '@storybook/react';
-import { OutfitPage } from './OutfitPage';
+import { ViewOutfitPage } from './ViewOutfitPage';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
 
 const meta: Meta = {
-  title: 'Page/OutfitPage',
-  component: OutfitPage,
+  title: 'Page/ViewOutfitPage',
+  component: ViewOutfitPage,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -16,6 +16,6 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story = (args) => <OutfitPage {...args} />
+const Template: Story = (args) => <ViewOutfitPage {...args} />
 
 export const Default = Template.bind({});

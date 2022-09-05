@@ -7,7 +7,11 @@
     "tags": "標籤",
     "setting": "設定",
     "viewCalendar": "檢視日曆",
-    "addCalendar": "新增日曆穿搭"
+    "addCalendar": "新增日曆穿搭",
+    "viewClosest": "檢視衣櫥",
+    "addCloset": "添加到衣櫥",
+    "viewOutfit": "檢視穿搭",
+    "addOutfit": "添加到穿搭"
   },
   "weekDay": {
     "Mon": "一",
