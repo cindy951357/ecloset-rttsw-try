@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import '../styles.css';
 import { CalendarPage } from './CalendarPage/CalendarPage';
 import { ClosetPage } from './ClosetPage/ClosetPage';
-import { OutfitPage } from './OutfitPage/OutfitPage';
+import { ViewOutfitPage } from './ViewOutfitPage/ViewOutfitPage';
 import { PickOutfitDatePage } from "./PickOutfitDatePage/PickOutfitDatePage";
 
 import { NavBar } from './../components/NavBar/NavBar';
@@ -20,15 +20,14 @@ import { PopupPage } from './PopupPage/PopupPage';
 
 import classnames from 'classnames';
 import SettingPage from "./SettingPage/SettingPage";
+import './App.scss';
 
-const appStyleClassName = classnames(
-    'flex',
-    'flex-col',
-    'container',
-    'max-h-full',
-    'h-screen',
-    'w-screen',
-)
+// const appStyleClassName = classnames(
+//     'grid',
+//     'max-h-full',
+//     'h-screen',
+//     'w-screen',
+// )
 
 const App = () => {
     const { t } = useTranslation();
@@ -36,7 +35,7 @@ const App = () => {
 
     return (
         <div id='app'
-            className={appStyleClassName}
+            className={''}
         >
             <Header></Header>
             <Router>

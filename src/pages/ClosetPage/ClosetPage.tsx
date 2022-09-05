@@ -28,16 +28,16 @@ const navItemList = [
 
 const ClosetPage = () => {
     return (
-        <div>
+        <div className={'closet-page row-span-[10]'}>
             <SecondNavBar
                 variant={'second-layer'}
                 navItemList={navItemList}
                 defaultNavItem={NAV_VIEW_CLOSET}
             />
             <Routes>
+                <Route index element={<ViewClosetPage />}></Route>
                 <Route path='view-closet' element={<ViewClosetPage />}></Route>
                 <Route path='add-closet' element={<AddClosetPage />}></Route>
-                <Route path='*' element={<ViewClosetPage />}></Route>
             </Routes>
         </div>
     )

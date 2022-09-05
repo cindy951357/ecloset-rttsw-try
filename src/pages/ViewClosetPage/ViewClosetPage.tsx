@@ -14,25 +14,28 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 import { HTMLAttributes } from 'react';
 import classnames from 'classnames';
 
-const closetPageClass = classnames(
-    'closet-page',
-    'page',
+const viewClosetPageClass = classnames(
+    'view-closet-page',
     'grid',
-    'grid-rows-6',
+    'grid-rows-12',
+    'h-full',
 );
 
 const filterConditionSectionClass = classnames(
     'filter-condition-section',
-    'flex',
+    'row-span-1',
+    'grid',
+    'grid-cols-2',
+    'overflow-y-scroll',
 );
 
 const filterResultClass = classnames(
     'filter-closet-result',
     'w-full',
     'h-full',
+    'overflow-y-scroll',
     'flex',
     'flex-wrap',
-    'row-span-5',
 );
 
 const clothItemClass = classnames(
@@ -47,7 +50,7 @@ const ViewClosetPage = ({ ...props }: Props) => {
     const [secondTypeSelected, setSecondTypeSelected] = useState(ALL);
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
     return (
-        <div className={closetPageClass}>
+        <div className={viewClosetPageClass}>
             <div className={filterConditionSectionClass}>
                 <DropdownInput
                     layer={'FIRST'}

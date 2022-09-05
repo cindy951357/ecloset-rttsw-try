@@ -28,16 +28,16 @@ const navItemList = [
 
 const CalendarPage = () => {
     return (
-        <div>
+        <div className={'calendar-page'}>
             <SecondNavBar
                 variant={'second-layer'}
                 navItemList={navItemList}
                 defaultNavItem={NAV_VIEW_CALENDAR}
             />
             <Routes>
+                <Route index element={<ViewCalendarPage />}></Route>
                 <Route path='view-calendar' element={<ViewCalendarPage />}></Route>
                 <Route path='add-calendar' element={<PickOutfitDatePage />}></Route>
-                <Route path='*' element={<ViewCalendarPage />}></Route>
             </Routes>
         </div>
     )
