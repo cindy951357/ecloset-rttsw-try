@@ -55,6 +55,10 @@ module.exports = {
                     outputPath: 'images',
                 }
             },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
         ]
     },
     mode: 'development',

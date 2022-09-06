@@ -2,6 +2,9 @@ import React, {
     HTMLAttributes,
     useState,
 } from 'react'
+
+import { useDispatch } from 'react-redux';
+
 import classnames from 'classnames';
 
 import {
@@ -9,7 +12,7 @@ import {
 } from './../../../constants';
 
 import CheckIcon from './../../assets/images/icons/check-solid.svg';
-import { insertPickedClothItems } from '../../actions/pickedClothItems';
+import { deletePickedClothItems, insertPickedClothItems } from '../../actions/pickedClothItems';
 
 const SIMPLE_MODE = 'SIMPLE_MODE';
 const COMPLEX_MODE = 'COMPLEX_MODE';
@@ -34,6 +37,10 @@ const ClothItem = ({ ...props }: Props) => {
         selectMode,
     } = props;
 
+    const dispatch = useDispatch();
+
+    const [isChecked, setIsChecked] = useState(false);
+
     const wrapperStyleClassNames = classnames(
         'cloth-item',
         'flex',
@@ -57,7 +64,14 @@ const ClothItem = ({ ...props }: Props) => {
         if (!selectMode) {
             return;
         }
-        insertPickedClothItems(clothID);
+        if (!isChecked) {
+            dispatch(insertPickedClothItems(clothID));
+            setIsChecked(true);
+        } else {
+            dispatch(deletePickedClothItems(clothID));
+            setIsChecked(false);
+        }
+
     }
 
     return (
@@ -71,8 +85,9 @@ const ClothItem = ({ ...props }: Props) => {
                         : `url("./images/${imgFile}")`
                 ,
             }}
+            onClick={() => { onClothItemClick(clothID) }}
         >
-
+            {isChecked && <img src={CheckIcon} alt='check' />}
         </div >
     )
 }

@@ -38,9 +38,14 @@ const clothItemClass = classnames(
 
 );
 const FilterCloset = ({ ...props }: Props) => {
+    const {
+        selectMode
+    } = props;
+
     const [firstTypeSelected, setFirstTypeSelected] = useState(ALL);
     const [secondTypeSelected, setSecondTypeSelected] = useState(ALL);
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
+
     return (
         <div className="filter-closet">
             <div className={filterConditionSectionClass}>
@@ -68,9 +73,10 @@ const FilterCloset = ({ ...props }: Props) => {
                             <ClothItem
                                 key={item.id}
                                 className={clothItemClass}
+                                clothID={item.id}
                                 imgFile={item.file}
                                 viewMode={'SIMPLE_MODE'}
-                                selectMode={false}
+                                selectMode={selectMode}
                                 borderRadius={'1em 1em 1em 1em'}
                                 size={'S'}
                             />
