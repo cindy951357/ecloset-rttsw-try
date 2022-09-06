@@ -25,6 +25,8 @@ import './App.scss';
 import { ViewCalendarPage } from "./ViewCalendarPage/ViewCalendarPage";
 import { ViewClosetPage } from "./ViewClosetPage/ViewClosetPage";
 import { AddClosetPage } from "./AddClosetPage/AddClosetPage";
+import { OutfitPage } from "./OutfitPage/OutfitPage";
+import { AddOutfitPage } from "./AddOutfitPage/AddOutfitPage";
 
 // const appStyleClassName = classnames(
 //     'grid',
@@ -49,7 +51,11 @@ const App = () => {
                         <Route path="add-closet" element={<AddClosetPage />} />
                         <Route index element={<ViewClosetPage />} />
                     </Route>
-                    <Route path="outfit" element={<PickOutfitDatePage />} />
+                    <Route path="outfit" element={<OutfitPage />} >
+                        <Route path="view-outfit" element={<ViewOutfitPage />} />
+                        <Route path="add-outfit" element={<AddOutfitPage />} />
+                        <Route index element={<ViewOutfitPage />} />
+                    </Route>
                     <Route path="calendar" element={<CalendarPage />}>
                         <Route path="view-calendar" element={<ViewCalendarPage />} />
                         <Route path="add-calendar" element={<PickOutfitDatePage />} />

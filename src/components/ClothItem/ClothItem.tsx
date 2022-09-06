@@ -1,22 +1,27 @@
-import React, { ReactNode, HTMLAttributes } from 'react'
+import React, {
+    HTMLAttributes,
+    useState,
+} from 'react'
 import classnames from 'classnames';
 
 import {
     env,
-    imgFolderPath,
-    defaultImgFName
 } from './../../../constants';
-import defaultImg from './../../assets/images/cloth-items/A02_DTB_black.jpg';
+
+import CheckIcon from './../../assets/images/icons/check-solid.svg';
+import { insertPickedClothItems } from '../../actions/pickedClothItems';
 
 const SIMPLE_MODE = 'SIMPLE_MODE';
 const COMPLEX_MODE = 'COMPLEX_MODE';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
+    selectMode: Boolean,
     imgFile: string,
     borderRadius: string,
     position: string,
     size: 'S' | 'M' | 'L',
+    clothID: number,
 }
 
 const ClothItem = ({ ...props }: Props) => {
@@ -25,6 +30,8 @@ const ClothItem = ({ ...props }: Props) => {
         viewMode,
         size,
         borderRadius,
+        clothID,
+        selectMode,
     } = props;
 
     const wrapperStyleClassNames = classnames(
@@ -41,7 +48,18 @@ const ClothItem = ({ ...props }: Props) => {
         'bg-zinc-100',
         'items-center',
         'bg-cover',
-    )
+        {
+            'cursor-pointer': selectMode,
+        }
+    );
+
+    const onClothItemClick = clothID => {
+        if (!selectMode) {
+            return;
+        }
+        insertPickedClothItems(clothID);
+    }
+
     return (
         <div
             className={wrapperStyleClassNames}
@@ -54,6 +72,7 @@ const ClothItem = ({ ...props }: Props) => {
                 ,
             }}
         >
+
         </div >
     )
 }

@@ -62,6 +62,7 @@ const OutfitItem = ({ ...props }: Props) => {
                     <ClothItem
                         key={i}
                         viewMode={viewMode}
+                        selectMode={false}
                         imgFile={file}
                         borderRadius={borderRadiusList[i]}
                         position={positionList[i]}

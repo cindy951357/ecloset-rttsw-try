@@ -1,7 +1,7 @@
 const ViewOutfitPage = () => {
     return (
         <div className='outfit-page page'>
-            Outfit Page
+            View Outfit Page
         </div>
     );
 };

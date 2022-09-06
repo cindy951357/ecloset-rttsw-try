@@ -4,6 +4,7 @@ import {
 import moment from 'moment';
 import { defaultOutfitDatesTupleArr } from '../mockData/mockOutfitDate';
 interface Props {
+    /**(date, outfitID) */
     outfitDateTupleArr: Array<Array<[string, string]>>,
     pickedOutfitDate: {
         outfitID: number,
