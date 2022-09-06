@@ -31,7 +31,7 @@ const navItemList = [
 
 const ClosetPage = () => {
     return (
-        <div className={'closet-page row-span-[10]'}>
+        <div className={'closet-page page'}>
             <WithNestedNavPage navItemList={navItemList} defaultNavItem={NAV_VIEW_CLOSET} />
         </div>
     )
