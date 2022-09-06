@@ -31,7 +31,7 @@ const navItemList = [
 
 const CalendarPage = () => {
     return (
-        <div className={'calendar-page'}>
+        <div className={'calendar-page page'}>
             <WithNestedNavPage navItemList={navItemList} defaultNavItem={NAV_VIEW_CALENDAR} />
         </div>
     )

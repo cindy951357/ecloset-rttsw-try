@@ -38,7 +38,7 @@ const ViewCalendarPage = () => {
         clothFileNames,
     } = useSelector(zoomInSelector);
     return (
-        <div className={`calendar-page page ${defaultClassName}`}
+        <div className={`view-calendar-page page ${defaultClassName}`}
         // style={rwdStyle}
         >
             <div className={zoomedInClass}
