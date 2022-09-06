@@ -20,7 +20,10 @@ const WithNestedNavPage = ({
             <Routes>
                 <Route index element={navItemList[0].RouteComponent}></Route>
                 {navItemList.map((navItemElem) => {
-                    return <Route path={navItemElem.linkTo} element={navItemElem.RouteComponent}></Route>
+                    return <Route key={navItemElem.linkTo}
+                        path={navItemElem.linkTo}
+                        element={navItemElem.RouteComponent}>
+                    </Route>
                 })}
             </Routes>
         </div >
