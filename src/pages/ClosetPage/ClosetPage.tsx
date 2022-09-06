@@ -14,14 +14,14 @@ const NAV_ADD_CLOSET = 'NAV_ADD_CLOSET';
 
 const navItemList = [
     {
-        linkTo: '/closet/view-closet',
+        linkTo: 'view-closet',
         i18n: 'nav.viewClosest',
         navNameConstant: NAV_VIEW_CLOSET,
         iconName: 'fa-heart',
         RouteComponent: <ViewClosetPage />,
     },
     {
-        linkTo: '/closet/add-closet',
+        linkTo: 'add-closet',
         i18n: 'nav.addCloset',
         navNameConstant: NAV_ADD_CLOSET,
         iconName: 'fa-heart',

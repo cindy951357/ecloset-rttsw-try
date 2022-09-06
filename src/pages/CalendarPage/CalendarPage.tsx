@@ -14,14 +14,14 @@ const NAV_ADD_CALENDAR = 'NAV_ADD_CALENDAR';
 
 const navItemList = [
     {
-        linkTo: '/calendar/view-calendar',
+        linkTo: 'view-calendar',
         i18n: 'nav.viewCalendar',
         navNameConstant: NAV_VIEW_CALENDAR,
         iconName: 'fa-heart',
         RouteComponent: <ViewCalendarPage />,
     },
     {
-        linkTo: '/calendar/add-calendar',
+        linkTo: 'add-calendar',
         i18n: 'nav.addCalendar',
         navNameConstant: NAV_ADD_CALENDAR,
         iconName: 'fa-heart',
