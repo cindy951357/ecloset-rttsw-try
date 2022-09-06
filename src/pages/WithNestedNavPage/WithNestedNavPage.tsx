@@ -2,6 +2,7 @@ import React from 'react'
 import {
     Routes,
     Route,
+    Outlet,
 } from 'react-router-dom';
 
 import { SecondNavBar } from '../../components/SecondNavBar/SecondNavBar';
@@ -17,15 +18,7 @@ const WithNestedNavPage = ({
                 navItemList={navItemList}
                 defaultNavItem={defaultNavItem}
             />
-            <Routes>
-                <Route index element={navItemList[0].RouteComponent}></Route>
-                {navItemList.map((navItemElem) => {
-                    return <Route key={navItemElem.linkTo}
-                        path={navItemElem.linkTo}
-                        element={navItemElem.RouteComponent}>
-                    </Route>
-                })}
-            </Routes>
+            <Outlet />
         </div >
     )
 }

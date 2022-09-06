@@ -3,6 +3,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
+    Navigate,
 } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
@@ -46,14 +47,17 @@ const App = () => {
                     <Route path="closet" element={<ClosetPage />} >
                         <Route path="view-closet" element={<ViewClosetPage />} />
                         <Route path="add-closet" element={<AddClosetPage />} />
+                        <Route index element={<ViewClosetPage />} />
                     </Route>
                     <Route path="outfit" element={<PickOutfitDatePage />} />
                     <Route path="calendar" element={<CalendarPage />}>
                         <Route path="view-calendar" element={<ViewCalendarPage />} />
                         <Route path="add-calendar" element={<PickOutfitDatePage />} />
+                        <Route index element={<ViewCalendarPage />} />
                     </Route>
                     <Route path="setting" element={<SettingPage />} />
-                    <Route index element={<CalendarPage />} />
+                    <Route path='*' element={<Navigate to='calendar' replace />} >
+                    </Route>
                 </Routes>
                 <NavBar variant={''}></NavBar>
             </Router>
