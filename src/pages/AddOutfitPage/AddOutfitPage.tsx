@@ -6,11 +6,16 @@ import { Puzzle } from '../../components/Puzzle/Puzzle';
 
 const addOutfitPageClass = classnames(
     'add-outfit-page',
+    'grid',
 );
 
 const AddOutfitPage = () => {
     return (
-        <div className={addOutfitPageClass}>
+        <div className={addOutfitPageClass}
+            style={{
+                gridTemplateRows: '200px auto',
+            }}
+        >
             <Puzzle />
             <FilterCloset selectMode />
         </div>

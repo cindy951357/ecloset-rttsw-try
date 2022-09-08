@@ -11,9 +11,13 @@ import {
     env,
 } from './../../../constants';
 
-import CheckIcon from './../../assets/images/icons/check-solid.svg';
 import { deletePickedClothItems, insertPickedClothItems } from '../../actions/pickedClothItems';
 import { genBGImgFilePathByEnv } from '../../utils/filename';
+
+import { useSelector } from 'react-redux';
+import { pickedClothItemSelector } from '../../reducers/pickedClothItems';
+
+import { MAX_OUTFIT_ITEM_SIZE } from '../../../constants';
 
 const SIMPLE_MODE = 'SIMPLE_MODE';
 const COMPLEX_MODE = 'COMPLEX_MODE';
@@ -42,6 +46,8 @@ const ClothItem = ({ ...props }: Props) => {
 
     const [isChecked, setIsChecked] = useState(false);
 
+    const pickedClothItem = useSelector(pickedClothItemSelector);
+
     const wrapperStyleClassNames = classnames(
         'cloth-item',
         'flex',
@@ -69,7 +75,11 @@ const ClothItem = ({ ...props }: Props) => {
         if (!selectMode) {
             return;
         }
+
         if (!isChecked) {
+            if (pickedClothItem.length >= MAX_OUTFIT_ITEM_SIZE) {
+                return;
+            }
             dispatch(insertPickedClothItems(clothID));
             setIsChecked(true);
         } else {
@@ -88,7 +98,7 @@ const ClothItem = ({ ...props }: Props) => {
             }}
             onClick={() => { onClothItemClick(clothID) }}
         >
-            {isChecked && <img src={CheckIcon} alt='check' />}
+            {isChecked && <img src={'./../../assets/images/icons/check-solid.svg'} alt='check' />}
         </div >
     )
 }

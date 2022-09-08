@@ -13,26 +13,21 @@ import { genBGImgFilePathByEnv, genImgFilePathByEnv } from '../../utils/filename
 const puzzleClass: string = classnames(
     'puzzle',
     'grid',
-    'grid-rows-2',
-    'grid-cols-2',
-    'w-[100px]',
-    'h-[100px]',
-    'sm:w-full',
-    'sm:h-full',
+    'w-[200px]',
+    'h-[200px]',
     'flex',
     'justify-self-center',
 );
 
 const imgClass = classnames(
     'puzzle-img',
-    'w-[50px]',
-    'h-[50px]',
-    'sm:w-full',
-    'sm:h-full',
+    'w-full',
+    'h-full',
     'flex',
     'bg-rose-100',
     'bg-contain',
     'bg-no-repeat',
+    'bg-center',
 )
 
 
@@ -64,6 +59,10 @@ const Puzzle = ({ }) => {
     return (
         <div
             className={puzzleClass}
+            style={{
+                gridTemplateColumns: '1fr 1fr',
+                gridTemplateRows: '1fr 1fr'
+            }}
         >
             {clothFiles.map((el, index) => (
                 <div className={imgClass} key={index}
