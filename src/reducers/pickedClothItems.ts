@@ -26,4 +26,4 @@ const pickedClothItemReducer = (state = init, action) => {
 export default pickedClothItemReducer;
 
 export const pickedClothItemSelector =
-    ({ pickedClothItemSelector }) => pickedClothItemSelector;
+    ({ pickedClothItemReducer }) => pickedClothItemReducer;

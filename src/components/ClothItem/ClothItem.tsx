@@ -13,6 +13,7 @@ import {
 
 import CheckIcon from './../../assets/images/icons/check-solid.svg';
 import { deletePickedClothItems, insertPickedClothItems } from '../../actions/pickedClothItems';
+import { genBGImgFilePathByEnv } from '../../utils/filename';
 
 const SIMPLE_MODE = 'SIMPLE_MODE';
 const COMPLEX_MODE = 'COMPLEX_MODE';
@@ -57,6 +58,10 @@ const ClothItem = ({ ...props }: Props) => {
         'bg-cover',
         {
             'cursor-pointer': selectMode,
+        },
+        {
+            'border-4': isChecked,
+            'border-rose-200': isChecked,
         }
     );
 
@@ -79,11 +84,7 @@ const ClothItem = ({ ...props }: Props) => {
             className={wrapperStyleClassNames}
             style={{
                 borderRadius: borderRadius,
-                backgroundImage:
-                    env === 'development'
-                        ? `url("./../../assets/images/cloth-items/${imgFile}")`
-                        : `url("./images/${imgFile}")`
-                ,
+                backgroundImage: genBGImgFilePathByEnv(imgFile, "./../../assets"),
             }}
             onClick={() => { onClothItemClick(clothID) }}
         >

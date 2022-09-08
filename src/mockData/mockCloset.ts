@@ -8,6 +8,13 @@ import {
 }
     from './mockTypes';
 
+export interface clothProps {
+    id: number,
+    files: string,
+    firstType: string,
+    secondType: string,
+}
+
 export const mockCloset = [
     {
         id: 1,

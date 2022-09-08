@@ -23,3 +23,5 @@ export const defaultOutfitImgFileNames: [string, string, string, string] = [
     'S01_Orin_black_derby.jpg',
     'A02_DTB_black.jpg',
 ]
+
+export const MAX_OUTFIT_ITEM_SIZE = 4;

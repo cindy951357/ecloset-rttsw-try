@@ -62,7 +62,7 @@ const App = () => {
                         <Route index element={<ViewCalendarPage />} />
                     </Route>
                     <Route path="setting" element={<SettingPage />} />
-                    <Route path='*' element={<Navigate to='calendar' replace />} >
+                    <Route path='*' element={<Navigate to='outfit/add-outfit' replace />} >
                     </Route>
                 </Routes>
                 <NavBar variant={''}></NavBar>
