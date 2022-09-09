@@ -51,7 +51,6 @@ const OutfitWithRadioBtn = ({
     setID,
     checkedOutfitID, /** Debug */
 }) => {
-    console.log('OutfitWithRadioBtn, clothIDs: ', clothIDs)
     return (
         <div className={`${outfitWithRadioBtnClass} ${checkedOutfitID === numbering ? checkedOutfitStyle : ''}`}>
             <label className="form-control">

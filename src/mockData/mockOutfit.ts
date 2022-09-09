@@ -1,14 +1,9 @@
 export interface mockOutfit {
     id: number,
-    clothes: [string, string, string, string],
+    clothes: number[],
 }
 export const mockOutfits =
     [
-        {
-            "id": -1,
-            "clothes": [-1, -1, -1, -1],
-            tags: [],
-        },
         {
             "id": 1,
             "clothes": [1, 2, 3, 4],

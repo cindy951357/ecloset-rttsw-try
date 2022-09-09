@@ -47,8 +47,8 @@ const NavItem = ({ ...props }: Props) => {
   const customizedClassNames: string = classnames(
     {
       [`nav-item-${variant}`]: true,
-      'text-slate-300': active === 0,
-      'text-black': active === 1,
+      'text-slate-300': !active,
+      'text-black': active,
     });
 
 
