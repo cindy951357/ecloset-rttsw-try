@@ -19,6 +19,7 @@ const ViewOutfitPage = () => {
         <div className={viewOutfitPageClass}>
             {puzzles.map(outfit => (
                 <OutfitItem
+                    key={outfit.id}
                     clothIDs={outfit.clothes}
                     viewMode='SIMPLE_MODE'
                 />

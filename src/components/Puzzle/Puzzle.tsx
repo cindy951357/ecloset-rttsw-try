@@ -37,7 +37,6 @@ const Puzzle = ({ }) => {
     const [clothFiles, setClothFiles] = useState(Array(MAX_OUTFIT_ITEM_SIZE).fill(''));
 
     useEffect(() => {
-        console.log(pickedClothItems, 'pickedClothItems');
         let files: Array<string> = [];
         if (pickedClothItems) {
             for (let i = 0; i < pickedClothItems.length; i++) {

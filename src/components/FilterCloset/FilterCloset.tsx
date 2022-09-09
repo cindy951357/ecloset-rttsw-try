@@ -25,7 +25,7 @@ const filterConditionSectionClass = classnames(
 const filterResultClass = classnames(
     'filter-closet-result',
     'w-full',
-    'h-full',
+    'h-[400px]',
     'overflow-y-scroll',
     'flex',
     'flex-wrap',
@@ -47,7 +47,11 @@ const FilterCloset = ({ ...props }: Props) => {
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
 
     return (
-        <div className="filter-closet">
+        <div className="filter-closet"
+            style={{
+                rowGap: '2em',
+            }}
+        >
             <div className={filterConditionSectionClass}>
                 <DropdownInput
                     layer={'FIRST'}

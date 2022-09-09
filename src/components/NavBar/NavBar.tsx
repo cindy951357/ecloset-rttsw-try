@@ -31,7 +31,6 @@ const defaultClassNames = classnames(
     'bg-white',
     'items-center',
     'justify-center',
-    'py-3',
 )
 
 const navItemList = [

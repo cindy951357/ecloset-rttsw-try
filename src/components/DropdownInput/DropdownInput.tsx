@@ -65,6 +65,7 @@ const liClass = classnames(
     'hover:bg-slate-300',
     'w-full',
     'p-1',
+    'm-1',
 );
 
 const DropdownInput = ({
