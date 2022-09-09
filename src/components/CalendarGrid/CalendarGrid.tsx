@@ -25,6 +25,7 @@ import {
 
 import { generateMockOutfitDateTuplesArr } from '../../mockData/mockOutfitDate';
 import { useTranslation } from 'react-i18next';
+import { puzzleSelector } from '../../reducers/puzzles';
 
 const defaultDateNumber: Array<number> =
     Array.from(
@@ -50,6 +51,7 @@ const dayNamesClass = classnames(
     'text-center',
     'py-2',
     'text-zinc-400',
+    'w-full',
     'max-w-[200px]',
     'sm:w-[80%]',
     'sm:max-w-full',
@@ -96,6 +98,7 @@ export const CalendarGrid = ({
     const dispatch = useDispatch();
 
     const outfitDate = useSelector(outfiitDateSelector);
+    const puzzles = useSelector(puzzleSelector);
 
     const onOutfitCellClick = (clothFiles) => {
         dispatch(setZoomedInAreaContent({
@@ -116,8 +119,9 @@ export const CalendarGrid = ({
             <div className={defaultOutfitGridClass}>
                 {
                     outfitDate.outfitDateTupleArr.map((tuple, i) => {
+                        console.log(tuple, i);
                         const mockOutfitId = tuple[1];
-                        const mockClothIDs: number[] = mockOutfits.find(
+                        const mockClothIDs: number[] = puzzles.find(
                             outfit => outfit.id.toString() === mockOutfitId.toString()
                         )?.clothes;
                         return (
@@ -131,7 +135,7 @@ export const CalendarGrid = ({
                                 <time
                                     className={defaultDateLabelStyle}
                                 >
-                                    {i + 1}
+                                    {i + 1 /**date */}
                                 </time>
                                 <OutfitItem
                                     viewMode='SIMPLE_MODE'

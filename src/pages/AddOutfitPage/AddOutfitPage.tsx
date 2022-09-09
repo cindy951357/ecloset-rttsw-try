@@ -30,7 +30,7 @@ const AddOutfitPage = () => {
 
     const onSubmitBtnClick = () => {
         dispatch(insertPuzzle({
-            id: outfits.length,
+            id: outfits.length + 1,
             clothes: pickedClothItem,
             tags: [],
         }));

@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import { OutfitItem } from '../OutfitItem/OutfitItem';
 
 import './OutfitList.scss';
+import { puzzleSelector } from '../../reducers/puzzles';
+import { useSelector } from 'react-redux';
 
 // tutorial: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
@@ -77,11 +79,12 @@ const outfitListClass = classnames(
 
 const OutfitList = ({ setOutfitID, checkedOutfitID }) => {
 
+    const outfits = useSelector(puzzleSelector);
     return (
         <div className={outfitListClass}>
-            {mockOutfits.map((outfit, i) => {
+            {outfits.map((outfit, i) => {
                 return (
-                    i > 0 && <OutfitWithRadioBtn
+                    i >= 0 && <OutfitWithRadioBtn
                         key={i}
                         clothIDs={
                             outfit.clothes}
