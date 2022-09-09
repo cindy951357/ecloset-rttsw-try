@@ -8,6 +8,10 @@ import { OutfitList } from '../../components/OutfitList/OutfitList';
 
 import { setPickedOutfitDate } from '../../actions/outfitDate';
 import { SubmitButton } from '../../components/SubmitButton/SubmitButton';
+import { setPopupShowAndContent } from '../../actions/popup';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 
 const pickOutfitDatePageClass = classnames(
   'pick-outfit-date-page',
@@ -63,21 +67,31 @@ const PickStep2 = ({ setDate }) => {
 
 const PickOutfitDatePage = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const [date, setDate] = useState('');
   const [outfitID, setOutfitID] = useState(-1);
 
+  const onSubmitButtonClick = () => {
+    dispatch(setPickedOutfitDate({
+      outfitID: outfitID,
+      date: date
+    }));
+    dispatch(setPopupShowAndContent({
+      isShow: true,
+      content: {
+        message: t('popup.outfitDateIsAdded')
+      }
+    }));
+    navigate('/calendar/view-calendar');
+  };
 
   return (
     <div className={pickOutfitDatePageClass}>
       <PickStep1 setOutfitID={setOutfitID} />
       <PickStep2 setDate={setDate} />
-      <SubmitButton onClick={() => {
-        dispatch(setPickedOutfitDate({
-          outfitID: outfitID,
-          date: date
-        }));
-      }} />
+      <SubmitButton onClick={onSubmitButtonClick} />
     </div>
   )
 }

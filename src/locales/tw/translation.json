@@ -23,6 +23,7 @@
     "Sun": "日"
   },
   "popup": {
-    "puzzleIsAdded": "新穿搭已經添加"
+    "puzzleIsAdded": "新穿搭已經添加",
+    "outfitDateIsAdded": "穿搭日曆已經更新"
   }
 }

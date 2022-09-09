@@ -23,6 +23,7 @@
     "Sun": "Sun"
   },
   "popup": {
-    "puzzleIsAdded": "New outfit is added"
+    "puzzleIsAdded": "New outfit is added",
+    "outfitDateIsAdded": "Calendar is updated"
   }
 }
