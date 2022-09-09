@@ -12,7 +12,7 @@ import {
 } from './../../../constants';
 
 import { deletePickedClothItems, insertPickedClothItems } from '../../actions/pickedClothItems';
-import { genBGImgFilePathByEnv } from '../../utils/filename';
+import { genBGImgFilePathByEnv, genSVGPathByEnv } from '../../utils/filename';
 
 import { useSelector } from 'react-redux';
 import { pickedClothItemSelector } from '../../reducers/pickedClothItems';
@@ -98,7 +98,7 @@ const ClothItem = ({ ...props }: Props) => {
             }}
             onClick={() => { onClothItemClick(clothID) }}
         >
-            {isChecked && <img src={'./../../assets/images/icons/check-solid.svg'} alt='check' />}
+            {isChecked && <img src={genSVGPathByEnv('check-solid.svg', './../../assets')} alt='check' />}
         </div >
     )
 }
