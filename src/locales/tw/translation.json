@@ -21,5 +21,8 @@
     "Fri": "五",
     "Sat": "六",
     "Sun": "日"
+  },
+  "popup": {
+    "puzzleIsAdded": "新穿搭已經添加"
   }
 }

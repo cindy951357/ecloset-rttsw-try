@@ -3,21 +3,15 @@ import React from 'react'
 import classnames from 'classnames';
 
 import { useSelector, useDispatch } from 'react-redux';
+
 import { popupShowSelector } from '../../reducers/popup';
 import { setPopupShowAndContent } from '../../actions/popup';
 
-import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
-
-import { defaultOutfitClothIDs, defaultOutfitImgFileNames } from './../../../constants';
-
 const PopupPage = () => {
     const dispatch = useDispatch();
-    const {
-        isShow,
-        content,
-    } = useSelector(popupShowSelector);
+    const popup = useSelector(popupShowSelector);
 
-    const popupClassName = classnames(
+    const popupClassName: string = classnames(
         'pop-up-page',
         'p-6',
         'flex',
@@ -28,34 +22,35 @@ const PopupPage = () => {
         'h-full',
         'z-1',
         {
-            'hidden': !isShow,
+            'hidden': !popup.isShow,
         },
         'bg-[rgba(249,168,212,0.8)]',//'bg-rose-200',
         'absolute',
-    )
+    );
+
+    const messageClass: string = classnames(
+        'popup-message',
+        'text-white',
+    );
+
     return (
         <div
             className={popupClassName}
-            style={{
-                gridTemplateRows: '1fr 4fr 1fr',
-            }}
         >
             <button
                 onClick={() => {
                     dispatch(setPopupShowAndContent({
                         isShow: false,
                         content: null,
-                    }))
+                    }));
+
                 }}
                 className={'justify-self-end'}
             >
                 &#x2715;
             </button>
-            {isShow && <OutfitItem
-                viewMode={content.viewMode}
-                clothIDs={defaultOutfitClothIDs}
-            />}
-            <div>haha</div>
+
+            {popup.isShow && <div className={messageClass}>{popup.content.message}</div>}
         </div>
     )
 }

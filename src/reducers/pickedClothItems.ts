@@ -1,6 +1,7 @@
 import {
     INSERT_PICKED_CLOTH_ITEMS,
     DELETE_PICKED_CLOTH_ITEMS,
+    CLEAR_PICKED_CLOTH_ITEMS,
 } from "../actions/actionTypes";
 
 const init = [
@@ -19,6 +20,9 @@ const pickedClothItemReducer = (state = init, action) => {
             const newState = state;
             return newState.filter(id => id !== action.payload);
         };
+        case CLEAR_PICKED_CLOTH_ITEMS: {
+            return [];
+        }
         default: return state;
     }
 };

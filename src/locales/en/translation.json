@@ -21,5 +21,8 @@
     "Fri": "Fri",
     "Sat": "Sat",
     "Sun": "Sun"
+  },
+  "popup": {
+    "puzzleIsAdded": "New outfit is added"
   }
 }

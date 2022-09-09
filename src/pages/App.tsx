@@ -28,16 +28,8 @@ import { AddClosetPage } from "./AddClosetPage/AddClosetPage";
 import { OutfitPage } from "./OutfitPage/OutfitPage";
 import { AddOutfitPage } from "./AddOutfitPage/AddOutfitPage";
 
-// const appStyleClassName = classnames(
-//     'grid',
-//     'max-h-full',
-//     'h-screen',
-//     'w-screen',
-// )
-
 const App = () => {
     const { t } = useTranslation();
-
 
     return (
         <div id='app'
@@ -66,9 +58,8 @@ const App = () => {
                     </Route>
                 </Routes>
                 <NavBar variant={''}></NavBar>
+                <PopupPage />
             </Router>
-
-            <PopupPage />
         </div>
     )
 }

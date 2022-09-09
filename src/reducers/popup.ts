@@ -15,6 +15,7 @@ const init = {
     isShow: false,
     content: {
         outfitItem: null,
+        message: '',
     },
 };
 

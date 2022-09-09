@@ -10,6 +10,10 @@ import { SubmitButton } from '../../components/SubmitButton/SubmitButton';
 import { insertPuzzle } from './../../actions/puzzles';
 import { puzzleSelector } from '../../reducers/puzzles';
 import { setPopupShowAndContent } from '../../actions/popup';
+import { clearPickedClothItems } from '../../actions/pickedClothItems';
+import { useTranslation } from 'react-i18next';
+import { Navigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 
 const addOutfitPageClass = classnames(
@@ -19,19 +23,26 @@ const addOutfitPageClass = classnames(
 
 const AddOutfitPage = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { t } = useTranslation();
     const pickedClothItem = useSelector(pickedClothItemSelector);
     const outfits = useSelector(puzzleSelector);
 
     const onSubmitBtnClick = () => {
-        console.log('hi. clicked', pickedClothItem, outfits.length);
         dispatch(insertPuzzle({
             id: outfits.length,
             clothes: pickedClothItem,
             tags: [],
         }));
-        // dispatch(setPopupShowAndContent({
+        dispatch(setPopupShowAndContent({
+            isShow: true,
+            content: {
+                message: t('popup.puzzleIsAdded'),
+            }
+        }));
+        dispatch(clearPickedClothItems({}));
 
-        // }))
+        navigate('/outfit/view-outfit');
     }
     return (
         <div className={addOutfitPageClass}
