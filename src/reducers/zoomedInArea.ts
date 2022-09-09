@@ -4,7 +4,7 @@ import {
 
 const init = {
     viewMode: 'SIMPLE_MODE',
-    clothFileNames: ['', '', '', ''],
+    clothIDs: [1, 2, 3, 4],
 };
 
 export default function zoomInReducer(state = init, action) {
@@ -12,7 +12,7 @@ export default function zoomInReducer(state = init, action) {
         case SET_ZOOMIN_CONTENT:
             return {
                 ...state,
-                clothFileNames: action.payload.clothFileNames,
+                clothIDs: action.payload.clothIDs,
                 viewMode: action.payload.viewMode
             };
         default: return state;

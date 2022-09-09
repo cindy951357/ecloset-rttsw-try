@@ -26,7 +26,7 @@ const ZoomedInOutfitItem = ({ selectedClothFiles, show }: Props) => {
         >
             <OutfitItem
                 viewMode='SIMPLE_MODE'
-                clothFileNames={selectedClothFiles}
+                clothIDs={selectedClothFiles}
             />
         </div>
     )

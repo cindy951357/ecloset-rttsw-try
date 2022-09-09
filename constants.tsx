@@ -24,4 +24,6 @@ export const defaultOutfitImgFileNames: [string, string, string, string] = [
     'A02_DTB_black.jpg',
 ]
 
+export const defaultOutfitClothIDs = [1, 2, 3, 4];
+
 export const MAX_OUTFIT_ITEM_SIZE = 4;

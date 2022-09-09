@@ -8,7 +8,7 @@ import { setPopupShowAndContent } from '../../actions/popup';
 
 import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
 
-import { defaultOutfitImgFileNames } from './../../../constants';
+import { defaultOutfitClothIDs, defaultOutfitImgFileNames } from './../../../constants';
 
 const PopupPage = () => {
     const dispatch = useDispatch();
@@ -53,7 +53,7 @@ const PopupPage = () => {
             </button>
             {isShow && <OutfitItem
                 viewMode={content.viewMode}
-                clothFileNames={defaultOutfitImgFileNames}
+                clothIDs={defaultOutfitClothIDs}
             />}
             <div>haha</div>
         </div>

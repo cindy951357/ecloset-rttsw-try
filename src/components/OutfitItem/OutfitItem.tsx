@@ -2,6 +2,7 @@ import React, { ReactNode, HTMLAttributes } from 'react'
 import classnames from 'classnames';
 
 import { ClothItem } from './../ClothItem/ClothItem';
+import { mockCloset } from '../../mockData/mockCloset';
 
 const imgFolderPath = './../../assets/images/cloth-items'
 
@@ -17,7 +18,7 @@ const positionList = [
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
-    clothFileNames: [string, string, string, string],
+    clothIDs: number[],
 }
 
 export const styleClassNames = classnames(
@@ -46,18 +47,17 @@ export const styleClassNames = classnames(
 
 const OutfitItem = ({ ...props }: Props) => {
     const {
-        clothFileNames,
+        clothIDs,
         viewMode,
     } = props;
-
-
     return (
         <div
             className={`outfit-item ${styleClassNames}`}
             style={{ gridTemplateRows: '1fr 1fr', gridTemplateColumns: '1fr 1fr' }}
         >
 
-            {clothFileNames.map((file, i) => {
+            {clothIDs.map((clothID, i) => {
+                const file = mockCloset.find(el => el.id === clothID).file;
                 return (
                     <ClothItem
                         key={i}

@@ -35,7 +35,7 @@ const ViewCalendarPage = () => {
     const dispatch = useDispatch();
     const {
         viewMode,
-        clothFileNames,
+        clothIDs,
     } = useSelector(zoomInSelector);
     return (
         <div className={`view-calendar-page page ${defaultClassName}`}
@@ -44,9 +44,9 @@ const ViewCalendarPage = () => {
             <div className={zoomedInClass}
             >
 
-                <OutfitItem viewMode={viewMode} clothFileNames={clothFileNames} />
+                <OutfitItem viewMode={viewMode} clothIDs={clothIDs} />
             </div>
-            <CalendarGrid />
+            <CalendarGrid label={'primary'} />
         </div>
     );
 };

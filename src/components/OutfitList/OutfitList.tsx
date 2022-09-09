@@ -46,11 +46,12 @@ const checkedOutfitStyle = classnames(
 );
 
 const OutfitWithRadioBtn = ({
-    clothFileNames,
+    clothIDs,
     numbering,
     setID,
     checkedOutfitID, /** Debug */
 }) => {
+    console.log('OutfitWithRadioBtn, clothIDs: ', clothIDs)
     return (
         <div className={`${outfitWithRadioBtnClass} ${checkedOutfitID === numbering ? checkedOutfitStyle : ''}`}>
             <label className="form-control">
@@ -60,7 +61,7 @@ const OutfitWithRadioBtn = ({
                 />
                 {numbering}
             </label>
-            <OutfitItem clothFileNames={clothFileNames} viewMode='SIMPLE_MODE' />
+            <OutfitItem clothIDs={clothIDs} viewMode='SIMPLE_MODE' />
         </div>
 
     )
@@ -83,7 +84,7 @@ const OutfitList = ({ setOutfitID, checkedOutfitID }) => {
                 return (
                     i > 0 && <OutfitWithRadioBtn
                         key={i}
-                        clothFileNames={
+                        clothIDs={
                             outfit.clothes}
                         numbering={outfit.id}
                         setID={setOutfitID}

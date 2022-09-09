@@ -100,7 +100,7 @@ export const CalendarGrid = ({
     const onOutfitCellClick = (clothFiles) => {
         dispatch(setZoomedInAreaContent({
             viewMode: 'SIMPLE_MODE',
-            clothFileNames: clothFiles,
+            clothIDs: clothFiles,
         }));
     }
 
@@ -117,14 +117,14 @@ export const CalendarGrid = ({
                 {
                     outfitDate.outfitDateTupleArr.map((tuple, i) => {
                         const mockOutfitId = tuple[1];
-                        const mockClothFileNames: string[] = mockOutfits.find(
+                        const mockClothIDs: number[] = mockOutfits.find(
                             outfit => outfit.id.toString() === mockOutfitId.toString()
-                        )?.clothes ?? defaultOutfitImgFileNames;
+                        )?.clothes;
                         return (
                             <div key={tuple[0]}
                                 className={defaultCellStyle}
                                 onClick={() => {
-                                    onOutfitCellClick(mockClothFileNames)
+                                    onOutfitCellClick(mockClothIDs)
                                 }}
                                 style={{ gridTemplateRows: '20px auto' }}
                             >
@@ -135,7 +135,7 @@ export const CalendarGrid = ({
                                 </time>
                                 <OutfitItem
                                     viewMode='SIMPLE_MODE'
-                                    clothFileNames={mockClothFileNames}
+                                    clothIDs={mockClothIDs}
                                 />
                             </div>
                         )

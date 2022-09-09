@@ -12,7 +12,7 @@ const SECOND_LAYER = 'second-layer';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   variant: 'first-layer' | 'second-layer',
-  active: Boolean;
+  active: number;
   text: String;
   fontawesomeiconname: string,
 }
@@ -46,8 +46,9 @@ const NavItem = ({ ...props }: Props) => {
 
   const customizedClassNames: string = classnames(
     {
-      'active': active,
       [`nav-item-${variant}`]: true,
+      'text-slate-300': active === 0,
+      'text-black': active === 1,
     });
 
 
@@ -60,7 +61,6 @@ const NavItem = ({ ...props }: Props) => {
     <button
       {...props}
       className={`${defaultClassNames} ${customizedClassNames}`}
-      style={{ color: active ? 'black' : 'lightgray' }}
     >
       <FontAwesomeIcon icon={`fa-solid ${fontawesomeiconname}`} />
       <span className={textClass}>{props.text}</span>
