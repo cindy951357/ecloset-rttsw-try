@@ -1,0 +1,5 @@
+.outfit-list {
+    input[type="radio"]:checked::before {
+        transform: scale(1);
+    }
+}

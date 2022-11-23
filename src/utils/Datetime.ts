@@ -1,4 +1,4 @@
-const getFirstDayOfMonth = (year: number, monthNumber: number): number => {
+export const getFirstDayOfMonth = (year: number, monthNumber: number): number => {
 
     const firstDate = new Date(year, monthNumber - 1, 1);
 
@@ -6,11 +6,20 @@ const getFirstDayOfMonth = (year: number, monthNumber: number): number => {
     return firstDate.getDay();
 }
 
-function getDaysInMonth(year: number, monthNumber: number) {
+export const getNumOfDaysInThisMonth = (year: number, monthNumber: number) => {
     return new Date(year, monthNumber, 0).getDate();
 }
 
-export {
-    getFirstDayOfMonth,
-    getDaysInMonth,
+export const todayDate: Date = new Date();
+export const currentYear: number = todayDate.getFullYear();
+export const currentMonth: number = todayDate.getMonth() + 1;
+export const numOfDaysOfCurrentMonth: number = getNumOfDaysInThisMonth(currentYear, currentMonth);
+
+// i18n key
+export const dayNamesInWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+export const generateDatesOfCurMonth = (curYear: number, curMonth: number): Array<string> => {
+    return Array.from(
+        Array(numOfDaysOfCurrentMonth).keys()
+    ).map(key => `${curYear}-${curMonth}-${key + 1}`);;
 }

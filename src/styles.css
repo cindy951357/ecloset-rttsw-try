@@ -14,13 +14,31 @@ html {
     width: 100vw;
 }
 
+
+#app {
+    display: grid;
+    grid-row: 3;
+    grid-template-rows: 1fr 10fr 1fr;
+
+}
+
 .page {
     overflow-y: scroll;
-    flex: 10;
     /* 10 / 12*/
 
     width: 100vw;
+    min-width: 300px;
+    background-color: rgb(228 228 231);
+    /*zinc-200*/
+}
+
+
+a {
+    /*For React Router Link*/
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
 }

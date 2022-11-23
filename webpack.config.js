@@ -46,7 +46,19 @@ module.exports = {
                     },
                     'postcss-loader',
                 ],
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif|jp2|webp)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'images',
+                }
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
         ]
     },
     mode: 'development',

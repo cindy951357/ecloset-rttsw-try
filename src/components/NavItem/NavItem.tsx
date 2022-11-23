@@ -1,38 +1,75 @@
 import React, { ReactNode, HTMLAttributes } from 'react'
 import classnames from 'classnames';
 
-import './NavItem.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import fontawesome from '@fortawesome/fontawesome';
+import { faTshirt, faCalendar, faWrench, faTags, faSquare, faPuzzlePiece } from '@fortawesome/fontawesome-free-solid'
+
+fontawesome.library.add(faTshirt, faCalendar, faWrench, faTags, faSquare, faPuzzlePiece);
+
 const FIRST_LAYER = 'first-layer';
 const SECOND_LAYER = 'second-layer';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
-  variant: String,
-  active: Boolean;
+  variant: 'first-layer' | 'second-layer',
+  active: number;
   text: String;
+  fontawesomeiconname: string,
 }
 
-const NavItem = ({ variant = 'first-layer', ...props }: Props) => {
-  const bgColor: string =
-    variant === FIRST_LAYER ? 'bg-pink-200' : 'bg-fuchsia-200'
-  const classNames: string = classnames(
+const NavItem = ({ ...props }: Props) => {
+  const {
+    variant,
+    active,
+    fontawesomeiconname
+  } = props;
+
+  const defaultClassNames: string = classnames(
     'nav-item',
     'flex',
-    'p-1',
-    'justify-center',
-    'align-center',
+    'w-full',
     {
-      'active': props.active || false,
+      'h-full': variant === FIRST_LAYER,
+      'h-32': variant === FIRST_LAYER,
+    },
+    'justify-center',
+    'items-center',
+    {
+      'flex-col': variant === FIRST_LAYER,
+      'flex-row': variant === FIRST_LAYER,
+    },
+    'text-2xl',
+    {
+      'py-2': variant === FIRST_LAYER,
+    },
+  );
+
+  const customizedClassNames: string = classnames(
+    {
       [`nav-item-${variant}`]: true,
-      [bgColor]: true,
+      'text-slate-300': !active,
+      'text-black': active,
     });
+
+
+  const textClass: string = classnames(
+    'text-xs',
+    'py-2',
+  )
+
   return (
     <button
       {...props}
-      className={classNames}
+      className={`${defaultClassNames} ${customizedClassNames}`}
     >
-      {props.text}
+      <FontAwesomeIcon icon={`fa-solid ${fontawesomeiconname}`} />
+      <span className={textClass}>{props.text}</span>
     </button>
   )
+}
+
+NavItem.defaultProps = {
+  fontawesomeiconname: 'fa-tshirt'
 }
 
 export {

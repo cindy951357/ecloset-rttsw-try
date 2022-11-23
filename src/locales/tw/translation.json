@@ -1,0 +1,29 @@
+{
+  "title": "親愛的衣櫥",
+  "nav": {
+    "closet": "衣櫥",
+    "outfit": "穿搭",
+    "calendar": "日曆",
+    "tags": "標籤",
+    "setting": "設定",
+    "viewCalendar": "檢視日曆",
+    "addCalendar": "新增日曆穿搭",
+    "viewClosest": "檢視衣櫥",
+    "addCloset": "添加到衣櫥",
+    "viewOutfit": "檢視穿搭",
+    "addOutfit": "添加到穿搭"
+  },
+  "weekDay": {
+    "Mon": "一",
+    "Tue": "二",
+    "Wed": "三",
+    "Thu": "四",
+    "Fri": "五",
+    "Sat": "六",
+    "Sun": "日"
+  },
+  "popup": {
+    "puzzleIsAdded": "新穿搭已經添加",
+    "outfitDateIsAdded": "穿搭日曆已經更新"
+  }
+}
