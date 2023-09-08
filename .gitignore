@@ -1,8 +1,0 @@
-node_modules/
-*-lock.json
-
-package.json
-dist/
-.storybook
-*.txt
-
