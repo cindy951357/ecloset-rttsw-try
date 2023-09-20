@@ -3,7 +3,7 @@ import {
     TRAVEL_ONE_MONTH,
 } from '../actions/actionTypes';
 import moment from 'moment';
-import { defaultOutfitDatesTupleArr } from '../mockData/mockOutfitDate';
+import { defaultOutfitDatesTupleArr, generateMockOutfitDateTuplesArr } from '../mockData/mockOutfitDate';
 
 const now = new Date();
 const yyyy = now.getFullYear();
@@ -64,6 +64,7 @@ export default function outfiitDateReducer(state = init, action) {
                     month: traveledDateTime.getMonth() + 1,
                     dd: traveledDateTime.getDate(),
                 },
+                outfitDateTupleArr: generateMockOutfitDateTuplesArr(traveledDateTime.getFullYear, traveledDateTime.getMonth() + 1),
             };
         default: return state;
     }
