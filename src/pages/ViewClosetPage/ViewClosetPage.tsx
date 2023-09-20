@@ -11,6 +11,7 @@ const viewClosetPageClass = classnames(
     'view-closet-page',
     'grid',
     'h-full',
+    'pt-[40px]'
 );
 
 
