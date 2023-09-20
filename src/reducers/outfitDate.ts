@@ -3,7 +3,12 @@ import {
     TRAVEL_ONE_MONTH,
 } from '../actions/actionTypes';
 import moment from 'moment';
-import { defaultOutfitDatesTupleArr, generateMockOutfitDateTuplesArr } from '../mockData/mockOutfitDate';
+import {
+    defaultOutfitDatesTupleArr,
+    generateMockOutfitDateTuplesArr,
+    defaultOutfitDatesMatrix,
+    monthSize,
+} from '../mockData/mockOutfitDate';
 
 const now = new Date();
 const yyyy = now.getFullYear();
@@ -12,26 +17,27 @@ const dd = now.getDate();
 
 interface Props {
     /**(date, outfitID) */
-    outfitDateTupleArr: Array<Array<[string, string]>>,
+    outfitDateTupleArr: Array<Array<[string, number]>>,
     pickedOutfitDate: {
         outfitID: number,
         date: string,
         year: number,
         month: number,
         dd: number,
-    }
+    },
+    travelIndex: number,
 }
 const init: Props = {
-    outfitDateTupleArr: defaultOutfitDatesTupleArr,
+    outfitDateTupleArr: defaultOutfitDatesMatrix[Math.floor(monthSize / 2)],
     pickedOutfitDate: {
         outfitID: -1,
         date: `${yyyy}-${MM}-${dd}`,
         year: yyyy,
         month: MM,
         dd: dd,
-    }
+    },
+    travelIndex: Math.floor(monthSize / 2),
 };
-
 export default function outfiitDateReducer(state = init, action) {
     switch (action.type) {
         case SET_PICKED_OUTFIT_DATE:
@@ -44,6 +50,7 @@ export default function outfiitDateReducer(state = init, action) {
                 }
             })
             return {
+                ...state,
                 pickedOutfitDate: action.payload,
                 outfitDateTupleArr: newOutfitDate,
             };
@@ -51,10 +58,14 @@ export default function outfiitDateReducer(state = init, action) {
             const {
                 plusOrMinus, // 1 or -1
             } = action.payload
-
+            let newArr: Array<any>;
             const traveledDateTime: Date = new Date(`${state.pickedOutfitDate.year}-${state.pickedOutfitDate.month}-${state.pickedOutfitDate.dd}`);
             traveledDateTime.setMonth(traveledDateTime.getMonth() + plusOrMinus);
-
+            const totalNumsOfDays = moment(`${traveledDateTime.getFullYear()}-${traveledDateTime.getMonth() + 1}`).daysInMonth();
+            const newTravelIndex = state.travelIndex + plusOrMinus;
+            newArr = (0 <= newTravelIndex && newTravelIndex < monthSize)
+                ? defaultOutfitDatesMatrix[newTravelIndex]
+                : Array.from(Array(totalNumsOfDays), (index) => ([index, -1]));
             return {
                 ...state,
                 pickedOutfitDate: {
@@ -64,7 +75,8 @@ export default function outfiitDateReducer(state = init, action) {
                     month: traveledDateTime.getMonth() + 1,
                     dd: traveledDateTime.getDate(),
                 },
-                outfitDateTupleArr: generateMockOutfitDateTuplesArr(traveledDateTime.getFullYear, traveledDateTime.getMonth() + 1),
+                outfitDateTupleArr: newArr,
+                travelIndex: newTravelIndex,
             };
         default: return state;
     }

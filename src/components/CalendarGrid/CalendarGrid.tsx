@@ -113,12 +113,15 @@ export const CalendarGrid = ({
             </div>
             <div className={defaultOutfitGridClass}>
                 {
+
                     outfitDate.outfitDateTupleArr.map((tuple, i) => {
-                        console.log(tuple, i);
                         const mockOutfitId = tuple[1];
-                        const mockClothIDs: number[] = puzzles.find(
+                        let mockClothIDs: number[] = puzzles.find(
                             outfit => outfit.id.toString() === mockOutfitId.toString()
                         )?.clothes;
+                        if (mockClothIDs === undefined) {
+                            mockClothIDs = [-1, -1, -1, -1];
+                        }
                         return (
                             <div key={tuple[0]}
                                 className={defaultCellStyle}
@@ -130,7 +133,7 @@ export const CalendarGrid = ({
                                 <time
                                     className={defaultDateLabelStyle}
                                 >
-                                    {i + 1 /**date */}
+                                    {i + 1}
                                 </time>
                                 <OutfitItem
                                     viewMode='SIMPLE_MODE'

@@ -94,10 +94,11 @@ const ClothItem = ({ ...props }: Props) => {
             className={wrapperStyleClassNames}
             style={{
                 borderRadius: borderRadius,
-                backgroundImage: genBGImgFilePathByEnv(imgFile, "./../../assets"),
+                backgroundImage: imgFile && genBGImgFilePathByEnv(imgFile, "./../../assets"),
             }}
-            onClick={() => { onClothItemClick(clothID) }}
+            onClick={() => { clothID > 0 && onClothItemClick(clothID) }}
         >
+
             {isChecked && <img src={'./../../assets/images/icons/check-solid.svg'} alt='check' />}
         </div >
     )

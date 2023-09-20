@@ -1,4 +1,8 @@
-import React, { ReactNode, HTMLAttributes } from 'react'
+import React, {
+    ReactNode,
+    HTMLAttributes,
+    useEffect,
+} from 'react'
 import classnames from 'classnames';
 
 import { ClothItem } from './../ClothItem/ClothItem';
@@ -56,19 +60,38 @@ const OutfitItem = ({ ...props }: Props) => {
             style={{ gridTemplateRows: '1fr 1fr', gridTemplateColumns: '1fr 1fr' }}
         >
 
-            {clothIDs.map((clothID, i) => {
-                const file = mockCloset.find(el => el.id === clothID).file;
-                return (
-                    <ClothItem
-                        key={i}
-                        viewMode={viewMode}
-                        selectMode={false}
-                        imgFile={file}
-                        borderRadius={borderRadiusList[i]}
-                        position={positionList[i]}
-                        size={'M'}
-                    ></ClothItem>
-                )
+            {clothIDs && clothIDs.map((clothID, i) => {
+                if (clothID > 0) {
+                    let file;
+                    const found = mockCloset.find(el => el.id === clothID)
+                    if (found) {
+                        file = mockCloset.find(el => el.id === clothID)?.file;
+                    }
+                    return (
+                        <ClothItem
+                            key={i}
+                            viewMode={viewMode}
+                            selectMode={false}
+                            imgFile={file}
+                            borderRadius={borderRadiusList[i]}
+                            position={positionList[i]}
+                            size={'M'}
+                        ></ClothItem>
+                    )
+                } else {
+                    return (
+                        <ClothItem
+                            key={i}
+                            viewMode={viewMode}
+                            selectMode={false}
+                            imgFile={undefined}
+                            borderRadius={borderRadiusList[i]}
+                            position={positionList[i]}
+                            size={'M'}
+                        ></ClothItem>
+                    )
+                }
+
             })}
         </div>
     )
