@@ -54,6 +54,8 @@ const ClothItem = ({ ...props }: Props) => {
         {
             'w-full': size === 'L' || size === 'M',
             'h-full': size === 'L' || size === 'M',
+            'sm:w-max-[120px]': size === 'M',
+            'sm:h-max-[120px]': size === 'M',
             'w-24': size === 'S',
             'h-24': size === 'S',
             'md:w-32': size === 'S',

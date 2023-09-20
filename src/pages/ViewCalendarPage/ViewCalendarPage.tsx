@@ -17,12 +17,16 @@ const defaultClassName = classnames(
     'flex',
     'flex-col',
     'sm:flex-row',
+    'sm:pt-[54px]',
+    'pt-0',
 );
 
 const zoomedInClass = classnames(
     'zoomed-in-area',
     'flex',
     'w-full',
+    'sm:w-max-[50vw]',
+    'sm:w-[50vw]',
     'text-slate-400',
     'p-3',
     'text-center',
