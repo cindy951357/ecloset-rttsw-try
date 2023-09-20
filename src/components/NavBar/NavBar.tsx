@@ -74,7 +74,7 @@ const NavBar = ({ variant = '', ...props }: Props) => {
 
     return (
         <ul id='nav_bar'
-            className='flex flex-row w-screen flex-1'
+            className='flex flex-row w-full flex-1'
         >
 
             {

@@ -2,33 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-}
 
-#root {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-}
-
-
-#app {
-    display: grid;
-    grid-row: 3;
-    grid-template-rows: 1fr 10fr 1fr;
-
-}
 
 .page {
-    overflow-y: scroll;
+    overflow-y: auto;
     /* 10 / 12*/
+    overflow-x: hidden;
 
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     min-width: 300px;
     background-color: rgb(228 228 231);
+    padding-top: 54px;
+    /* for headers*/
+    padding-bottom: 100px;
+    /* for bottom buttons*/
     /*zinc-200*/
 }
 

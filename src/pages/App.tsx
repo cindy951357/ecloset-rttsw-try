@@ -35,8 +35,8 @@ const App = () => {
         <div id='app'
             className={''}
         >
-            <Header></Header>
             <Router>
+                <Header></Header>
                 <Routes>
                     <Route path="closet" element={<ClosetPage />} >
                         <Route path="view-closet" element={<ViewClosetPage />} />

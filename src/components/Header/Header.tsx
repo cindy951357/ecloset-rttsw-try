@@ -8,7 +8,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const styleClassNames = classnames(
   'overall-header',
   'row-span-1',
-  'w-screen',
   'flex',
   'justify-self-start',
   'place-content-center',
@@ -20,6 +19,7 @@ const styleClassNames = classnames(
 const Header = ({ ...props }: Props) => {
   return (
     <div
+      id="overall_header"
       {...props}
       className={styleClassNames}
     >

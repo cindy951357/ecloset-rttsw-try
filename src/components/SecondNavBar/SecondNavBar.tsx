@@ -57,6 +57,7 @@ const SecondNavBar = ({ ...props }: Props) => {
     )
     return (
         <ul
+            id="second_nav_bar"
             className={secondNavBarClass}
         >
 
