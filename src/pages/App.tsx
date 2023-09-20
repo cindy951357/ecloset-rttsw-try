@@ -48,13 +48,13 @@ const App = () => {
                         <Route path="add-outfit" element={<AddOutfitPage />} />
                         <Route index element={<ViewOutfitPage />} />
                     </Route>
-                    <Route path="calendar" element={<CalendarPage />}>
+                    <Route path="/" element={<CalendarPage />}>
                         <Route path="view-calendar" element={<ViewCalendarPage />} />
                         <Route path="add-calendar" element={<PickOutfitDatePage />} />
                         <Route index element={<ViewCalendarPage />} />
                     </Route>
                     <Route path="setting" element={<SettingPage />} />
-                    <Route path='*' element={<Navigate to='calendar' replace />} >
+                    <Route path='*' element={<Navigate to='/' replace />} >
                     </Route>
                 </Routes>
                 <NavBar variant={''}></NavBar>
