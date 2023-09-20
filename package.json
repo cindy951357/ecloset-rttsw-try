@@ -1,5 +1,5 @@
 {
-  "name": "RTTSW-try",
+  "name": "ecloset-rttsw-try",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,9 +18,14 @@
     "tailwindcss",
     "react",
     "react18",
-    "Storybook"
+    "Storybook",
+    "ecloset",
+    "outfit",
+    "fashion",
+    "side project",
+    "Cindy Rabbit Yeh"
   ],
-  "author": "Cindy R",
+  "author": "Cindy Rabbit Yeh",
   "license": "ISC",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.18.6",
