@@ -11,7 +11,6 @@ import './ViewCalendarPage.scss';
 import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { zoomInSelector } from '../../reducers/zoomedInArea';
-import { outfiitDateSelector } from '../../reducers/outfitDate';
 
 
 const defaultClassName = classnames(
@@ -37,13 +36,12 @@ const ViewCalendarPage = () => {
         viewMode,
         clothIDs,
     } = useSelector(zoomInSelector);
+
     return (
         <div className={`view-calendar-page page ${defaultClassName}`}
-        // style={rwdStyle}
         >
             <div className={zoomedInClass}
             >
-
                 <OutfitItem viewMode={viewMode} clothIDs={clothIDs} />
             </div>
             <CalendarGrid label={'primary'} />

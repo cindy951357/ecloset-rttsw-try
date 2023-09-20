@@ -1,21 +1,34 @@
 import {
     SET_PICKED_OUTFIT_DATE,
+    TRAVEL_ONE_MONTH,
 } from '../actions/actionTypes';
 import moment from 'moment';
 import { defaultOutfitDatesTupleArr } from '../mockData/mockOutfitDate';
+
+const now = new Date();
+const yyyy = now.getFullYear();
+const MM = now.getMonth() + 1;
+const dd = now.getDate();
+
 interface Props {
     /**(date, outfitID) */
     outfitDateTupleArr: Array<Array<[string, string]>>,
     pickedOutfitDate: {
         outfitID: number,
         date: string,
+        year: number,
+        month: number,
+        dd: number,
     }
 }
 const init: Props = {
     outfitDateTupleArr: defaultOutfitDatesTupleArr,
     pickedOutfitDate: {
         outfitID: -1,
-        date: '2022-09-24',
+        date: `${yyyy}-${MM}-${dd}`,
+        year: yyyy,
+        month: MM,
+        dd: dd,
     }
 };
 
@@ -33,6 +46,24 @@ export default function outfiitDateReducer(state = init, action) {
             return {
                 pickedOutfitDate: action.payload,
                 outfitDateTupleArr: newOutfitDate,
+            };
+        case TRAVEL_ONE_MONTH:
+            const {
+                plusOrMinus, // 1 or -1
+            } = action.payload
+
+            const traveledDateTime: Date = new Date(`${state.pickedOutfitDate.year}-${state.pickedOutfitDate.month}-${state.pickedOutfitDate.dd}`);
+            traveledDateTime.setMonth(traveledDateTime.getMonth() + plusOrMinus);
+
+            return {
+                ...state,
+                pickedOutfitDate: {
+                    ...state.pickedOutfitDate,
+                    date: `${traveledDateTime.getFullYear()}-${traveledDateTime.getMonth() + 1}-${traveledDateTime.getDate()}`,
+                    year: traveledDateTime.getFullYear(),
+                    month: traveledDateTime.getMonth() + 1,
+                    dd: traveledDateTime.getDate(),
+                },
             };
         default: return state;
     }

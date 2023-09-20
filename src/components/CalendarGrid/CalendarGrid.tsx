@@ -3,11 +3,9 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import moment from 'moment';
 
 import { OutfitItem } from '../OutfitItem/OutfitItem';
-import { defaultOutfitFiles, defaultOutfitImgFileNames } from './../../../constants';
-
+import { TimeTravelBtn } from '../TimeTravelBtn/TimeTravelBtn';
 import { setZoomedInAreaContent } from '../../actions/zoomedInArea';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -19,11 +17,7 @@ import {
 
 } from './../../utils/Datetime';
 
-import {
-    mockOutfits,
-} from '../../mockData/mockOutfit';
 
-import { generateMockOutfitDateTuplesArr } from '../../mockData/mockOutfitDate';
 import { useTranslation } from 'react-i18next';
 import { puzzleSelector } from '../../reducers/puzzles';
 
@@ -109,6 +103,7 @@ export const CalendarGrid = ({
 
     return (
         <div className={calendarGridClass}>
+            <TimeTravelBtn />
             <div className={dayNamesClass}>
                 {
                     dayNamesInWeek.map(dayName => (
