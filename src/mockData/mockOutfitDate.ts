@@ -74,7 +74,6 @@ const generateMockOutfitMatrix =
                 );
             }
         }
-        console.log(outfitDatesTupleArr);
         return outfitDatesTupleArr;
     }
 const now = new Date();

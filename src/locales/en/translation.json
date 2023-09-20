@@ -25,5 +25,9 @@
   "popup": {
     "puzzleIsAdded": "New outfit is added",
     "outfitDateIsAdded": "Calendar is updated"
+  },
+  "closet": {
+    "chooseFile": "Choose a picture",
+    "uploadIt": "Upload it"
   }
 }
