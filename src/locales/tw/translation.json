@@ -25,5 +25,10 @@
   "popup": {
     "puzzleIsAdded": "新穿搭已經添加",
     "outfitDateIsAdded": "穿搭日曆已經更新"
+  },
+  "closet": {
+    "chooseFile": "上傳圖片",
+    "uploadIt": "提交",
+    "optionHint": "請選擇您上傳項目的類別"
   }
 }

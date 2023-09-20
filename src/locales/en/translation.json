@@ -28,6 +28,7 @@
   },
   "closet": {
     "chooseFile": "Choose a picture",
-    "uploadIt": "Upload it"
+    "uploadIt": "Upload it",
+    "optionHint": "Please select the type of your uploaded item."
   }
 }

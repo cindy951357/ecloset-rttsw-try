@@ -15,7 +15,7 @@ interface Props {
     selectMode: boolean,
 }
 
-const filterConditionSectionClass = classnames(
+export const filterConditionSectionClass = classnames(
     'filter-condition-section',
     'row-span-1',
     'grid',
