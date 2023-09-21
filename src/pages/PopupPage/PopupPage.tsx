@@ -20,7 +20,8 @@ const PopupPage = () => {
         //grid-template-rows is specified in inline style in jsx part
         'w-full',
         'h-full',
-        'z-1',
+        'z-50',
+        'top-0',
         {
             'hidden': !popup.isShow,
         },

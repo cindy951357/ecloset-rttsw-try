@@ -12,6 +12,7 @@ import {
     firstLayerClothTypes,
 } from './../../mockData/mockTypes';
 import { addCloth } from '../../actions/cloth';
+import { setPopupShowAndContent } from '../../actions/popup';
 
 fontawesome.library.add(faUpload, faBox);
 
@@ -46,6 +47,12 @@ const AddClosetPage = () => {
             firstType: firstTypeSelected,
             secondType: secondTypeSelected,
             blobURL: blobURL,
+        }));
+        dispatch(setPopupShowAndContent({
+            isShow: true,
+            content: {
+                message: t('closet.clothAddedMsg'),
+            }
         }));
     }
 
