@@ -1,4 +1,5 @@
 import { useState, ChangeEvent } from 'react'
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fontawesome from '@fortawesome/fontawesome';
 import { faUpload, faBox } from '@fortawesome/fontawesome-free-solid'
@@ -10,14 +11,16 @@ import {
     clothTypes,
     firstLayerClothTypes,
 } from './../../mockData/mockTypes';
+import { addCloth } from '../../actions/cloth';
 
 fontawesome.library.add(faUpload, faBox);
 
 const AddClosetPage = () => {
     const { t } = useTranslation();
+    const dispatch = useDispatch();
 
     const [imgFile, setImgFile] = useState<File | null>(null);
-    const [imgSrc, setImgSrc] = useState<string>('');
+    const [blobURL, setBlobURL] = useState<string>('');
 
 
     const [firstTypeSelected, setFirstTypeSelected] = useState(ALL);
@@ -30,12 +33,22 @@ const AddClosetPage = () => {
             if (e.target.files[0]) {
                 console.log("here", imgFile)
                 document.getElementById('preview_uploaded_img').src = URL.createObjectURL(e.target.files[0]);
+                setBlobURL(URL.createObjectURL(e.target.files[0]));
             }
         }
     }
     const onChooseFileClick = () => {
         document.getElementById('input_file')?.click();
     }
+
+    const onSubmitClick = () => {
+        dispatch(addCloth({
+            firstType: firstTypeSelected,
+            secondType: secondTypeSelected,
+            blobURL: blobURL,
+        }));
+    }
+
     return (
         <div className="page add-closet-page 
             grid sm:grid-rows-[1fr_60px_auto]
@@ -74,7 +87,7 @@ const AddClosetPage = () => {
                         secondLayerDefaultOption={null} />
                 </div>
             </div>
-            <div className="btn-group flex md:flex-col items-end sm:justify-end">
+            <div className="btn-group flex md:flex-col sm:items-end">
                 <input id="input_file" type="file"
                     onChange={onFileInputChange}
                     className="hidden"
@@ -88,9 +101,11 @@ const AddClosetPage = () => {
                     <FontAwesomeIcon icon={`fa-solid fa-box`} />
                     {t('closet.chooseFile')}
                 </button>
-                <button type="submit"
+                <button
                     className="btn flex w-[100px] h-[40px] rounded-lg bg-rose-200 
-                     items-center justify-center md:mt-4 sm:ml-4">
+                     items-center justify-center md:mt-4 sm:ml-4"
+                    onClick={onSubmitClick}
+                >
                     <FontAwesomeIcon icon={`fa-solid fa-upload`} />
                     {t('closet.uploadIt')}
                 </button>

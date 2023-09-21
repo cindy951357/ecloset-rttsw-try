@@ -43,6 +43,7 @@ const SecondNavBar = ({ ...props }: Props) => {
         'flex',
         'flex-row',
         'w-screen',
+        'z-10',
     );
 
 

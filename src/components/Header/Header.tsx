@@ -14,6 +14,7 @@ const styleClassNames = classnames(
   'place-items-center',
   'bg-white',
   'text-rose-300',
+  'z-10',
 );
 
 const Header = ({ ...props }: Props) => {

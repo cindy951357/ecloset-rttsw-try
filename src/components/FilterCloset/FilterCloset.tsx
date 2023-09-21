@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import classnames from 'classnames';
+import { useSelector } from 'react-redux';
 
 import { DropdownInput } from './../../components/DropdownInput/DropdownInput';
 import { ClothItem } from '../../components/ClothItem/ClothItem';
@@ -10,6 +11,7 @@ import {
     firstLayerClothTypes,
 } from './../../mockData/mockTypes';
 import { mockCloset } from './../../mockData/mockCloset';
+import { clothSelector } from '../../reducers/cloth';
 
 interface Props {
     selectMode: boolean,
@@ -42,6 +44,8 @@ const FilterCloset = ({ ...props }: Props) => {
         selectMode
     } = props;
 
+    const closetToRender = useSelector(clothSelector);
+
     const [firstTypeSelected, setFirstTypeSelected] = useState(ALL);
     const [secondTypeSelected, setSecondTypeSelected] = useState(ALL);
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
@@ -68,7 +72,7 @@ const FilterCloset = ({ ...props }: Props) => {
                     secondLayerDefaultOption={secondLayerDefaultOption} />
             </div>
             <div className={filterResultClass}>
-                {mockCloset.map(item => {
+                {closetToRender.closet.map(item => {
                     if ((item.firstType === firstTypeSelected && item.secondType === secondTypeSelected)
                         || (item.firstType === firstTypeSelected && secondLayerDefaultOption === ALL
                             || firstTypeSelected === ALL)
@@ -79,6 +83,7 @@ const FilterCloset = ({ ...props }: Props) => {
                                 className={clothItemClass}
                                 clothID={item.id}
                                 imgFile={item.file}
+                                blobURL={item.blobURL}
                                 viewMode={'SIMPLE_MODE'}
                                 selectMode={selectMode}
                                 borderRadius={'1em 1em 1em 1em'}

@@ -39,6 +39,7 @@ const NavItem = ({ ...props }: Props) => {
       'flex-row': variant === FIRST_LAYER,
     },
     'text-2xl',
+    'z-10',
   );
 
   const customizedClassNames: string = classnames(

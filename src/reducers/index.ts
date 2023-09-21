@@ -5,6 +5,7 @@ import zoomInReducer from './zoomedInArea';
 import outfiitDateReducer from './outfitDate';
 import pickedClothItemReducer from './pickedClothItems';
 import puzzleReducer from './puzzles';
+import clothReducer from './cloth';
 
 export default combineReducers({
     popupReducer,
@@ -12,4 +13,5 @@ export default combineReducers({
     outfiitDateReducer,
     pickedClothItemReducer,
     puzzleReducer,
+    clothReducer,
 });
