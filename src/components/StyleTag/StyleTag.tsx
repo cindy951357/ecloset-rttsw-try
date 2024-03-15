@@ -14,18 +14,17 @@ const StyleTag = () => {
     const [currentTags, setcurrentTags] = useState<TagType[]>([]);
     
     useEffect(() => {
-        console.log(zoomInOutfit.tags);
-        const list = mockTags.filter(elem => zoomInOutfit.tags.includes(elem));
+        const list = mockTags.filter(elem => zoomInOutfit.tags.includes(elem.id));
         setcurrentTags(list);
     }, [zoomInOutfit]);
 
   return (
-    <div className="style-tags-container">
+    <div className="style-tags-container m-2">
         {
             currentTags.map((tag) => (
-                <div className="fashion-style-tag p-1 rounded">
+                <span className="fashion-style-tag p-1 rounded bg-rose-200 m-2">
                     {tag.tagName}
-                </div>
+                </span>
             ))
         }
     </div>
