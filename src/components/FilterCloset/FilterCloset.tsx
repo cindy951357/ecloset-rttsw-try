@@ -21,7 +21,9 @@ export const filterConditionSectionClass = classnames(
     'filter-condition-section',
     'row-span-1',
     'grid',
-    'grid-cols-2',
+    'grid-rows-2',
+    'gap-y-1',
+    'mb-2',
 );
 
 const filterResultClass = classnames(
@@ -51,7 +53,7 @@ const FilterCloset = ({ ...props }: Props) => {
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
 
     return (
-        <div className="filter-closet"
+        <div className="filter-closet p-2"
             style={{
                 rowGap: '2em',
             }}
@@ -71,6 +73,7 @@ const FilterCloset = ({ ...props }: Props) => {
                     clearSecondLayerDefaultOption={clearSecondLayerDefaultOption}
                     secondLayerDefaultOption={secondLayerDefaultOption} />
             </div>
+            <hr className="h-1 w-full bg-slate-300 border-0"/>
             <div className={filterResultClass}>
                 {closetToRender.closet.map(item => {
                     if ((item.firstType === firstTypeSelected && item.secondType === secondTypeSelected)
@@ -78,17 +81,20 @@ const FilterCloset = ({ ...props }: Props) => {
                             || firstTypeSelected === ALL)
                     ) {
                         return (
-                            <ClothItem
-                                key={item.id}
-                                className={clothItemClass}
-                                clothID={item.id}
-                                imgFile={item.file}
-                                blobURL={item.blobURL}
-                                viewMode={'SIMPLE_MODE'}
-                                selectMode={selectMode}
-                                borderRadius={'1em 1em 1em 1em'}
-                                size={'S'}
-                            />
+                            <div className="cloth-item-container p-2">
+                                <ClothItem
+                                    key={item.id}
+                                    className={clothItemClass}
+                                    clothID={item.id}
+                                    imgFile={item.file}
+                                    blobURL={item.blobURL}
+                                    viewMode={'SIMPLE_MODE'}
+                                    selectMode={selectMode}
+                                    borderRadius={'1em 1em 1em 1em'}
+                                    size={'S'}
+                                />
+                            </div>
+                            
                         );
                     };
 

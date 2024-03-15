@@ -5,6 +5,7 @@ import {
 const init = {
     viewMode: 'SIMPLE_MODE',
     clothIDs: [1, 2, 3, 4],
+    tags: [1, 2, 3],
 };
 
 export default function zoomInReducer(state = init, action) {

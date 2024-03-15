@@ -11,6 +11,7 @@ import './ViewCalendarPage.scss';
 import { OutfitItem } from '../../components/OutfitItem/OutfitItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { zoomInSelector } from '../../reducers/zoomedInArea';
+import StyleTag from '../../components/StyleTag/StyleTag';
 
 
 const defaultClassName = classnames(
@@ -24,6 +25,7 @@ const defaultClassName = classnames(
 const zoomedInClass = classnames(
     'zoomed-in-area',
     'flex',
+    'flex-col',
     'w-full',
     'sm:w-max-[50vw]',
     'sm:w-[50vw]',
@@ -47,6 +49,7 @@ const ViewCalendarPage = () => {
             <div className={zoomedInClass}
             >
                 <OutfitItem viewMode={viewMode} clothIDs={clothIDs} />
+                <StyleTag/>
             </div>
             <CalendarGrid label={'primary'} />
         </div>
