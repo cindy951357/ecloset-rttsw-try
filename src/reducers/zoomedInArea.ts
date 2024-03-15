@@ -12,9 +12,9 @@ export default function zoomInReducer(state = init, action) {
     switch (action.type) {
         case SET_ZOOMIN_CONTENT:
             return {
-                ...state,
                 clothIDs: action.payload.clothIDs,
-                viewMode: action.payload.viewMode
+                viewMode: action.payload.viewMode,
+                tags: action.payload.tags,
             };
         default: return state;
     }

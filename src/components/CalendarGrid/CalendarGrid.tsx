@@ -94,10 +94,18 @@ export const CalendarGrid = ({
     const outfitDate = useSelector(outfiitDateSelector);
     const puzzles = useSelector(puzzleSelector);
 
-    const onOutfitCellClick = (clothFiles) => {
+    const onOutfitCellClick = (clothFiles, mockOutfitId) => {
+        const tagsToDispatch = clothFiles === undefined 
+        ? [] 
+        : puzzles.find(
+            outfit => outfit.id.toString() === mockOutfitId.toString()
+            )?.tags;
+        
+
         dispatch(setZoomedInAreaContent({
             viewMode: 'SIMPLE_MODE',
             clothIDs: clothFiles,
+            tags: tagsToDispatch === undefined ? [] : tagsToDispatch,
         }));
     }
 
@@ -126,7 +134,7 @@ export const CalendarGrid = ({
                             <div key={tuple[0]}
                                 className={defaultCellStyle}
                                 onClick={() => {
-                                    onOutfitCellClick(mockClothIDs)
+                                    onOutfitCellClick(mockClothIDs, mockOutfitId)
                                 }}
                                 style={{ gridTemplateRows: '20px auto' }}
                             >
