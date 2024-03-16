@@ -126,7 +126,7 @@ export const mockCloset = [
         blobURL: '',
     }, {
         id: 19,
-        file: "01_LadyFirst_粉_Olivia.jpg",
+        file: "T01_LadyFirst_粉_Olivia.jpg",
         firstType: TOP,
         secondType: BLOUSE,
         blobURL: '',
