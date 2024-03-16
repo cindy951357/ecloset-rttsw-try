@@ -1,15 +1,15 @@
 
 import moment from 'moment';
 export const mockOutfitDateSimple = [
-    1, //1
-    2,
+    5, //1
+    5,
     4,
     4,
     3,
     2,
     1,
     2,
-    3,
+    5,
     4,
     4, //11
     2,
@@ -18,17 +18,17 @@ export const mockOutfitDateSimple = [
     4,
     1,
     4,
-    4,
+    5,
     3,
-    4,
+    5,
     4, //21
     4,
     2,
     4,
-    4,
+    5,
     1,
     2,
-    4,
+    5,
     1,
     2,
     4, //30

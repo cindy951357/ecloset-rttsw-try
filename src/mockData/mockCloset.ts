@@ -124,5 +124,17 @@ export const mockCloset = [
         firstType: TOP,
         secondType: TSHIRT,
         blobURL: '',
-    },
+    }, {
+        id: 19,
+        file: "01_LadyFirst_粉_Olivia.jpg",
+        firstType: TOP,
+        secondType: BLOUSE,
+        blobURL: '',
+    }, {
+        id: 20,
+        file: "F03_GirlsHoliday_粉.jpg",
+        firstType: ONEPIECE,
+        secondType: DRESS,
+        blobURL: '',
+    }
 ]
