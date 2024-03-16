@@ -1,6 +1,7 @@
 export interface mockOutfit {
     id: number,
     clothes: number[],
+    tags: number[],
 }
 export const mockOutfits =
     [

@@ -3,9 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { zoomInSelector } from '../../reducers/zoomedInArea';
 import { mockTags } from '../../mockData/mockTags';
 
-type TagType = {
+export type TagType = {
     id: number;
     tagName: string;
+}
+
+export const SingleStyleTagComponent = (tagName) => {
+    return (
+        <span className="fashion-style-tag p-1 rounded bg-rose-200 m-2">
+                {tagName}
+        </span>
+    )
 }
 
 const StyleTag = () => {
@@ -22,9 +30,7 @@ const StyleTag = () => {
     <div className="style-tags-container m-2">
         {
             currentTags.map((tag) => (
-                <span className="fashion-style-tag p-1 rounded bg-rose-200 m-2">
-                    {tag.tagName}
-                </span>
+                <SingleStyleTagComponent tagName={tag.tagName}/>
             ))
         }
     </div>
