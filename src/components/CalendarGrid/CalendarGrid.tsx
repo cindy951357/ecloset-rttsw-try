@@ -74,6 +74,8 @@ const defaultCellStyle = classnames(
     'rounded',
     'py-1',
     'px-1',
+    'grayscale',
+    'hover:grayscale-0',
 );
 
 const defaultDateLabelStyle = classnames(
@@ -141,6 +143,7 @@ export const CalendarGrid = ({
                                 <time
                                     className={defaultDateLabelStyle}
                                 >
+                                    {/* date */}
                                     {i + 1}
                                 </time>
                                 <OutfitItem
