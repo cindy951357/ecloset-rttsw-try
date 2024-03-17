@@ -12,15 +12,17 @@ const viewOutfitPageClass: string = classnames(
     'grid',
     'grid-cols-2',
     'sm:grid-cols-3',
-    'md:grid-cols-4',
 );
 
 const ViewOutfitPage = () => {
     const puzzles: mockOutfit[] = useSelector(puzzleSelector);
     return (
         <div className={viewOutfitPageClass}>
-            {puzzles.map(outfit => (
-                <div className="closet-outfit-item-cell rounded p-2 shadow-gray">
+            {puzzles.map((outfit) => (
+                <div className="closet-outfit-item-cell flex rounded p-2 shadow-gray
+                    flex-col justify-center items-center
+                ">
+                    <strong className="text-gray">{outfit.id}</strong>
                     <OutfitItem
                         key={outfit.id}
                         clothIDs={outfit.clothes}
