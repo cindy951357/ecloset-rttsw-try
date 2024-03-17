@@ -1,3 +1,4 @@
+$bottomNavbarH: 70px;
 html,
 body {
     height: 100vh;
@@ -13,12 +14,12 @@ body {
 #nav_bar {
     position: fixed;
     bottom: 0;
-    height: 70px;
+    height: $bottomNavbarH;
 }
 
 #second_nav_bar {
     position: fixed;
-    top: 18.33px;
+    bottom: $bottomNavbarH;
 }
 
 #overall_header {

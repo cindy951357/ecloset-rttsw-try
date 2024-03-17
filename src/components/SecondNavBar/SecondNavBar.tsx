@@ -1,7 +1,6 @@
 import React, {
     HTMLAttributes,
     useState,
-    useEffect,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -24,10 +23,6 @@ interface Props extends HTMLAttributes<HTMLUListElement> {
     defaultNavItem,
 }
 
-const NAV_VIEW_CALENDAR = 'NAV_VIEW_CALENDAR';
-const NAV_ADD_CALENDAR = 'NAV_ADD_CALENDAR';
-
-
 const SecondNavBar = ({ ...props }: Props) => {
     const { t } = useTranslation();
     const {
@@ -36,8 +31,6 @@ const SecondNavBar = ({ ...props }: Props) => {
     } = props
     const [curPage, setCurPage] = useState(defaultNavItem);
 
-
-
     const secondNavBarClass: string = classnames(
         'second_nav_bar',
         'flex',
@@ -45,7 +38,6 @@ const SecondNavBar = ({ ...props }: Props) => {
         'w-screen',
         'z-10',
     );
-
 
     const liClassNames = classnames(
         'flex',

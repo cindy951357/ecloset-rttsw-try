@@ -13,9 +13,9 @@
     width: 100%;
     min-width: 300px;
     background-color: rgb(228 228 231);
-    padding-top: 30px;
+    /* padding-top: 30px; */
     /* for headers*/
-    padding-bottom: 70px;
+    /* padding-bottom: 70px; */
     /* for bottom buttons*/
     /*zinc-200*/
 }
