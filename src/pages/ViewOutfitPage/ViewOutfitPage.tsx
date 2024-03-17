@@ -10,7 +10,9 @@ const viewOutfitPageClass: string = classnames(
     'view-outfit-page',
     'page',
     'grid',
-    'gap-1',
+    'grid-cols-2',
+    'sm:grid-cols-3',
+    'md:grid-cols-4',
 );
 
 const ViewOutfitPage = () => {
@@ -18,11 +20,13 @@ const ViewOutfitPage = () => {
     return (
         <div className={viewOutfitPageClass}>
             {puzzles.map(outfit => (
-                <OutfitItem
-                    key={outfit.id}
-                    clothIDs={outfit.clothes}
-                    viewMode='SIMPLE_MODE'
-                />
+                <div className="closet-outfit-item-cell rounded p-2 shadow-gray">
+                    <OutfitItem
+                        key={outfit.id}
+                        clothIDs={outfit.clothes}
+                        viewMode='SIMPLE_MODE'
+                    />
+                </div>                
             ))}
         </div>
     );

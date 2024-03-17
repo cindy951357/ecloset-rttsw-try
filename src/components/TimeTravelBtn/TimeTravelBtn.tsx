@@ -14,7 +14,9 @@ export const TimeTravelBtn = () => {
     }
     return (
         <div id="time_travel_btns" className={"flex text-gray-500"}>
-            <div id='prev_month_btn' className={"hover:cursor-pointer flex hover:font-bold hover:text-black"}
+            <div id='prev_month_btn' className={
+                "hover:cursor-pointer flex hover:font-bold hover:text-black hover:shadow-gray"
+            }
                 onClick={() => { onTravelOneMonth(-1) }}
             >
                 {'<<  '}
@@ -22,7 +24,9 @@ export const TimeTravelBtn = () => {
             <div id='displayed_year_month' className={"flex"}>
                 {`  ${outfitDate.pickedOutfitDate.year} / ${outfitDate.pickedOutfitDate.month}  `}
             </div>
-            <div id='next_month_btn' className={"hover:cursor-pointer flex hover:font-bold hover:text-black"}
+            <div id='next_month_btn' className={
+                "hover:cursor-pointer flex hover:font-bold hover:text-black hover:shadow-gray"
+            }
                 onClick={() => { onTravelOneMonth(1) }}
             >
                 {'  >>'}

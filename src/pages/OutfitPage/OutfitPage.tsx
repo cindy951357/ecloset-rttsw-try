@@ -1,12 +1,4 @@
 import React from 'react'
-import {
-    Routes,
-    Route,
-} from 'react-router-dom';
-
-import { ViewClosetPage } from '../ViewClosetPage/ViewClosetPage';
-import { AddClosetPage } from '../AddClosetPage/AddClosetPage';
-import { SecondNavBar } from '../../components/SecondNavBar/SecondNavBar';
 import { WithNestedNavPage } from '../WithNestedNavPage/WithNestedNavPage';
 import { AddOutfitPage } from '../AddOutfitPage/AddOutfitPage';
 import { ViewOutfitPage } from '../ViewOutfitPage/ViewOutfitPage';

@@ -146,10 +146,12 @@ export const CalendarGrid = ({
                                     {/* date */}
                                     {i + 1}
                                 </time>
-                                <OutfitItem
-                                    viewMode='SIMPLE_MODE'
-                                    clothIDs={mockClothIDs}
-                                />
+                                <div className="hover:shadow-2xl">
+                                    <OutfitItem
+                                        viewMode='SIMPLE_MODE'
+                                        clothIDs={mockClothIDs}
+                                    />
+                                </div>                                
                             </div>
                         )
                     })}
