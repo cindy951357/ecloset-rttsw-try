@@ -27,6 +27,7 @@ import { ViewClosetPage } from "./ViewClosetPage/ViewClosetPage";
 import { AddClosetPage } from "./AddClosetPage/AddClosetPage";
 import { OutfitPage } from "./OutfitPage/OutfitPage";
 import { AddOutfitPage } from "./AddOutfitPage/AddOutfitPage";
+import { StyleTagPage } from "./StyleTagPage/StyleTagPage";
 
 const App = () => {
     const { t } = useTranslation();
@@ -43,6 +44,7 @@ const App = () => {
                         <Route path="add-closet" element={<AddClosetPage />} />
                         <Route index element={<ViewClosetPage />} />
                     </Route>
+                    <Route path="style-tags" element={<StyleTagPage />} />
                     <Route path="outfit" element={<OutfitPage />} >
                         <Route path="view-outfit" element={<ViewOutfitPage />} />
                         <Route path="add-outfit" element={<AddOutfitPage />} />
@@ -53,6 +55,7 @@ const App = () => {
                         <Route path="add-calendar" element={<PickOutfitDatePage />} />
                         <Route index element={<ViewCalendarPage />} />
                     </Route>
+                    
                     <Route path="setting" element={<SettingPage />} />
                     <Route path='*' element={<Navigate to='/' replace />} >
                     </Route>

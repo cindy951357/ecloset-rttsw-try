@@ -54,7 +54,7 @@ const navItemList = [
 
     },
     {
-        linkTo: '/tags',
+        linkTo: '/style-tags',
         i18n: 'nav.tags',
         navNameConstant: NAV_TAGS,
         iconName: 'fa-tags',

@@ -6,6 +6,7 @@ import outfiitDateReducer from './outfitDate';
 import pickedClothItemReducer from './pickedClothItems';
 import puzzleReducer from './puzzles';
 import clothReducer from './cloth';
+import styleTagReducer from './styleTags';
 
 export default combineReducers({
     popupReducer,
@@ -14,4 +15,5 @@ export default combineReducers({
     pickedClothItemReducer,
     puzzleReducer,
     clothReducer,
+    styleTagReducer,
 });

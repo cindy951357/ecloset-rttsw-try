@@ -8,3 +8,4 @@ export const CLEAR_PICKED_CLOTH_ITEMS = 'CLEAR_PICKED_CLOTH_ITEMS';
 export const INSERT_PUZZLE = 'INSERT_PUZZLE';
 
 export const ADD_CLOTH = 'ADD_CLOTH';
+export const ADD_STYLE_TAG = 'ADD_STYLE_TAG';
