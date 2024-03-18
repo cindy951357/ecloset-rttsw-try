@@ -15,8 +15,8 @@ const inputRadioClass = classnames(
     'appearance-none',
     'grid',
     'translate-x-[-0.1em]',
-    'w-4',
-    'h-4',
+    'w-6',
+    'h-6',
     'cursor-pointer',
     'border-2',
     'border-solid',
@@ -25,8 +25,8 @@ const inputRadioClass = classnames(
     'm-0',
     'border-rose-300',
     'before:content=[""]',
-    'before:w-[0.6em]',
-    'before:h-[0.6em]',
+    'before:w-[2em]',
+    'before:h-[2em]',
     'before:rounded-full',
     'before:bg-rose-300', //input[type="radio"]::before { background-color: xxx }
     'before:scale-0',
@@ -62,7 +62,9 @@ const OutfitWithRadioBtn = ({
                 />
                 {numbering}
             </label>
-            <OutfitItem clothIDs={clothIDs} viewMode='SIMPLE_MODE' />
+            <OutfitItem clothIDs={clothIDs} viewMode='SIMPLE_MODE'
+                size={'S'}
+            />
         </div>
 
     )

@@ -28,6 +28,8 @@ const pickOutfitDatePageClass = classnames(
 const step1Class = classnames(
   'step-1',
   'grid',
+  'h-96',
+  'overflow-y-auto',
 );
 
 const step2Class = classnames(
@@ -40,8 +42,8 @@ const PickStep1 = ({ setOutfitID }) => {
 
   return (
     <div className={step1Class}>
-      <div className="step-instruction">
-        Step 1. Let's pick your desired outfit.
+      <div className="step-instruction text-lg my-2">
+        <strong>Step 1.</strong> Let's pick your desired outfit.
       </div>
       <div className="filter-section">
         <OutfitList setOutfitID={setOutfitID} checkedOutfitID={checkedOutfitID} />
@@ -53,8 +55,8 @@ const PickStep1 = ({ setOutfitID }) => {
 const PickStep2 = ({ setDate }) => {
   return (
     <div className={step2Class}>
-      <div className="step-instruction">
-        Step 2. Let's pick your desired day.
+      <div className="step-instruction text-lg my-2">
+      <strong>Step 2.</strong> Let's pick your desired day.
       </div>
       <div className="date-input-section">
         <input type='date'
@@ -90,6 +92,7 @@ const PickOutfitDatePage = () => {
   return (
     <div className={pickOutfitDatePageClass}>
       <PickStep1 setOutfitID={setOutfitID} />
+      <div className="w-full h-1 border-solid border-2 border-slate-300 mt-2"/>
       <PickStep2 setDate={setDate} />
       <SubmitButton onClick={onSubmitButtonClick} />
     </div>

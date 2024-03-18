@@ -23,6 +23,7 @@ const positionList = [
 interface Props extends HTMLAttributes<HTMLDivElement> {
     viewMode: 'SIMPLE_MODE' | 'COMPLEX_MODE',
     clothIDs: number[],
+    size: 'S'|'M'|'L',
 }
 
 export const styleClassNames = classnames(
@@ -30,6 +31,8 @@ export const styleClassNames = classnames(
     'grid-cols-2',
     'grid-rows-2',
     'gap-0',
+    'bg-white',
+    'rounded-xl',
     'px-0.5',
     'place-content-center',
     'flex',
@@ -53,6 +56,7 @@ const OutfitItem = ({ ...props }: Props) => {
     const {
         clothIDs,
         viewMode,
+        size
     } = props;
     return (
         <div
@@ -84,10 +88,10 @@ const OutfitItem = ({ ...props }: Props) => {
                             key={i}
                             viewMode={viewMode}
                             selectMode={false}
-                            imgFile={undefined}
+                            imgFile={''}
                             borderRadius={borderRadiusList[i]}
                             position={positionList[i]}
-                            size={'M'}
+                            size={size}
                         ></ClothItem>
                     )
                 }
