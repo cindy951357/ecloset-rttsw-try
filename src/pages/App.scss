@@ -1,3 +1,4 @@
+@import './mixin.scss';
 $bottomNavbarH: 70px;
 html,
 body {
@@ -30,6 +31,10 @@ body {
     top: 0;
     font-size: 22px;
     box-shadow: 0px 4px 8px 5px lightgray;
+    @include for-phone {
+        height: 28px;
+        font-size: 0.8em;
+    }
 }
 .page {
     overflow-y: auto;
@@ -41,4 +46,7 @@ body {
     background-color: rgb(228 228 231);
     padding-top: 44px;
 
+    @include for-phone {
+        padding-top: 16px;
+    }
 }
