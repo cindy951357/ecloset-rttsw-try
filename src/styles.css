@@ -2,14 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-a {
-    /*For React Router Link*/
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}

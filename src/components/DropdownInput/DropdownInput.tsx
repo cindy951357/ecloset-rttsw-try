@@ -25,6 +25,7 @@ const dropdownInputClass = classnames(
     'h-8',
     'w-48',
     'box-border',
+    'my-2',
 );
 
 const firstRowClass = classnames(
@@ -64,8 +65,8 @@ const liClass = classnames(
     'cursor-pointer',
     'hover:bg-slate-300',
     'w-full',
-    'p-1',
-    'm-1',
+    'p-2',
+    'my-2',
 );
 
 const DropdownInput = ({

@@ -12,6 +12,18 @@ body {
     height: 100%;
 }
 
+
+
+a {
+    /*For React Router Link*/
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
 #nav_bar {
     position: fixed;
     bottom: 0;
@@ -40,7 +52,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
 
-    height: 100%;
+    height: calc(100% - $bottomNavbarH);
     width: 100%;
     min-width: 300px;
     background-color: rgb(228 228 231);

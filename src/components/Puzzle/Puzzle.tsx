@@ -12,9 +12,10 @@ import { genBGImgFilePathByEnv, genImgFilePathByEnv } from '../../utils/filename
 
 const puzzleClass: string = classnames(
     'puzzle',
+    'flex',
     'grid',
-    'w-[200px]',
-    'h-[200px]',
+    'w-[170px]',
+    'h-[170px]',
     'flex',
     'justify-self-center',
 );

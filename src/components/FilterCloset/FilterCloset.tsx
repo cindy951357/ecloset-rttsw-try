@@ -19,11 +19,7 @@ interface Props {
 
 export const filterConditionSectionClass = classnames(
     'filter-condition-section',
-    'row-span-1',
-    'grid',
-    'grid-rows-2',
-    'gap-y-1',
-    'mb-2',
+    'my-2',
 );
 
 const filterResultClass = classnames(
@@ -33,6 +29,8 @@ const filterResultClass = classnames(
     'overflow-y-scroll',
     'flex',
     'flex-wrap',
+    'bg-zinc-300',
+    'rounded-xl',
 );
 
 const clothItemClass = classnames(
@@ -53,7 +51,7 @@ const FilterCloset = ({ ...props }: Props) => {
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
 
     return (
-        <div className="filter-closet p-2"
+        <div className="filter-closet flex p-2 min-w-24"
             style={{
                 rowGap: '2em',
             }}
@@ -73,7 +71,7 @@ const FilterCloset = ({ ...props }: Props) => {
                     clearSecondLayerDefaultOption={clearSecondLayerDefaultOption}
                     secondLayerDefaultOption={secondLayerDefaultOption} />
             </div>
-            <hr className="h-1 w-full bg-slate-300 border-0"/>
+            {/* <hr className="h-1 w-full bg-slate-300 border-0"/> */}
             <div className={filterResultClass}>
                 {closetToRender.closet.map(item => {
                     if ((item.firstType === firstTypeSelected && item.secondType === secondTypeSelected)

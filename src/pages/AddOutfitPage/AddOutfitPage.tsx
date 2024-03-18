@@ -18,7 +18,11 @@ import { useNavigate } from 'react-router-dom';
 
 const addOutfitPageClass = classnames(
     'add-outfit-page',
-    'grid',
+    'page',
+    'flex',
+    'flex-col',
+    'justify-center',
+    'items-center',
 );
 
 const AddOutfitPage = () => {
@@ -46,17 +50,15 @@ const AddOutfitPage = () => {
     }
     return (
         <div className={addOutfitPageClass}
-            style={{
-                gridTemplateRows: '200px auto',
-                rowGap: '2em',
-            }}
         >
             <Puzzle />
             <FilterCloset selectMode />
+            
             <SubmitButton
                 onClick={() => { onSubmitBtnClick(); }}
-            />
+            />            
         </div>
+        
     )
 }
 
