@@ -68,7 +68,7 @@ const generateMockOutfitMatrix =
 
             const totalNumsOfDays = moment(`${curYear}-${curMonth}`).daysInMonth();
             for (let j = 0; j < totalNumsOfDays; j++) {
-                const randInt = Math.floor(Math.random() * 6) - 1; // generate -1 possibly
+                const randInt = Math.floor(Math.random() * 7) - 1; // generate -1 possibly
                 outfitDatesTupleArr[i].push(
                     [`${curYear}-${curMonth}-${j + 1}`, randInt]
                 );
