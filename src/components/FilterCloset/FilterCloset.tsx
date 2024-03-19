@@ -82,7 +82,7 @@ const FilterCloset = ({ ...props }: Props) => {
             </div>
             {/* <hr className="h-1 w-full bg-slate-300 border-0"/> */}
             <div className={filterResultClass}>
-                {closetToRender.closet.map(item => {
+                {closetToRender.map(item => {
                     if ((item.firstType === firstTypeSelected && item.secondType === secondTypeSelected)
                         || (item.firstType === firstTypeSelected && secondLayerDefaultOption === ALL
                             || firstTypeSelected === ALL)
