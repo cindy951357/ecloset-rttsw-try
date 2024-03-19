@@ -17,9 +17,10 @@ import StyleTag from '../../components/StyleTag/StyleTag';
 const defaultClassName = classnames(
     'flex',
     'flex-col',
-    'sm:flex-row',
+    'xl:flex-row',
     'pt-0',
     'justify-center',
+    'items-center',
 );
 
 const zoomedInClass = classnames(
@@ -27,10 +28,11 @@ const zoomedInClass = classnames(
     'flex',
     'flex-col',
     'w-full',
-    'sm:min-w-[320px]',
-    'sm:min-h-[320px]',
-    'xs:max-w-[160px]',
-    'xs:max-h-[160px]',
+    'h-full',
+    'xs:w-40',
+    'xs:h-40',
+    'sm:w-96',
+    'sm:h-96',
     'text-slate-400',
     'p-3',
     'text-center',

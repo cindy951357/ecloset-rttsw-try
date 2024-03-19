@@ -13,9 +13,11 @@ module.exports = {
 
       'lg': '720px',
 
-      'xl': '1024px',
+      'xl': '880px',
 
-      '2xl': '1280px',
+      '2xl': '1024px',
+
+      '3xl': '1280px',
     }
   },
   plugins: [],
