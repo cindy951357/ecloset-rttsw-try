@@ -19,6 +19,7 @@ const defaultClassName = classnames(
     'flex-col',
     'sm:flex-row',
     'pt-0',
+    'justify-center',
 );
 
 const zoomedInClass = classnames(
