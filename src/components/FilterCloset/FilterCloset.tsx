@@ -20,10 +20,15 @@ interface Props {
 
 export const filterConditionSectionClass = classnames(
     'filter-condition-section',
+    'w-full',
     'my-2',
     'flex',
     'flex-col',
-    'xs:flex-row'
+    'xs:flex-row',
+    'drop-shadow-md',
+    'bg-gradient-to-b',
+    'from-transparent',
+    'to-zinc-100',
 );
 
 const clothItemClass = classnames(

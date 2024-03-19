@@ -28,10 +28,11 @@ import { AddClosetPage } from "./AddClosetPage/AddClosetPage";
 import { OutfitPage } from "./OutfitPage/OutfitPage";
 import { AddOutfitPage } from "./AddOutfitPage/AddOutfitPage";
 import { StyleTagPage } from "./StyleTagPage/StyleTagPage";
+import { env } from "../../constants";
 
 const App = () => {
     const { t } = useTranslation();
-
+    console.log("env:", env);
     return (
         <div id='app'
             className={''}

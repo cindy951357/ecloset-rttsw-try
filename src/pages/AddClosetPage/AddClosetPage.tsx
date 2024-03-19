@@ -58,15 +58,14 @@ const AddClosetPage = () => {
 
     return (
         <div className="add-closet-page h-full
-            grid sm:grid-rows-[1fr_60px_auto]
-            md:grid-cols-2 md:grid-rows-2
+            grid grid-rows-[2fr_60px_1fr]
             gap-y-1
             px-5 py-5
             flex
             justify-center
             items-center
         ">
-            <div className="md:col-start-1 md:col-span-2 justify-self-center">
+            <div className="justify-self-center">
                 <div className="img-background-container 
                     relative bg-rose-100
                     h-[310px] w-[310px] rounded-xl border border-gray-400
@@ -81,9 +80,29 @@ const AddClosetPage = () => {
                             "
                     />
                 </div>
+                <div className="btn-container flex justify-center pt-1">
+                <input id="input_file" type="file"
+                    onChange={onFileInputChange}
+                    className="hidden"
+                    accept="image/jpeg, image/png, image/jpg"
+                />
+                <button id="choose_file"
+                    className="btn flex w-[150px] h-[40px] rounded-lg bg-rose-200
+                        items-center justify-center mr-2
+                    "
+                    onClick={onChooseFileClick}
+                >
+                    <FontAwesomeIcon icon={`fa-solid fa-box`} />
+                    {t('closet.chooseFile')}
+                </button>
+                </div>
             </div>
             <div>
-                <span className="upload-type-hint w-16 xs:w-12 md:w-14">{t('closet.optionHint')}</span>
+                <span className="upload-type-hint w-16 xs:w-12 md:w-14
+                    xs:text-xl text-xs
+                ">
+                    {t('closet.optionHint')}
+                    </span>
                 <div className={filterConditionSectionClass}>
                     <DropdownInput
                         layer={'FIRST'}
@@ -100,25 +119,10 @@ const AddClosetPage = () => {
                         secondLayerDefaultOption={null} />
                 </div>
             </div>
-            <div className="btn-group flex md:flex-col xs:w-26 xs:text-xs sm:items-end">
-                <input id="input_file" type="file"
-                    onChange={onFileInputChange}
-                    className="hidden"
-                    accept="image/jpeg, image/png, image/jpg"
-                />
-                <button id="choose_file"
-                    className="btn flex w-[150px] h-[40px] rounded-lg bg-rose-200
-                    items-center justify-center
-                    mr-2
-                    "
-                    onClick={onChooseFileClick}
-                >
-                    <FontAwesomeIcon icon={`fa-solid fa-box`} />
-                    {t('closet.chooseFile')}
-                </button>
+            <div className="btn-container flex justify-center xs:w-26 xs:text-xs">
                 <button
-                    className="btn flex w-[100px] h-[40px] rounded-lg bg-rose-200 
-                     items-center justify-center md:mt-4 sm:ml-4"
+                    className="btn submit-btn flex w-[120px] h-[40px] rounded-lg bg-rose-200 
+                     items-center justify-center md:mt-4 sm:ml-4 text-xs xs:text-xl"
                     onClick={onSubmitClick}
                 >
                     <FontAwesomeIcon icon={`fa-solid fa-upload`} />

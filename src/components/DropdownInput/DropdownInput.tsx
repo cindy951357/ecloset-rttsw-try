@@ -22,31 +22,28 @@ const dropdownInputClass = classnames(
     'flex-col',
     'rounded',
     'bg-slate-100',
-    'w-20',
-    'h-10',
-    'xs:max-w-10',
-    'xs:h-10',
-    'xs:text-xs',
+    'w-24',
+    'text-xs',
+    'xs:text-base',
     'h-8',
-    'sm:w-48',
+    'xs:w-44',
     'box-border',
     'm-2',
 );
 
 const firstRowClass = classnames(
-    'first-rorw',
+    'first-row',
     'cursor-pointer',
     'flex',
     'w-full',
     'justify-between',
-    'items-center',
     'p-1',
 );
 
 const selectedOptionClass = classnames(
     'selected-option',
     'flex',
-
+    'items-center',
 );
 
 const dropdownIconClass = classnames(
@@ -72,6 +69,7 @@ const liClass = classnames(
     'w-full',
     'p-2',
     'my-2',
+    'items-center',
 );
 
 const DropdownInput = ({
@@ -85,7 +83,7 @@ const DropdownInput = ({
     const [selectedOption, setSelectedOption] = useState('Please Select');
 
     const onDropdownIconClick = () => {
-        setIsListOn(true);
+        setIsListOn(!isListOn);
     };
 
     const onListItemClick = (option) => {
