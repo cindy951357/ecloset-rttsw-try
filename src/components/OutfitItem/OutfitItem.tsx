@@ -79,7 +79,7 @@ const OutfitItem = ({ ...props }: Props) => {
                             imgFile={file}
                             borderRadius={borderRadiusList[i]}
                             position={positionList[i]}
-                            size={'M'}
+                            size={size}
                         ></ClothItem>
                     )
                 } else {

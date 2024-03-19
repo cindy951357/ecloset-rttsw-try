@@ -26,6 +26,7 @@ const ViewOutfitPage = ({size='M'}) => {
                         key={outfit.id}
                         clothIDs={outfit.clothes}
                         viewMode='SIMPLE_MODE'
+                        size={'L'}
                     />
                 </div>                
             ))}

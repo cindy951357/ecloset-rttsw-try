@@ -52,7 +52,7 @@ const ClothItem = ({ ...props }: Props) => {
 
     const wrapperStyleClassNames = classnames(
         'cloth-item',
-        'flex',
+        'flex',        
         {
             'w-full': size === 'L' || size === 'M',
             'h-full': size === 'L' || size === 'M',
@@ -62,6 +62,8 @@ const ClothItem = ({ ...props }: Props) => {
             'h-17': size === 'S',
             'md:w-24': size === 'S',
             'md:h-24': size === 'S',
+            'xs:w-10': size === 'S',
+            'xs:h-10': size === 'S',
         },
         'bg-zinc-100',
         'items-center',

@@ -6,6 +6,7 @@ module.exports = {
   ],
   theme: {
     screens: {
+      'xs': '360px',
       'sm': '415px', //iPhone XR:  415 width
 
       'md': '540px',

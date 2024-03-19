@@ -60,24 +60,30 @@ const AddClosetPage = () => {
         <div className="page add-closet-page 
             grid sm:grid-rows-[1fr_60px_auto]
             md:grid-cols-2 md:grid-rows-2
-            gap-y-8
+            gap-y-1
             px-5 py-5
+            flex
+            justify-center
+            items-center
         ">
             <div className="md:col-start-1 md:col-span-2 justify-self-center">
                 <div className="img-background-container 
                     relative bg-rose-100
                     h-[310px] w-[310px] rounded-xl border border-gray-400
+                    xs:max-w-[190px] xs:max-h-[190px]
                     flex justify-center items-center"
                 >
                     <img id="preview_uploaded_img"
-                        className="border w-[200px] h-[200px] absolute
+                        className="flex border w-[200px] h-[200px] absolute
                             max-w-[200px] max-h-[200px] sm:max-w-[300px] sm:max-h-[300px]
-                            min-w-[30px] min-h-[30px]"
+                            min-w-[30px] min-h-[30px]
+                            xs:max-w-[170px] xs:max-h-[170px]
+                            "
                     />
                 </div>
             </div>
             <div>
-                {t('closet.optionHint')}
+                <span className="upload-type-hint w-16 xs:w-12 md:w-14">{t('closet.optionHint')}</span>
                 <div className={filterConditionSectionClass}>
                     <DropdownInput
                         layer={'FIRST'}
@@ -94,15 +100,17 @@ const AddClosetPage = () => {
                         secondLayerDefaultOption={null} />
                 </div>
             </div>
-            <div className="btn-group flex md:flex-col sm:items-end">
+            <div className="btn-group flex md:flex-col xs:w-26 xs:text-xs sm:items-end">
                 <input id="input_file" type="file"
                     onChange={onFileInputChange}
                     className="hidden"
                     accept="image/jpeg, image/png, image/jpg"
                 />
                 <button id="choose_file"
-                    className="btn flex w-[100px] h-[40px] rounded-lg bg-rose-200
-                    items-center justify-center"
+                    className="btn flex w-[150px] h-[40px] rounded-lg bg-rose-200
+                    items-center justify-center
+                    mr-2
+                    "
                     onClick={onChooseFileClick}
                 >
                     <FontAwesomeIcon icon={`fa-solid fa-box`} />

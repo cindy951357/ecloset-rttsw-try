@@ -1,12 +1,6 @@
 import React from 'react'
-import {
-    Routes,
-    Route,
-} from 'react-router-dom';
-
 import { ViewClosetPage } from '../ViewClosetPage/ViewClosetPage';
 import { AddClosetPage } from '../AddClosetPage/AddClosetPage';
-import { SecondNavBar } from '../../components/SecondNavBar/SecondNavBar';
 import { WithNestedNavPage } from '../WithNestedNavPage/WithNestedNavPage';
 
 const NAV_VIEW_CLOSET = 'NAV_VIEW_CLOSET';

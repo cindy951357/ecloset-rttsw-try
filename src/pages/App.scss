@@ -1,5 +1,6 @@
 @import './mixin.scss';
 $bottomNavbarH: 70px;
+$secondBottomNavBarH: 32px;
 $overallHeaderH: 44px;
 html,
 body {
@@ -53,7 +54,7 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
 
-    height: calc(100vh - $bottomNavbarH);
+    height: calc(100vh - $bottomNavbarH - $secondBottomNavBarH);
     width: 100%;
     min-width: 300px;
     background-color: rgb(228 228 231);

@@ -39,10 +39,7 @@ const FilterCloset = ({ ...props }: Props) => {
     const filterResultClass = classnames(
         'filter-closet-result',
         'w-full',
-        {
-            'h-[400px]': !isTall,
-            'h-full': isTall,
-        },
+        'xs:h-[360px]',
         'overflow-y-auto',
         'flex',
         'flex-wrap',
@@ -57,7 +54,9 @@ const FilterCloset = ({ ...props }: Props) => {
     const [secondLayerDefaultOption, clearSecondLayerDefaultOption] = useState(ALL);
 
     return (
-        <div className="filter-closet flex p-2 min-w-24"
+        <div className="filter-closet flex p-2 min-w-24
+            xs:flex-col
+        "
             style={{
                 rowGap: '2em',
             }}
