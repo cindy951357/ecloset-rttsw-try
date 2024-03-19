@@ -33,5 +33,12 @@ export const mockTags = [
     },{
         id: 9,
         tagName: '文青但是是俏皮的文青',
+    },{
+        id: 10,
+        tagName: '就是愛格紋',
+    }
+    ,{
+        id: 11,
+        tagName: '古著風',
     }
 ]

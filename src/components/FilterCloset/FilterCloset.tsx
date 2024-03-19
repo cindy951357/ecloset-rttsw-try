@@ -55,7 +55,7 @@ const FilterCloset = ({ ...props }: Props) => {
 
     return (
         <div className="filter-closet flex p-2 min-w-24
-            xs:flex-col
+            xs:flex-col h-full
         "
             style={{
                 rowGap: '2em',

@@ -28,7 +28,7 @@
   },
   "closet": {
     "chooseFile": "Choose a picture",
-    "uploadIt": "Upload it",
+    "uploadIt": "Add to closet",
     "optionHint": "Please select the type of your uploaded item.",
     "clothAddedMsg": "Your cloth is added."
   }

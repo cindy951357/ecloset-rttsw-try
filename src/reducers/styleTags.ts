@@ -12,11 +12,11 @@ export default function styleTagReducer(state = init, action) {
             const { tagName } = action.payload;
             const newId: number = state.length;
             return [
-                ...state,
                 {
                     id: newId,
                     tagName: tagName
-                }
+                },
+                ...state,  
             ];
         default:
             return state;

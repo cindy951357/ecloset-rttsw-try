@@ -12,7 +12,7 @@ const WithNestedNavPage = ({
     defaultNavItem,
 }) => {
     return (
-        <div className={'closet-page row-span-[10]'}>
+        <div className={'closet-page'}>
             <Outlet />
             <SecondNavBar
                 variant={'second-layer'}

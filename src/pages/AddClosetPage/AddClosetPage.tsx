@@ -57,7 +57,7 @@ const AddClosetPage = () => {
     }
 
     return (
-        <div className="page add-closet-page 
+        <div className="add-closet-page h-full
             grid sm:grid-rows-[1fr_60px_auto]
             md:grid-cols-2 md:grid-rows-2
             gap-y-1

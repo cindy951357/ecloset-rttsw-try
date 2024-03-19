@@ -13,7 +13,7 @@ export const mockOutfits =
         {
             "id": 2,
             "clothes": [5, 6, 7],
-            tags: [1, 7],
+            tags: [1, 7,8],
         },
         {
             "id": 3,
@@ -23,10 +23,10 @@ export const mockOutfits =
         {
             "id": 4,
             "clothes": [12, 18, 3, 4],
-            tags: [1, 2, 3]
+            tags: [1, 2, 3,9]
         }, {
             "id": 5,
             "clothes": [19, 20],
-            tags: [2, 4, 6], 
+            tags: [2, 4, 10], 
         }
     ]
