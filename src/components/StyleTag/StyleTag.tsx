@@ -10,13 +10,15 @@ export type TagType = {
 
 type SingleStyleTagComponentProps = {
     tagName: string;
+    selected: boolean;
 }
 
-export const SingleStyleTagComponent: React.FC<SingleStyleTagComponentProps> = ({tagName}) => {
+export const SingleStyleTagComponent: React.FC<SingleStyleTagComponentProps> = ({tagName, selected}) => {
     return (
-        <span className="fashion-style-tag p-1 rounded bg-rose-200 m-2
+        <span className={`"fashion-style-tag p-2 rounded bg-rose-200 m-1
             text-ellipsis truncate max-w-[72px]
-        ">
+            ${selected?"border-solid border-2 border-rose-400" : ""}
+        "`}>
                 {tagName}
         </span>
     )

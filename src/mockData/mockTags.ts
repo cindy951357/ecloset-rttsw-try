@@ -41,4 +41,4 @@ export const mockTags = [
         id: 11,
         tagName: '古著風',
     }
-]
+];
