@@ -60,7 +60,4 @@ a {
     padding-top: $overallHeaderH;
     position: relative;
 
-    @include for-phone {
-        padding-top: 16px;
-    }
 }

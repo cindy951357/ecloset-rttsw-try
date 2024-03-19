@@ -8,7 +8,7 @@ export const genBGImgFilePathByEnv =
         imgUrl = env === 'development'
             ? `url("${assetsPath}/images/cloth-items/${imgFile}")`
             : `url("./images/${imgFile}")`;
-        if(location.pathname.includes('add-outfit')){
+        if(env === 'productioin' && location.pathname.includes('-outfit')){
             imgUrl = `url("./../images/${imgFile}")`
         }
         return imgUrl;

@@ -15,9 +15,11 @@ const puzzleClass: string = classnames(
     'flex',
     'grid',
     'w-[170px]',
-    'h-[170px]',
+    'min-h-[170px]',
     'flex',
     'justify-self-center',
+    'rounded-xl',
+    'bg-rose-100',
 );
 
 const imgClass = classnames(
@@ -25,6 +27,7 @@ const imgClass = classnames(
     'w-full',
     'h-full',
     'flex',
+    'rounded-xl',
     'bg-rose-100',
     'bg-contain',
     'bg-no-repeat',
