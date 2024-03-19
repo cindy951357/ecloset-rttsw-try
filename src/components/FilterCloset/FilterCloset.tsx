@@ -21,6 +21,9 @@ interface Props {
 export const filterConditionSectionClass = classnames(
     'filter-condition-section',
     'my-2',
+    'flex',
+    'flex-col',
+    'xs:flex-row'
 );
 
 const clothItemClass = classnames(
@@ -39,7 +42,8 @@ const FilterCloset = ({ ...props }: Props) => {
     const filterResultClass = classnames(
         'filter-closet-result',
         'w-full',
-        'xs:h-[360px]',
+        'h-[360px]',
+        'xs:h-full',
         'overflow-y-auto',
         'flex',
         'flex-wrap',

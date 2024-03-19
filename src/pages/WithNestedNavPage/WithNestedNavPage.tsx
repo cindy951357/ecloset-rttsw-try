@@ -1,7 +1,5 @@
 import React from 'react'
 import {
-    Routes,
-    Route,
     Outlet,
 } from 'react-router-dom';
 
@@ -12,7 +10,7 @@ const WithNestedNavPage = ({
     defaultNavItem,
 }) => {
     return (
-        <div className={'closet-page'}>
+        <div className={'h-full with-second-navbar'}>
             <Outlet />
             <SecondNavBar
                 variant={'second-layer'}

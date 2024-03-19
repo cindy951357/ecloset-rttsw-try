@@ -30,7 +30,7 @@ const dropdownInputClass = classnames(
     'h-8',
     'sm:w-48',
     'box-border',
-    'my-2',
+    'm-2',
 );
 
 const firstRowClass = classnames(
