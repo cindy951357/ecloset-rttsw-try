@@ -63,7 +63,7 @@ const OutfitWithRadioBtn = ({
                 {numbering}
             </label>
             <OutfitItem clothIDs={clothIDs} viewMode='SIMPLE_MODE'
-                size={'S'}
+                size={'M'}
             />
         </div>
 
