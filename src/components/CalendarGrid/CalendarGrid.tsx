@@ -32,7 +32,8 @@ const calendarGridClass = classnames(
     'flex-col',
     'justify-center',
     'items-center',
-    'sm:w-full',
+    'sm:max-w-[700px]',
+    'sm:min-w-[500px]',
 )
 
 const dayNamesClass = classnames(

@@ -22,6 +22,7 @@ const ViewClosetPage = ({ ...props }: Props) => {
         <div className={viewClosetPageClass}>
             <FilterCloset
                 selectMode={false}
+                isTall
             />
         </div>
     );

@@ -15,22 +15,12 @@ import { clothSelector } from '../../reducers/cloth';
 
 interface Props {
     selectMode: boolean,
+    isTall: boolean,
 }
 
 export const filterConditionSectionClass = classnames(
     'filter-condition-section',
     'my-2',
-);
-
-const filterResultClass = classnames(
-    'filter-closet-result',
-    'w-full',
-    'h-[400px]',
-    'overflow-y-scroll',
-    'flex',
-    'flex-wrap',
-    'bg-zinc-300',
-    'rounded-xl',
 );
 
 const clothItemClass = classnames(
@@ -41,8 +31,24 @@ const clothItemClass = classnames(
 );
 const FilterCloset = ({ ...props }: Props) => {
     const {
-        selectMode
+        selectMode,
+        isTall,
     } = props;
+
+
+    const filterResultClass = classnames(
+        'filter-closet-result',
+        'w-full',
+        {
+            'h-[400px]': !isTall,
+            'h-full': isTall,
+        },
+        'overflow-y-auto',
+        'flex',
+        'flex-wrap',
+        'bg-zinc-300',
+        'rounded-xl',
+    );
 
     const closetToRender = useSelector(clothSelector);
 

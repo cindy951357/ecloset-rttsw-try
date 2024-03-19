@@ -1,5 +1,6 @@
 @import './mixin.scss';
 $bottomNavbarH: 70px;
+$overallHeaderH: 44px;
 html,
 body {
     height: 100vh;
@@ -38,7 +39,7 @@ a {
 
 #overall_header {
     width: 100%;
-    height: 44px;
+    height: $overallHeaderH;
     position: fixed;
     top: 0;
     font-size: 22px;
@@ -52,11 +53,12 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
 
-    height: calc(100% - $bottomNavbarH);
+    height: calc(100vh - $bottomNavbarH);
     width: 100%;
     min-width: 300px;
     background-color: rgb(228 228 231);
-    padding-top: 44px;
+    padding-top: $overallHeaderH;
+    position: relative;
 
     @include for-phone {
         padding-top: 16px;
