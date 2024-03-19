@@ -14,7 +14,9 @@ type SingleStyleTagComponentProps = {
 
 export const SingleStyleTagComponent: React.FC<SingleStyleTagComponentProps> = ({tagName}) => {
     return (
-        <span className="fashion-style-tag p-1 rounded bg-rose-200 m-2">
+        <span className="fashion-style-tag p-1 rounded bg-rose-200 m-2
+            text-ellipsis truncate max-w-[72px]
+        ">
                 {tagName}
         </span>
     )
@@ -31,7 +33,7 @@ const StyleTag = (tags) => {
     }, [zoomInOutfit]);
 
   return (
-    <div className="style-tags-container m-2">
+    <div className="style-tags-container h-[50px] p-[2px] flex self-center text-rose-500">
         {
             currentTags.map((tag:TagType) => (
                 <SingleStyleTagComponent tagName={tag.tagName}/>

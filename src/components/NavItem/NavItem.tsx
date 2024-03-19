@@ -31,8 +31,8 @@ const NavItem = ({ ...props }: Props) => {
     'flex',
     'w-full',
     {
-      'h-full': variant === FIRST_LAYER,
-      'h-32': variant === FIRST_LAYER,
+      'xs:h-full': variant === FIRST_LAYER,
+      'h-26': variant === FIRST_LAYER,
     },
     'justify-center',
     'items-center',

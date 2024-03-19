@@ -67,16 +67,19 @@ const navItemList = [
     }
 ]
 
-const NavBar = ({ variant = '', ...props }: Props) => {
+const NavBar = ({ variant = '' }: Props) => {
     const { t } = useTranslation();
     const [curPage, setCurPage] = useState(NAV_CALENDAR);
 
 
     return (
         <ul id='nav_bar'
-            className='flex flex-row w-full flex-1'
+            className='flex flex-row w-full flex-1
+                h-[54px] xs:h-[70px]
+            '
         >
-
+        {/* Use flex-1 to allow a flex item to grow and shrink 
+        as needed, ignoring its initial size */}
             {
                 navItemList.map(navItem => (
                     <li key={navItem.i18n}

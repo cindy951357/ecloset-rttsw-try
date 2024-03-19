@@ -40,11 +40,10 @@ const dayNamesClass = classnames(
     'day-names',
     'grid',
     'grid-cols-7',
-    'gap-1',
     'flex',
     'text-xs',
     'text-center',
-    'py-2',
+    'xs:py-[2px]',
     'text-zinc-400',
     'w-full',
     'max-w-[200px]',
@@ -57,9 +56,10 @@ const defaultOutfitGridClass = classnames(
     'outfit-grid',
     'grid',
     'grid-cols-7',
-    'gap-1',
+    'gap-0',
     'rounded',
-    'max-w-[200px]',
+    'w-[300px]',
+    'h-[300px]',
     'flex',
     'justify-center',
     'items-center',
@@ -73,8 +73,7 @@ const defaultCellStyle = classnames(
     'grid',
     'h-full',
     'rounded',
-    'py-1',
-    'px-1',
+    'px-[1px]',
     'grayscale',
     'hover:grayscale-0',
 );
@@ -83,9 +82,10 @@ const defaultDateLabelStyle = classnames(
     'date-label',
     'flex',
     'place-content-center',
-    'text-xs',
+    'text-[7px]',
+    'xs:text-[9px]',
     'text-zinc-400',
-    'py-1',
+    'py-[2px]',
 );
 
 export const CalendarGrid = ({
@@ -139,7 +139,7 @@ export const CalendarGrid = ({
                                 onClick={() => {
                                     onOutfitCellClick(mockClothIDs, mockOutfitId)
                                 }}
-                                style={{ gridTemplateRows: '20px auto' }}
+                                style={{ gridTemplateRows: '13px auto' }}
                             >
                                 <time
                                     className={defaultDateLabelStyle}
