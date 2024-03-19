@@ -40,44 +40,44 @@ const dayNamesClass = classnames(
     'day-names',
     'grid',
     'grid-cols-7',
+    'col-span-7',
     'flex',
     'text-xs',
     'text-center',
     'xs:py-[2px]',
     'text-zinc-400',
     'w-full',
-    'max-w-[200px]',
-    'sm:w-[80%]',
-    'sm:max-w-full',
     'place-self-center',
 );
 
 const defaultOutfitGridClass = classnames(
     'outfit-grid',
+    'w-fit',
     'grid',
     'grid-cols-7',
     'gap-0',
     'rounded',
-    'w-[300px]',
-    'h-[300px]',
     'flex',
     'justify-center',
     'items-center',
-    'sm:max-w-full',
-    'sm:w-[80%]',
     'place-self-center',
 );
 
 const defaultCellStyle = classnames(
     'cell',
     'grid',
+    'gap-1',
     'h-full',
     'w-10',
     'h-10',
-    'xs:w-40',
-    'xs:h-40',
-    'sm:w-14',
-    'sm:h-14',
+    'xs:w-12',
+    'xs:h-12',
+    'sm:w-16',
+    'sm:h-16',
+    'lg:w-20',
+    'lg:h-20',
+    '2xl:w-24',
+    '2xl:h-24',
     'rounded',
     'px-[1px]',
     'grayscale',
@@ -121,14 +121,15 @@ export const CalendarGrid = ({
     return (
         <div className={calendarGridClass}>
             <TimeTravelBtn />
-            <div className={dayNamesClass}>
-                {
-                    dayNamesInWeek.map(dayName => (
-                        <time key={dayName}>{t(`weekDay.${dayName}`)}</time>
-                    ))
-                }
-            </div>
+            
             <div className={defaultOutfitGridClass}>
+                <div className={dayNamesClass}>
+                    {
+                        dayNamesInWeek.map(dayName => (
+                            <time key={dayName}>{t(`weekDay.${dayName}`)}</time>
+                        ))
+                    }
+                </div>
                 {
 
                     outfitDate.outfitDateTupleArr.map((tuple, i) => {

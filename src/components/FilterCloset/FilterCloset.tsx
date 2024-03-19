@@ -20,14 +20,15 @@ interface Props {
 
 export const filterConditionSectionClass = classnames(
     'filter-condition-section',
+    'fixed',
+    'xs:static',
     'w-full',
     'my-2',
     'flex',
     'flex-col',
-    'xs:flex-row',
     'drop-shadow-md',
     'bg-gradient-to-b',
-    'from-transparent',
+    'from-white',
     'to-zinc-100',
 );
 
@@ -35,7 +36,6 @@ const clothItemClass = classnames(
     'cloth-item-result',
     'flex',
     'm-2',
-
 );
 const FilterCloset = ({ ...props }: Props) => {
     const {
@@ -46,14 +46,16 @@ const FilterCloset = ({ ...props }: Props) => {
 
     const filterResultClass = classnames(
         'filter-closet-result',
-        'w-full',
-        'h-[360px]',
-        'xs:h-full',
+        'mt-[110px]', // because dropdown takes up space
+        'xs:mt-0',
+        'grid',
+        'grid-cols-2',
+        'xs:grid-cols-2',
+        'sm:grid-cols-5',
+        'xl:grid-cols-8',
+        '2xl:grid-cols-10',
+        'h-fit',
         'overflow-y-auto',
-        'flex',
-        'flex-wrap',
-        'bg-zinc-300',
-        'rounded-xl',
     );
 
     const closetToRender = useSelector(clothSelector);

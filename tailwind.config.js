@@ -18,6 +18,11 @@ module.exports = {
       '2xl': '1024px',
 
       '3xl': '1280px',
+    },
+    extend: {
+      width: {
+        '34': '130px',
+      }
     }
   },
   plugins: [],

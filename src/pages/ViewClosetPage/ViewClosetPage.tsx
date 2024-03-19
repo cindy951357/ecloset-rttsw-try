@@ -9,9 +9,7 @@ import { FilterCloset } from '../../components/FilterCloset/FilterCloset';
 
 const viewClosetPageClass = classnames(
     'view-closet-page',
-    'grid',
-    'h-full',
-    'pt-[40px]'
+    'page',
 );
 
 
