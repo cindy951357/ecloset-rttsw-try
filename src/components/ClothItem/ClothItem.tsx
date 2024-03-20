@@ -36,7 +36,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const ClothItem = ({ ...props }: Props) => {
     const {
         imgFile,
-        viewMode,
         size,
         borderRadius,
         clothID,

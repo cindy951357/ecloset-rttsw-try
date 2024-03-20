@@ -19,8 +19,9 @@ import { useNavigate } from 'react-router-dom';
 const addOutfitPageClass = classnames(
     'add-outfit-page',
     'page',
+    'grid',
+    'grid-rows-[1fr_5fr_1fr]',
     'flex',
-    'flex-col',
     'justify-center',
     'items-center',
 );

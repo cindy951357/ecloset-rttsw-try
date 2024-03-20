@@ -40,7 +40,6 @@ const clothItemClass = classnames(
 const FilterCloset = ({ ...props }: Props) => {
     const {
         selectMode,
-        isTall,
     } = props;
 
 

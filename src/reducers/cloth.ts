@@ -11,23 +11,22 @@ interface ClothProps {
     blobURL: string
 }
 
-
 const init: Array<ClothProps> = [...mockCloset];
 
 export default function clothReducer(state = init, action) {
     switch (action.type) {
         case ADD_CLOTH:
             const { blobURL, firstType, secondType } = action.payload;
-            const newId: number = state.length;
+            const newId: number = state.length + 1;
             return [
+                    ...state,
                     {
                         id: newId,
                         file: "",
                         firstType: firstType,
                         secondType: secondType,
                         blobURL: blobURL,
-                    },
-                    ...state
+                    },                    
                 ];
         default:
             return state;
