@@ -80,7 +80,6 @@ const ViewOutfitPage = () => {
             <div className={gridContainerClass}>
                 {intersectPuzzles.map((outfit) => (
                     <div className="puzzle-container rounded-2xl
-                        aspect-square
                         bg-white hover:shadow-2xl flex flex-col 
                         items-center
                     ">
@@ -91,6 +90,19 @@ const ViewOutfitPage = () => {
                             viewMode='SIMPLE_MODE'
                             size={'L'}
                         />
+                        <div className="tags-of-this-outfit flex flex-row">
+                            {
+                                outfit.tags.map(tag => {
+                                    const tagName = mockTags.find(mockTag => mockTag.id === tag)?.tagName;
+                                    return (
+                                        <mark className="flex flex-row bg-sky-100 rounded 
+                                        p-1 m-1 truncate overflow-hidden">
+                                            {tagName}
+                                        </mark>
+                                )})
+                            }
+                        </div>
+                        
                     </div>                
                 ))}
             </div>            

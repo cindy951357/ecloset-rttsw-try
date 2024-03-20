@@ -19,8 +19,8 @@ const defaultClassName = classnames(
     'flex-col',
     'xl:flex-row',
     'pt-0',
-    'xs:justify-start',
-    'justify-center',
+    'justify-start',
+    'xs:justify-center',
     'items-center',
 );
 

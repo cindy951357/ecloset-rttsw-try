@@ -53,6 +53,7 @@ const dayNamesClass = classnames(
 const defaultOutfitGridClass = classnames(
     'outfit-grid',
     'w-fit',
+    'max-w-[90vw]',
     'grid',
     'grid-cols-7',
     'gap-0',
@@ -70,6 +71,7 @@ const defaultCellStyle = classnames(
     'h-full',
     'w-10',
     'h-10',
+    'max-w-full',
     'xs:w-12',
     'xs:h-12',
     'sm:w-16',
