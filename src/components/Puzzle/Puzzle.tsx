@@ -6,9 +6,10 @@ import { useSelector } from 'react-redux';
 import { pickedClothItemSelector } from '../../reducers/pickedClothItems';
 
 import classnames from 'classnames'
-import { MAX_OUTFIT_ITEM_SIZE } from '../../../constants.tsx';
+import { MAX_OUTFIT_ITEM_SIZE } from '../../../constants';
 import { mockCloset, clothProps } from './../../mockData/mockCloset';
 import { genBGImgFilePathByEnv, genImgFilePathByEnv } from '../../utils/filename';
+import { clothSelector } from '../../reducers/cloth';
 
 const puzzleClass: string = classnames(
     'puzzle',
@@ -37,24 +38,24 @@ const imgClass = classnames(
 
 const Puzzle = ({ }) => {
     const pickedClothItems = useSelector(pickedClothItemSelector);
-
-    const [clothFiles, setClothFiles] = useState(Array(MAX_OUTFIT_ITEM_SIZE).fill(''));
+    const clothState = useSelector(clothSelector);
+    const [cloths, setCloths] = useState(Array(MAX_OUTFIT_ITEM_SIZE).fill(null));
 
     useEffect(() => {
-        let files: Array<string> = [];
+        let array = [];
         if (pickedClothItems) {
             for (let i = 0; i < pickedClothItems.length; i++) {
-                const cloth = mockCloset.find(el => el.id === pickedClothItems[i]);
+                const cloth = clothState.find(el => el.id === pickedClothItems[i].id);
                 if (cloth) {
-                    files.push(cloth.file);
+                    array.push(cloth);
                 } else {
-                    files.push('');
+                    array.push(null);
                 }
             }
             for (let i = 0; i + pickedClothItems.length < MAX_OUTFIT_ITEM_SIZE; i++) {
-                files.push('')
+                array.push(null)
             }
-            setClothFiles(files);
+            setCloths(array);
         }
 
     }, [pickedClothItems])
@@ -67,11 +68,17 @@ const Puzzle = ({ }) => {
                 gridTemplateRows: '1fr 1fr'
             }}
         >
-            {clothFiles.map((el, index) => (
-                <div className={imgClass} key={index}
-                    style={{ backgroundImage: genBGImgFilePathByEnv(el, "./../../assets") }}
+            {cloths.map(el => {
+                return el !== null && (
+                <div className={imgClass} key={el.id}
+                    style={{ backgroundImage:
+                        el.blobURL === '' 
+                        ? genBGImgFilePathByEnv(el.file, "./../../assets")
+                        : `url(${el.blobURL})`
+                     }}
                 />
-            ))}
+                )}
+            )}
         </div>
     )
 }

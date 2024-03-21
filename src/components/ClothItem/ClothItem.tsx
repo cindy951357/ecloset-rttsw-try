@@ -18,6 +18,7 @@ import { useSelector } from 'react-redux';
 import { pickedClothItemSelector } from '../../reducers/pickedClothItems';
 
 import { MAX_OUTFIT_ITEM_SIZE } from '../../../constants';
+import { clothSelector } from '../../reducers/cloth';
 
 const SIMPLE_MODE = 'SIMPLE_MODE';
 const COMPLEX_MODE = 'COMPLEX_MODE';
@@ -44,6 +45,7 @@ const ClothItem = ({ ...props }: Props) => {
     } = props;
 
     const dispatch = useDispatch();
+    const clothState = useSelector(clothSelector);
 
     const [isChecked, setIsChecked] = useState(false);
 
@@ -76,19 +78,16 @@ const ClothItem = ({ ...props }: Props) => {
         }
     );
 
-    const onClothItemClick = clothID => {
+    const onClothItemClick = () => {
         if (!selectMode) {
             return;
         }
-
-        if (!isChecked) {
-            if (pickedClothItem.length >= MAX_OUTFIT_ITEM_SIZE) {
-                return;
-            }
-            dispatch(insertPickedClothItems(clothID));
+        const cltohToOperate = clothState.find(elem => elem.id === clothID);
+        if (!isChecked) {            
+            dispatch(insertPickedClothItems(cltohToOperate));
             setIsChecked(true);
         } else {
-            dispatch(deletePickedClothItems(clothID));
+            dispatch(deletePickedClothItems(cltohToOperate));
             setIsChecked(false);
         }
 
@@ -102,7 +101,9 @@ const ClothItem = ({ ...props }: Props) => {
                 backgroundImage:
                     imgFile ? genBGImgFilePathByEnv(imgFile, "./../../assets") : `url(${blobURL})`,
             }}
-            onClick={() => { clothID > 0 && onClothItemClick(clothID) }}
+            onClick={() => { 
+                clothID > 0 && onClothItemClick();
+            }}
         >
 
             {isChecked && <img src={'./../../assets/images/icons/check-solid.svg'} alt='check' />}

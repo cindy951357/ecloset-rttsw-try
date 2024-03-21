@@ -4,21 +4,29 @@ import {
     CLEAR_PICKED_CLOTH_ITEMS,
 } from "../actions/actionTypes";
 
+
+import { MAX_OUTFIT_ITEM_SIZE } from '../../constants';
+import { useSelector } from "react-redux";
+import { clothSelector } from "./cloth";
+
 const init = [
-    /** put cloth ID here */
+    /** put cloth here */
 ]
+
+
 
 const pickedClothItemReducer = (state = init, action) => {
     switch (action.type) {
         case INSERT_PICKED_CLOTH_ITEMS: {
+            const cltohToOperate = action.payload;
             return [
                 ...state,
-                action.payload
+                cltohToOperate
             ];
         };
         case DELETE_PICKED_CLOTH_ITEMS: {
-            const newState = state;
-            return newState.filter(id => id !== action.payload);
+            const newState = [...state];
+            return newState.filter(elem => elem.id !== action.payload.id);
         };
         case CLEAR_PICKED_CLOTH_ITEMS: {
             return [];

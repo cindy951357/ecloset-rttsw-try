@@ -15,7 +15,6 @@ import { clothSelector } from '../../reducers/cloth';
 
 interface Props {
     selectMode: boolean,
-    isTall: boolean,
 }
 
 export const filterConditionSectionClass = classnames(
