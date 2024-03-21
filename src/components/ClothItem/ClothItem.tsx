@@ -82,6 +82,9 @@ const ClothItem = ({ ...props }: Props) => {
         if (!selectMode) {
             return;
         }
+        if(pickedClothItem.length >= MAX_OUTFIT_ITEM_SIZE) {
+            return;
+        }
         const cltohToOperate = clothState.find(elem => elem.id === clothID);
         if (!isChecked) {            
             dispatch(insertPickedClothItems(cltohToOperate));
