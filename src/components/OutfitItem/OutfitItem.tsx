@@ -7,6 +7,8 @@ import classnames from 'classnames';
 
 import { ClothItem } from './../ClothItem/ClothItem';
 import { mockCloset } from '../../mockData/mockCloset';
+import { clothSelector } from '../../reducers/cloth';
+import { useSelector } from 'react-redux';
 
 const imgFolderPath = './../../assets/images/cloth-items'
 
@@ -50,6 +52,7 @@ const OutfitItem = ({ ...props }: Props) => {
         viewMode,
         size
     } = props;
+    const clothState = useSelector(clothSelector);
     return (
         <div
             className={`outfit-item ${styleClassNames}`}
@@ -59,9 +62,9 @@ const OutfitItem = ({ ...props }: Props) => {
             {clothIDs && clothIDs.map((clothID, i) => {
                 if (clothID > 0) {
                     let file;
-                    const found = mockCloset.find(el => el.id === clothID)
+                    const found = clothState.find(el => el.id === clothID)
                     if (found) {
-                        file = mockCloset.find(el => el.id === clothID)?.file;
+                        file = clothState.find(el => el.id === clothID)?.file;
                     }
                     return (
                         <ClothItem
