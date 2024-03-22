@@ -32,6 +32,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     size: 'S' | 'M' | 'L',
     clothID: number,
     blobURL: string,
+    isUsingBlobURL: boolean,
 }
 
 const ClothItem = ({ ...props }: Props) => {
@@ -42,6 +43,7 @@ const ClothItem = ({ ...props }: Props) => {
         clothID,
         selectMode,
         blobURL,
+        isUsingBlobURL,
     } = props;
 
     const dispatch = useDispatch();
@@ -102,7 +104,7 @@ const ClothItem = ({ ...props }: Props) => {
             style={{
                 borderRadius: borderRadius,
                 backgroundImage:
-                    imgFile ? genBGImgFilePathByEnv(imgFile, "./../../assets") : `url(${blobURL})`,
+                isUsingBlobURL ? `url(${blobURL})`: genBGImgFilePathByEnv(imgFile, "./../../assets"),
             }}
             onClick={() => { 
                 clothID > 0 && onClothItemClick();

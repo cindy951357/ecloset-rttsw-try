@@ -61,10 +61,18 @@ const OutfitItem = ({ ...props }: Props) => {
 
             {clothIDs && clothIDs.map((clothID, i) => {
                 if (clothID > 0) {
-                    let file;
+                    let file='';
+                    let blobURL='';
+                    let isUsingBlobURL;
                     const found = clothState.find(el => el.id === clothID)
                     if (found) {
                         file = clothState.find(el => el.id === clothID)?.file;
+                        if (file === '') {
+                            blobURL = clothState.find(el => el.id === clothID)?.blobURL;
+                            isUsingBlobURL = true;
+                        } else {
+                            isUsingBlobURL = false;
+                        }
                     }
                     return (
                         <ClothItem
@@ -72,8 +80,10 @@ const OutfitItem = ({ ...props }: Props) => {
                             viewMode={viewMode}
                             selectMode={false}
                             imgFile={file}
+                            blobURL={blobURL}
                             borderRadius={borderRadiusList[i]}
                             position={positionList[i]}
+                            isUsingBlobURL={isUsingBlobURL}
                             size={size}
                         ></ClothItem>
                     )
@@ -87,6 +97,7 @@ const OutfitItem = ({ ...props }: Props) => {
                             borderRadius={borderRadiusList[i]}
                             position={positionList[i]}
                             size={size}
+                            isUsingBlobURL={false}
                         ></ClothItem>
                     )
                 }

@@ -100,6 +100,7 @@ const FilterCloset = ({ ...props }: Props) => {
                                     clothID={item.id}
                                     imgFile={item.file}
                                     blobURL={item.blobURL}
+                                    isUsingBlobURL={item.file===''}
                                     viewMode={'SIMPLE_MODE'}
                                     selectMode={selectMode}
                                     borderRadius={'1em 1em 1em 1em'}

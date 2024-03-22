@@ -4,16 +4,9 @@ import {
     CLEAR_PICKED_CLOTH_ITEMS,
 } from "../actions/actionTypes";
 
-
-import { MAX_OUTFIT_ITEM_SIZE } from '../../constants';
-import { useSelector } from "react-redux";
-import { clothSelector } from "./cloth";
-
 const init = [
     /** put cloth here */
-]
-
-
+];
 
 const pickedClothItemReducer = (state = init, action) => {
     switch (action.type) {
